@@ -14,13 +14,36 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            /** Basic Information */
+            $table -> id();
+            $table -> string('username',15) -> unique();
+            $table -> string('display_name', 15) -> nullable();
+            $table -> string('email', 40) -> unique();
+            $table -> timestamp('email_verified_at') -> nullable();
+            $table -> string('password');
+            $table -> string('first') -> nullable();
+            $table -> string('last') -> nullable();
+            $table -> date('birthdate') ->default('2017-01-01');
+            $table -> string('token') -> nullable();
+            $table -> string('avatar') -> nullable();
+            $table -> enum('overlord_rank', [
+                'guest',
+                'member',
+                'moderator',
+                'administrator',
+                'banned'
+            ]) ->default('guest');
+
+            /** Discord Information */
+            $table -> bigInteger('discord_id') -> nullable();
+            $table -> string('discord_username') -> nullable();
+            $table -> integer('discord_discriminator') -> nullable();
+            $table -> string('discord_verification_token') -> nullable();
+            $table -> timestamp('discord_last_message_time') -> nullable();
+            $table -> integer('discord_last_message_id') -> nullable();
+
+            $table -> rememberToken();
+            $table -> timestamps();
         });
     }
 
