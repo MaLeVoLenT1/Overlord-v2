@@ -1,11 +1,25 @@
-import Vue from 'vue';
-export const EventBus = new Vue();
-window.vDashboard = new Vue({
+//import Vue from 'vue';
+export const EventBus = Vue.createApp({})
+window.vDashboard = Vue.createApp({
     data(){
         return{
-            location: null,
-            user: null,
-            requests: null,
+            location:  ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['page'] :  null),
+            user: ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['user'] : null),
+            requests: ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['request'] :  null),
+            section: ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['section'] :  null),
+            userConfig:{
+                isSignedIn: false,
+                overlord_rank: '',
+                hasAPI: false,
+                belongsToGuilds:false,
+                belongsToAlliances: false,
+                belongsToHubs: false,
+
+                isGuildLeader: false,
+                isAllianceLeader: false,
+                isHubLeader: false,
+
+            },
         }
 
     },
@@ -18,5 +32,4 @@ window.vDashboard = new Vue({
             self.requests.item = request;
         });
     }
-
-});
+})

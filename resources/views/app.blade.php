@@ -10,7 +10,6 @@
     <title>OverLord</title>
     <link rel="icon" type="image/png" href="{{ asset($header['icon']) }}">
     <link href="{{url( '/css/app.css' )}}" rel="stylesheet">
-    <link href="{{url( '/css/main.css' )}}" rel="stylesheet">
     <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token()]) !!};</script>
 </head>
 <body>

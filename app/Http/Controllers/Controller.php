@@ -26,10 +26,15 @@ class Controller extends BaseController
     /** App\User, App\DiscordUser */
     protected $userObject;
 
-    /** [EXAMPLE] TIME: 2018-06-15 14:00:44 | MaLeVoLenT.8129 | MaLeVoLenT#8129) */
-    protected $msgStart;
 
     public function __construct() {
+        // Grabs Request Object
+        $this -> request = Request::capture();
 
+        $this -> middleware(function ($request, $next) {
+            $this -> user = Auth::user();
+            $dash = new Dashboard($this -> user);    $this -> dashboard = $dash -> get();
+            return $next($request);
+        });
     }
 }

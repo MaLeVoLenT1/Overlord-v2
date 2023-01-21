@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Laracasts\Utilities\JavaScript\JavaScriptFacade as Javascript;
+use Request as ajaxCall;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,10 @@ class HomeController extends Controller
      * @return Renderable */
     public function index(): Renderable
     {
-        return view('home');
+
+        //if (ajaxCall::ajax()) {return response()->json($this -> dashboard);}
+        JavaScript::put(["Dashboard" => $this -> dashboard]);
+        return view('app')-> with('header' , $this -> dashboard['header']);
     }
 
     /**

@@ -1,5 +1,8 @@
 <?php
 
+use Database\Seeds\HeaderInformationSeeder;
+use Database\Seeds\HeaderKeywordsSeeder;
+use Database\Seeds\HeaderViewportSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

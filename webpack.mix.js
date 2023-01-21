@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+path = require('path');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,8 +13,16 @@ const mix = require('laravel-mix');
 
 // mix.browserSync('localhost/overlordappv2');
 
-// mix.setResourceRoot('../');
+mix.setResourceRoot('../');
+mix.alias({
+
+    '@': path.resolve('resources'),
+    'ext': path.resolve('node_modules'),
+})
 
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/pages/home.js', 'public/js/pages/').vue()
     .sass('resources/sass/app.scss', 'public/css');
+
+mix.copyDirectory('resources/img/', 'public/images');

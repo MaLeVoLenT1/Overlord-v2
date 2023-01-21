@@ -24,7 +24,6 @@ class CreateHeaderKeywordsTable extends Migration
                 'crypto',
                 'all',
             ]);
-            $table->timestamps();
         });
     }
 
