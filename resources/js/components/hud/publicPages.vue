@@ -31,27 +31,30 @@
         data() {
             return {
                 location: {main: null, sub: null, target: null, host: null, uri: null},
-                user: ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['user'] : null),
-                section: ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['section'] :  null),
-                requests: ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['request'] :  null),
+                user: null, section: null, requests: null
             }
         },
         created(){
             let self = this;
 
+            // Checks if the overlord object is available.
             if (typeof overlord.Dashboard !== 'undefined') {
 
+                // Assigns the location object to pages that are loaded via the public pages component.
                 const page = overlord.Dashboard['page'];
                 self.location.main = page.main;
                 self.location.sub = page.sub;
                 self.location.target = page.target;
                 self.location.host = page.host;
                 self.location.uri = page.uri;
+
+                self.location.user = overlord.Dashboard['user'];
+                self.location.section = overlord.Dashboard['section'];
+                self.location.requests = overlord.Dashboard['request'];
+
                 console.log("Public Pages Loaded.");
             }
-            else{
-                console.log("Public Pages Failed to Load.");
-            }
+            else console.log("Public Pages Failed to Load.");
 
         }
     }
