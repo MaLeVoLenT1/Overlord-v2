@@ -4,6 +4,12 @@
         <Login v-if="location.main === 'login'"></Login>
         <Register v-if="location.main === 'register'"></Register>
         <Home v-if="location.main === 'home'"></Home>
+        <Crypto v-if="location.main === 'crypto'"></Crypto>
+        <News v-if="location.main === 'news'"></News>
+        <About v-if="location.main === 'about'"></About>
+        <Hub v-if="location.main === 'hub'"></Hub>
+        <Gaming v-if="location.main === 'gaming'"></Gaming>
+        <Profile v-if="location.main === 'profile'"></Profile>
     </div>
 </template>
 
@@ -12,13 +18,15 @@
     import Login from "../Pages/Login.vue";
     import Register from "../Pages/Register.vue";
     import Home from "../Pages/Home.vue";
+    import Crypto from "../Pages/Crypto.vue";
+    import News from "../Pages/News.vue";
+    import About from "../Pages/About.vue";
+    import Hub from "../Pages/Hub.vue";
+    import Gaming from "../Pages/Gaming.vue";
+    import Profile from "../Pages/Profile.vue";
+
     export default {
-        components: {
-            Welcome,
-            Login,
-            Register,
-            Home
-        },
+        components: {Welcome, Login, Register, Home, Crypto, News, About, Hub, Gaming, Profile},
         name: "publicPages",
         data() {
             return {
