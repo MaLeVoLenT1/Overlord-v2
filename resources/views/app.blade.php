@@ -13,10 +13,11 @@
     <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token()]) !!};</script>
 </head>
 <body>
+<div id="dash"></div>
 <div id="app">
     <div class="wrapper">
 
-        <public-pages @catch-user="updateUser"/>
+        <public-pages/>
 
     </div>
 </div>

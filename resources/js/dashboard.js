@@ -1,6 +1,7 @@
 //import Vue from 'vue';
-export const EventBus = Vue.createApp({})
+
 window.vDashboard = Vue.createApp({
+    name: 'Dashboard',
     data(){
         return{
             location:  ((typeof overlord.Dashboard !== 'undefined') ? overlord.Dashboard['page'] :  null),
@@ -23,13 +24,10 @@ window.vDashboard = Vue.createApp({
         }
 
     },
+    template: `<div></div>`,
     created(){
         let self = this;
         console.log("Dashboard Created.");
 
-        EventBus.$on('updateRequest', function (request) {
-            console.log("Updating Request Item Object");
-            self.requests.item = request;
-        });
     }
-})
+}).mount("#dash");

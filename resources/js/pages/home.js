@@ -2,12 +2,10 @@ require('../app');
 require('../dashboard');
 
 import publicPages from "../components/hud/publicPages";
-const { createApp } = Vue;
+import { createApp } from 'vue'
 
-createApp({
-    components: {
-        'public-pages': publicPages,
-    },
+const app = createApp({
+    name: 'Hub',
     data() {
         return {
             ui:{userMenu: false},
@@ -23,5 +21,12 @@ createApp({
                 console.log("Signed-In");
             }
         }
+    },
+    created(){
+        let self = this;
+        console.log("Hub Created.");
+
     }
-}).mount("#app");
+}).component('public-pages', publicPages).mount("#app");
+
+
