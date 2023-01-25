@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@landing');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/news', 'NewsArticleController');
+Route::resource('/games', 'GameController');
 
 // Profile Pages
 Route::prefix('profile')->group(function(){
@@ -50,6 +51,11 @@ Route::resource('/crypto', 'Crypto\CryptocurrencyController');
 
 // Discord Endpoints
 Route::prefix('discord') -> group(function () {
-
+    Route::get('/', 'Discord\DiscordController@index')->name('discord');
+    Route::get('/login', 'Discord\DiscordController@login')->name('discord.login');
+    Route::get('/callback', 'Discord\DiscordController@callback')->name('discord.callback');
+    Route::get('/logout', 'Discord\DiscordController@logout')->name('discord.logout');
+    Route::resource('/bot', 'Discord\DiscordBotController');
+    Route::resource('/discord-members', 'Discord\DiscordUserController');
 });
 
