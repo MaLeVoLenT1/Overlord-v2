@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Hub;
 
 use App\CalendarEvent;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class CalendarEventController extends Controller
