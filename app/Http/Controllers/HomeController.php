@@ -37,6 +37,7 @@ class HomeController extends Controller
      * @return Renderable */
     public function landing(): Renderable
     {
-        return view('welcome');
+        JavaScript::put(["Dashboard" => $this -> dashboard]);
+        return view('app')-> with('header' , $this -> dashboard['header']);
     }
 }

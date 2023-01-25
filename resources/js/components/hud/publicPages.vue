@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Welcome v-if="location.main === 'welcome'"></Welcome>
+        <Welcome v-if="location.main === '' && location.uri === '/'"></Welcome>
         <Login v-if="location.main === 'login'"></Login>
         <Register v-if="location.main === 'register'"></Register>
         <Home v-if="location.main === 'home'"></Home>
@@ -52,6 +52,7 @@
                 self.location.section = overlord.Dashboard['section'];
                 self.location.requests = overlord.Dashboard['request'];
 
+                console.log(`PATH: ${overlord.Dashboard['path']} | URL: ${overlord.Dashboard['url']}`);
                 console.log("Public Pages Loaded.");
             }
             else console.log("Public Pages Failed to Load.");

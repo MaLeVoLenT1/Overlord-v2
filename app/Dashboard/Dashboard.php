@@ -15,20 +15,29 @@ class Dashboard
         $this -> header = new Header();
     }
 
-    private function calculateURI($uri): array
+    private function calculateURI(): array
     {
-
+        if($this -> request -> path() == '/' && $this -> request -> url() == env('APP_URL')){
+            return [
+                'main' => '',
+                'sub' => null,
+                'target' => null,
+                'host' => env('APP_URL'),
+            ];
+        }
+        $uri = $this -> request -> path();
         $array = explode('/', $uri);
         return [
             'main' => (isset($array[0]))? $array[0] : null,
             'sub' => (isset($array[1]))? $array[1] : null,
             'target' => (isset($array[2]))? $array[2] : null,
+            'host' => env('APP_URL'),
         ];
     }
 
     public function get($target = 'all'): array
     {
-        $pages = $this -> calculateURI($this -> request -> path());
+        $pages = $this -> calculateURI();
         switch($target){
             case'all':
             default:
@@ -37,10 +46,11 @@ class Dashboard
                         'main' => $pages['main'],
                         'sub' => $pages['sub'],
                         'target' => $pages['target'],
-                        'host' => explode($this -> request -> path(),$this -> request -> url())[0],
+                        'host' => $pages['host'],
                         'uri' => $this -> request -> path(),
                     ],
                     'url' => $this -> request -> url(),
+                    'path' => $this -> request -> path(),
                     'header' => $this -> header -> header,
                     'request' => [
                         'env' => ['app_url' => env('APP_URL'), 'app_env' => env('APP_ENV')],
