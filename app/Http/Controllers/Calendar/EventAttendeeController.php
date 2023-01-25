@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Hub;
+namespace App\Http\Controllers\Calendar;
 
-use App\Calendar\CalendarEvent;
+use App\Calendar\EventAttendee;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CalendarEventController extends Controller
+class EventAttendeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CalendarEventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventAttendee  $eventAttendee
      * @return \Illuminate\Http\Response
      */
-    public function show(CalendarEvent $calendarEvent)
+    public function show(EventAttendee $eventAttendee)
     {
         //
     }
@@ -53,10 +53,10 @@ class CalendarEventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventAttendee  $eventAttendee
      * @return \Illuminate\Http\Response
      */
-    public function edit(CalendarEvent $calendarEvent)
+    public function edit(EventAttendee $eventAttendee)
     {
         //
     }
@@ -65,10 +65,10 @@ class CalendarEventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventAttendee  $eventAttendee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CalendarEvent $calendarEvent)
+    public function update(Request $request, EventAttendee $eventAttendee)
     {
         //
     }
@@ -76,10 +76,10 @@ class CalendarEventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventAttendee  $eventAttendee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CalendarEvent $calendarEvent)
+    public function destroy(EventAttendee $eventAttendee)
     {
         //
     }

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Hub;
+namespace App\Http\Controllers\Calendar;
 
-use App\Calendar\CalendarEvent;
+use App\Calendar\EventLog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CalendarEventController extends Controller
+class EventLogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CalendarEventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventLog  $eventLog
      * @return \Illuminate\Http\Response
      */
-    public function show(CalendarEvent $calendarEvent)
+    public function show(EventLog $eventLog)
     {
         //
     }
@@ -53,10 +53,10 @@ class CalendarEventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventLog  $eventLog
      * @return \Illuminate\Http\Response
      */
-    public function edit(CalendarEvent $calendarEvent)
+    public function edit(EventLog $eventLog)
     {
         //
     }
@@ -65,10 +65,10 @@ class CalendarEventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventLog  $eventLog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CalendarEvent $calendarEvent)
+    public function update(Request $request, EventLog $eventLog)
     {
         //
     }
@@ -76,10 +76,10 @@ class CalendarEventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Calendar\EventLog  $eventLog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CalendarEvent $calendarEvent)
+    public function destroy(EventLog $eventLog)
     {
         //
     }

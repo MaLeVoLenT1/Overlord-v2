@@ -35,11 +35,23 @@ Route::resource('/profile', 'Profile\ProfileController');
 Route::prefix('hub')->group(function () {
     Route::get('/', 'Hub\HubController@index')->name('hub');
     Route::resource('/individuals', 'Hub\UserController');
-    Route::resource('/calendar/events', 'Hub\CalendarEventController');
-    Route::resource('/calendars', 'Hub\CalendarController');
     Route::resource('/teams', 'Hub\TeamController');
     Route::resource('/organizations', 'Hub\OrganizationController');
     Route::resource('/communities', 'Hub\CommunityController');
+
+    // Calendar Pages
+    Route::prefix('calendar')->group(function () {
+        Route::resource('/event/review', 'Calendar\EventReviewController');
+        Route::resource('/event/rating', 'Calendar\EventRatingController');
+        Route::resource('/event/Organizers', 'Calendar\EventOrganizerController');
+        Route::resource('/event/logs', 'Calendar\EventLogController');
+        Route::resource('/event/invites', 'Calendar\EventInviteController');
+        Route::resource('/event/comments/replies', 'Calendar\EventCommentReplyController');
+        Route::resource('/event/comments', 'Calendar\EventCommentController');
+        Route::resource('/event/attendees', 'Calendar\EventAttendeeController');
+        Route::resource('/event', 'Calendar\CalendarEventController');
+    });
+    Route::resource('/calendar', 'Calendar\CalendarController');
 });
 
 // Cryptocurrency Pages
