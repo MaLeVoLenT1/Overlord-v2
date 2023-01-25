@@ -55,7 +55,16 @@ Route::prefix('discord') -> group(function () {
     Route::get('/login', 'Discord\DiscordController@login')->name('discord.login');
     Route::get('/callback', 'Discord\DiscordController@callback')->name('discord.callback');
     Route::get('/logout', 'Discord\DiscordController@logout')->name('discord.logout');
+
+    // Discord Overlord Model Endpoints
+    Route::resource('/bot/commands', 'Discord\BotCommandController');
+    Route::resource('/bot/events', 'Discord\BotEventController');
+    Route::resource('/bot/settings', 'Discord\BotSettingsController');
     Route::resource('/bot', 'Discord\DiscordBotController');
     Route::resource('/discord-members', 'Discord\DiscordUserController');
+    Route::resource('/discord-moderators', 'Discord\DiscordModeratorController');
+    Route::resource('/discord-roles', 'Discord\DiscordRoleController');
+    Route::resource('/discord-guests', 'Discord\DiscordGuestController');
+    Route::resource('/discord-admins', 'Discord\DiscordAdminController');
 });
 
