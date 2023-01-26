@@ -1,0 +1,83 @@
+/*------------------------------------------------------------------
+    career-box
+-------------------------------------------------------------------*/
+.career-list {
+    position: relative;
+}
+
+.career-box {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 50px 30px;
+    border: 1px solid #eaeaea;
+    background: #fff;
+}
+
+a.show-detail {
+    display: inline-block;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #cbcbcb;
+    font-size: 12px;
+}
+
+a.show-detail:after {
+    padding-left: 10px;
+    content: "\f178";
+    font-family: "FontAwesome";
+}
+
+.career-details-info {
+    display: none;
+}
+
+.career-details-info {
+    z-index: 1;
+    padding: 30px 0 0 0;
+    background: #fff;
+}
+
+.career-details-info {
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+
+.career-details-info .c-list-row {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.career-details-info .c-list-row label {
+    float: left;
+    /*font-family: 'Abel', sans-serif;*/
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.career-details-info .c-list-row .info {
+    padding-left: 100px;
+    color: #7e7e7e;
+    font-size: 14px;
+}
+
+.career-details-info .c-list-row ul {
+    padding: 0;
+}
+
+.career-details-info .c-list-row ul li {
+    padding: 0;
+    color: #7e7e7e;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+}
+
+.career-form .form-control {
+    margin-bottom: 30px;
+    border: 1px solid #e4e4e4;
+    box-shadow: none;
+}
+
+.career-form label {
+    font-weight: normal;
+}

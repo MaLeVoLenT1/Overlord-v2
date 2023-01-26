@@ -1,0 +1,126 @@
+/*------------------------------------------------------------------
+    progress bar
+-------------------------------------------------------------------*/
+.massive-progress {
+    overflow: visible;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    background: #eae8e8;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+.massive-progress .progress-bar {
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-left: 10px;
+    text-align: left;
+    color: #ffffff;
+    background-color: #222;
+    box-shadow: none;
+    font-size: 12px;
+    line-height: 19px;
+}
+
+.massive-progress .progress-bar > span {
+    position: absolute;
+    top: -28px;
+    right: -5px;
+    display: inline-block;
+    min-width: 25px;
+    height: 20px;
+    padding: 0 8px;
+    text-align: center;
+    letter-spacing: 0;
+    color: #fff;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, .6) !important;
+    line-height: 20px;
+}
+
+.massive-progress .progress-bar > span:before {
+    position: absolute;
+    bottom: -2px;
+    left: 15px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    content: "";
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-style: none;
+    border-color: #666;
+    border-right: 1px solid #666;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    background-color: #666;
+}
+
+.post-parallax .massive-progress .progress-bar > span {
+    color: #222 !important;
+    background-color: #a4a4a4 !important;
+}
+
+.post-parallax .massive-progress .progress-bar > span:before {
+    border-color: #a4a4a4;
+    border-right: 1px solid #a4a4a4;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    background-color: #a4a4a4;
+}
+
+/* Alt progress bar */
+.massive-progress-alt {
+    height: 30px;
+    margin-bottom: 30px;
+    border-radius: 0;
+    background: #f2f2f2;
+    box-shadow: none;
+}
+
+.massive-progress-alt .progress-bar {
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: left;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #222;
+    box-shadow: none;
+    font-size: 11px;
+    line-height: 30px;
+}
+
+.massive-progress-alt .progress-bar span {
+    float: right;
+}
+
+.highlight pre {
+    color: #555;
+    border-color: #eaeaea;
+    border-radius: 0;
+    background: #fcfcfc;
+}
+
+.massive-progress-alt.progress-theme-color .progress-bar,
+.massive-progress-alt.progress-theme-color .progress-bar > span {
+    color: #fff;
+}
+
+.progress-light-trans-bg {
+    background: rgba(255, 255, 255, .1);
+}
+

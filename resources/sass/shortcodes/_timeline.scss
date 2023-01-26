@@ -1,0 +1,256 @@
+/*------------------------------------------------------------------
+    timeline
+-------------------------------------------------------------------*/
+.timeline {
+    position: relative;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.timeline .time-show {
+    position: relative;
+    margin-top: 30px;
+    margin-right: -75px;
+    margin-bottom: 30px;
+}
+
+.timeline .time-show a {
+    color: #fff;
+}
+
+.timeline:before {
+    position: absolute;
+    z-index: 0;
+    top: 30px;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    content: "";
+    background-color: #d8d9df;
+}
+
+h3.timeline-title {
+    margin: 0;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    color: #c8ccd7;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.t-info {
+    color: #c8ccd7;
+}
+
+.timeline-item:before,
+.timeline-item.alt:after {
+    display: block;
+    width: 50%;
+    content: "";
+}
+
+.timeline-item {
+    display: table-row;
+    display: inline-table;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.timeline-desk {
+    position: relative;
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+}
+
+.timeline-desk h1 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.timeline-desk .panel {
+    display: block;
+    margin-left: 45px;
+    text-align: left;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.timeline .timeline-icon {
+    position: absolute;
+    top: 5px;
+    left: -35px;
+}
+
+.timeline .timeline-icon {
+    background: #c7cbd6;
+}
+
+.timeline-desk span a {
+    text-transform: uppercase;
+}
+
+.timeline .timeline-icon {
+    border: 5px solid #fff;
+    background: #222;
+}
+
+.timeline .timeline-icon.light {
+    background: #fff;
+}
+
+.timeline .timeline-icon {
+    display: block;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    color: #fff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 30px;
+    line-height: 65px;
+}
+
+.timeline .timeline-icon i {
+    margin-top: 9px;
+}
+
+.timeline-item.alt .timeline-icon {
+    right: -35px;
+    left: auto;
+}
+
+.timeline .time-icon:before {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.timeline .timeline-date {
+    position: absolute;
+    top: 30px;
+    left: -210px;
+    display: none;
+    width: 150px;
+    text-align: right;
+}
+
+.timeline-item.alt .timeline-date {
+    right: -210px;
+    left: auto;
+    display: none;
+    text-align: left;
+}
+
+.timeline-desk h5 span {
+    display: block;
+    margin-bottom: 4px;
+    color: #999;
+    font-size: 12px;
+}
+
+.timeline-item.alt:before {
+    display: none;
+}
+
+.timeline-item:before,
+.timeline-item.alt:after {
+    display: block;
+    width: 50%;
+    content: "";
+}
+
+.timeline-desk p {
+    margin-bottom: 0;
+    color: #999;
+    font-size: 14px;
+}
+
+.timeline-desk .panel {
+    margin-bottom: 5px;
+}
+
+.timeline-desk .album {
+    margin-top: 20px;
+}
+
+.timeline-item.alt .timeline-desk .album {
+    float: right;
+    margin-top: 20px;
+}
+
+.timeline-desk .album a {
+    float: left;
+    margin-right: 5px;
+}
+
+.timeline-item.alt .timeline-desk .album a {
+    float: right;
+    margin-left: 5px;
+}
+
+.timeline-desk .notification {
+    margin-top: 20px;
+    padding: 8px;
+    background: none repeat scroll 0 0 #fff;
+}
+
+.timeline-item.alt .panel {
+    margin-right: 45px;
+    margin-left: 0;
+}
+
+.timeline-item.alt h1,
+.timeline-item.alt p {
+    text-align: right;
+}
+
+/*----*/
+.timeline.dark:before {
+    position: absolute;
+    z-index: 0;
+    top: 30px;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    content: "";
+    background-color: #fff;
+}
+
+.timeline.dark h3.timeline-title {
+    margin: 0;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.timeline.dark .timeline-desk h1 {
+    color: #fff;
+}
+
+.timeline.dark .timeline-desk p {
+    color: #7e7e7e;
+}
+
+.timeline.dark .timeline-icon {
+    border: 5px solid #000;
+    background: #fff;
+}
+
+.timeline.dark .timeline-icon {
+    color: #222;
+}
+
+.timeline-parallax {
+    //background-image: url("../images/parallax/t-parallax.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}

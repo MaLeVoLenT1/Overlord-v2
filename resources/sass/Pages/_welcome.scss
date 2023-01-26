@@ -1,0 +1,56 @@
+.landing-container {
+    background-color: #2f2f2f;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+}
+
+.landing-links{
+    margin-left: 290px;
+    height: 100%;
+    width: 100%;
+    padding-top: 150px;
+    z-index: 1000;
+    // position: initial;
+}
+
+.landing-links > a {
+    color: rgba(129, 132, 134, 0.82);
+    padding: 0 26px;
+    font-size: 20px;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder !important;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+}
+
+.logo{
+    position: relative;
+    width: 50%;
+    align-items: center;
+    display: flex;
+}
+
+.logo-tribal{
+    max-width: 509px;
+    min-width: 201px;
+    width: 100%;
+    position: absolute;
+    opacity: .8;
+}
+
+.logo-text{
+    max-width: 875px;
+    min-width: 201px;
+    width: 100%;
+    position: absolute;
+    opacity: .8;
+}

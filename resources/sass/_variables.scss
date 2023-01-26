@@ -1,0 +1,64 @@
+/*    Overlord Styles   */
+
+//Text
+/*  GuildWars 2 font */           $font-family-GW2: 'GW2', 'Georgia', normal;
+/*  Main Text Size */             $OL-Text-Size-Large: 20px;
+/*  Medium Text Size */           $OL-Text-Size-Medium: 10px;
+/*  Overlord Medium Text Size */  $OL-Text-Shadow: rgb(3, 3, 3) 2px 3px 1px;
+
+//Alert Colors
+
+$OL-info-color: rgba(177, 177, 177, 0.71);
+
+
+$OL-primary-color: #b9b9b9;
+$OL-menu-color: #0a0a0a;
+$OL-hover-color: rgba(19, 145, 148, 0.82);
+
+
+
+$OL-neutral-color: #000;
+$OL-failed-color: rgba(228, 3, 3, 0.46);
+$OL-success-color: #2db31a;
+$OL-warning-color: #f7f226;
+
+// Overlord Backgrounds
+/*  Nav Design  */              $OL-Nav-Background: rgba(22, 22, 22, 0.96);
+$OL-Nav-Background-Trans: rgba(22, 22, 22, 0.8);
+
+// Body
+$body-bg: $OL-Nav-Background;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Brands
+$brand-primary: $OL-primary-color;
+$brand-info: #8eb4cb;
+$brand-success: $OL-success-color;
+$brand-warning: $OL-warning-color;
+$brand-danger: $OL-failed-color;
+
+// Typography
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 14px;
+$line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Navbar
+$navbar-default-bg: #fff;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;

@@ -11,14 +11,10 @@ path = require('path');
  |
  */
 
-// mix.browserSync('localhost/overlordappv2');
+mix.browserSync('localhost/overlord-v2');
 
 mix.setResourceRoot('../');
-mix.alias({
-
-    '@': path.resolve('resources'),
-    'ext': path.resolve('node_modules'),
-})
+mix.alias({'@': path.resolve('resources'), 'ext': path.resolve('node_modules'),});
 
 
 mix.js('resources/js/app.js', 'public/js')
