@@ -1,8 +1,8 @@
 <template>
     <div class="landing-container">
         <div class="logo">
-            <img class="logo-tribal" :src="determineIMAGE_PATH + 'tribal_m.png'">
-            <img class="logo-text" :src="determineIMAGE_PATH + 'Overlord_m.png'">
+            <img class="logo-tribal" :src="determineIMAGE_PATH + 'tribal_m.png'" alt="">
+            <img class="logo-text" :src="determineIMAGE_PATH + 'Overlord_m.png'" alt="overlord">
             <div class="landing-links">
                 <a href="home">Home</a>
                 <a href="hub">Hub</a>
