@@ -1,14 +1,16 @@
 <template>
     <section class="body-content" id="loading">
-        <loading :location="location" v-if="isLoading === true"/>
+        <loading v-if="isLoading === true"/>
+        <overlord-parallax-v1 :display="'main'"/>
     </section>
 </template>
 
 <script>
 import Loading from "../hud/loading.vue";
+import OverlordParallaxV1 from "../hud/parallax/OverlordParallaxV1.vue";
     export default {
         components: {
-            Loading
+            Loading, OverlordParallaxV1
         },
         name: "Home",
         data(){
