@@ -17,7 +17,7 @@ class RegisterController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
+    | validation and creation. By default, this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
     */
@@ -38,6 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('guest');
     }
 
@@ -60,9 +61,9 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return User
      */
-    protected function create(array $data)
+    protected function create(array $data): User
     {
         return User::create([
             'name' => $data['name'],

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\View\View;
+use Laracasts\Utilities\JavaScript\JavaScriptFacade as Javascript;
 
 class LoginController extends Controller
 {
@@ -35,6 +37,20 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Show the application's login form.
+     *
+     * @return View
+     */
+    public function showLoginForm(): View
+    {
+        //if (ajaxCall::ajax()) {return response()->json($this -> dashboard);}
+        JavaScript::put(["Dashboard" => $this -> dashboard]);
+        return view('app')-> with('header' , $this -> dashboard['header']);
+
     }
 }
