@@ -1,0 +1,83 @@
+.modal-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+    margin: 0px auto;
+    padding: 20px 30px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+    background: -ms-linear-gradient(0deg, black 0%, #2d2f33 50%, black 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000' ,GradientType=0)";
+    background: -webkit-gradient(linear, left top, right top, from(black), color-stop(50%, #2d2f33), to(black));
+    background: linear-gradient(90deg, black 0%, #2d2f33 50%, black 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000',endColorstr='#000000' , GradientType=1);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+    border-radius: 5px;
+    border: 1.5px solid rgba(56, 181, 180, 0.54);
+
+}
+
+.modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.modal-default-button {
+    float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+@media  only screen and (max-width: 600px) {
+    .modal-container {
+        height: 100% !important;
+        overflow-y: scroll;
+    }
+}
+
+@media  only screen and (max-width: 500px) {
+    .modal-container {
+        height: 100% !important;
+        overflow-y: scroll;
+    }
+}
