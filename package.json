@@ -39,6 +39,9 @@
         "undici": "^5.15.0",
         "isotope-layout": "^3.0.6",
         "flexslider": "^2.7.1",
-        "magnific-popup": "^1.1.0"
+        "magnific-popup": "^1.1.0",
+        "floatthead": "^2.1.2",
+        "jquery-sticky": "^1.0.4",
+        "sticky-kit": "^1.1.3"
     }
 }
