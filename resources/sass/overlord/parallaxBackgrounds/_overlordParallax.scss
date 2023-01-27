@@ -1,0 +1,158 @@
+.parallax-overlord{
+    position: absolute;
+    overflow: hidden;
+}
+.layer {
+    overflow: hidden;
+    background-size:auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    min-height: 950px;
+
+}
+/** Overlord Parallax */
+
+.layer-1 {
+    background: url("../../../img/backgrounds/overlordParallax2/bg.png");
+    height: 3000px;
+}
+
+.layer-2 {
+    background: url("../../../img/backgrounds/overlordParallax2/back-hexes.png");
+    height: 3000px;
+}
+
+.layer-3{
+    //background: url("../images/backgrounds/overlordParallax2/middle-float-hexes.png")!important;
+    height: 3000px;
+    .middle-hex-container{
+        width:100%;
+        height:100%;
+        .container-sides{
+            margin-top: 120px;
+            width: 95%;
+            display: inline-block;
+            height: 900px;
+            .side{
+                height: 100%;
+                width: 50%;
+                float: left;
+                .hex-left{
+                    margin-top: 8%;
+                    width: 67%;
+                    margin-left: 16.5%;
+                }
+                .hex-right{
+                    margin-top: 37%;
+                    margin-right: 14%;
+                    width: 67%;
+                }
+                .hex-left-sub{
+                    width: 39%;
+                    margin-top: -1%;
+                    margin-left: 7%;
+                }
+                .hex-right-sub{
+                    margin-right: 15%;
+                    width: 32%;
+                }
+            }
+
+        }
+    }
+}
+
+.layer-4 {
+    //background: url("../images/backgrounds/overlordParallax/overlord.png");
+    .logo-container{
+        width:100%;
+        //background-color: rgba(2, 157, 160, 0.19);
+        min-height: 400px;
+        .parallax-logo{
+            width:70%;
+            margin-right: 100px;
+            padding-top: 15%;
+        }
+        .parallax-logo-header{
+            width: 40%;
+            margin-top: 9%;
+            margin-left: 3%;
+            display: inline-block;
+        }
+    }
+}
+
+.layer-5 {
+    //background: url("../images/backgrounds/overlordParallax/tribal.png");
+    .container-tribal {
+        width: 100%;
+        text-align:left;
+        .parallax-tribal {
+            width: 33%;
+            margin-left: 10.5%;
+            padding-top: 2.5%;
+        }
+        .parallax-tribal-header {
+            width: 20%;
+            padding-top: 0.5%;
+            margin-left: 1.5%;
+
+        }
+    }
+}
+
+.layer-6{
+    //background: url("../images/backgrounds/overlordParallax2/top-float-hexes.png");
+    height: 3000px;
+    .top-hex-container{
+        width:100%;
+        height:100%;
+        .container-sides{
+            margin-top: 120px;
+            width: 95%;
+            display: inline-block;
+            height: 900px;
+            .side{
+                height: 100%;
+                width: 50%;
+                float: left;
+                .hex-left{
+                    margin-top: 8%;
+                    width: 48%;
+                    margin-left: 4%;
+                }
+                .hex-right{
+                    margin-top: 30%;
+                    margin-right: 2%;
+                    width: 48%;
+                }
+                .hex-left-sub{
+                    width: 27%;
+                    margin-top: 6%;
+                }
+                .hex-right-sub{
+                    width: 27%;
+                    margin-right: 10%;
+                    margin-top: 2%;
+                }
+            }
+
+        }
+    }
+}
+.layer-overlay {
+    //background: url("../images/backgrounds/overlordParallax/overlay-bottom.png")!important;
+    height: 3000px;
+}
+.header-information{
+    max-width: 400px;
+    width: 100%;
+    margin-left: 20%;
+    margin-top: -4%;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+
+}
