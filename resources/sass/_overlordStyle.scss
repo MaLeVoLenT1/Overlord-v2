@@ -1,0 +1,325 @@
+@import "variables";
+
+/*==================================================
+    * Overlord Gradient - Overlord Main
+* ===============================================*/
+
+@mixin overlord-gradient(){
+    background : -moz-linear-gradient(0% 50% 0deg,rgba(0, 0, 0, 1) 0%,rgba(45, 47, 51, 1) 50%,rgba(0, 0, 0, 1) 100%);
+    background : -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(45, 47, 51, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(0, 0, 0, 1) ),color-stop(0.5,rgba(45, 47, 51, 1) ),color-stop(1,rgba(0, 0, 0, 1) ));
+    background : -o-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(45, 47, 51, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    background : -ms-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(45, 47, 51, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000' ,GradientType=0)";
+    background : linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(45, 47, 51, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000',endColorstr='#000000' , GradientType=1);
+
+}
+
+/*==================================================
+    * Overlord Border - Overlord Main
+* ===============================================*/
+
+@mixin overlord-border-big(){
+    border-radius: 5px;
+    border: 1.5px solid rgba(56, 181, 180, 0.54);
+}
+
+@mixin overlord-border-medium(){
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.81);
+}
+
+/*SHADOW EFFECTS CLASSES
+    Website: https://codepen.io/sdthornton/pen/wBZdXq   */
+/*==================================================
+    * Shadow Effect - Overlord Main
+* ===============================================*/
+
+@mixin overlord-shadow() {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+}
+.OverLord-Shadow-Main {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 1px 8px, inset rgba(0, 0, 0, 0.4) 0 0 0 1px;
+}
+/*  Shadow Effect - Bottom
+* ===============================================*/
+.Overlord-Bottom-Shadow{
+  -webkit-box-shadow: 0 10px 6px -6px #000000;
+  -moz-box-shadow: 0 10px 6px -6px #000000;
+  box-shadow: 0 10px 6px -6px #000000;
+}
+/* Shadow Effect - Sides
+* ===============================================*/
+.Overlord-Sides-Shadow
+{
+  -webkit-box-shadow: 0 10px 15px rgb(0, 0, 0), 0 0 20px rgba(0, 0, 0, 0.19) inset;
+  -moz-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.19) inset;
+  box-shadow: 0 10px 15px rgb(0, 0, 0), 0 0 20px rgba(0, 0, 0, 0.19) inset;
+}
+.Overlord-Sides-Shadow:before, .Overlord-Sides-Shadow:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:10px;
+  bottom:10px;
+  left:0;
+  right:0;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+.Overlord-Sides-Shadow:after
+{
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+  -moz-transform:skew(8deg) rotate(3deg);
+  -ms-transform:skew(8deg) rotate(3deg);
+  -o-transform:skew(8deg) rotate(3deg);
+  transform:skew(8deg) rotate(3deg);
+}
+
+.Shadow-Left-Right-effect8
+{
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.Shadow-Left-Right-effect8:before, .Shadow-Left-Right-effect8:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:10px;
+  bottom:10px;
+  left:0;
+  right:0;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+.Shadow-Left-Right-effect8:after
+{
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+  -moz-transform:skew(8deg) rotate(3deg);
+  -ms-transform:skew(8deg) rotate(3deg);
+  -o-transform:skew(8deg) rotate(3deg);
+  transform:skew(8deg) rotate(3deg);
+}
+
+
+
+.Shadow-Top-Bottom-effect7
+{
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.Shadow-Top-Bottom-effect7:before, .Shadow-Top-Bottom-effect7:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:0;
+  bottom:0;
+  left:10px;
+  right:10px;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+.Shadow-Top-Bottom-effect7:after
+{
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+  -moz-transform:skew(8deg) rotate(3deg);
+  -ms-transform:skew(8deg) rotate(3deg);
+  -o-transform:skew(8deg) rotate(3deg);
+  transform:skew(8deg) rotate(3deg);
+}
+
+
+.Shadow-Bottom-effect6
+{
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.Shadow-Bottom-effect6:before, .Shadow-Bottom-effect6:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:50%;
+  bottom:0;
+  left:10px;
+  right:10px;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+.Shadow-Bottom-effect6:after
+{
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+  -moz-transform:skew(8deg) rotate(3deg);
+  -ms-transform:skew(8deg) rotate(3deg);
+  -o-transform:skew(8deg) rotate(3deg);
+  transform:skew(8deg) rotate(3deg);
+}
+.Shadow-Hard-Bottom-effect1{
+  -webkit-box-shadow: 0 10px 6px -6px #000000;
+  -moz-box-shadow: 0 10px 6px -6px #000000;
+  box-shadow: 0 10px 6px -6px #000000;
+}
+
+/*FONTS */
+@font-face {  font-family: 'GW2';  src: url('../fonts/GuildWars2/GWTwoFont.ttf');  }
+@font-face {  font-family: 'Bleeding Cowboys';  src: url('../fonts/Bleeding_Cowboys.ttf');  }
+@font-face {  font-family: 'Metal Macabre';  src: url('../fonts/MetalMacabre.ttf');  }
+@font-face {  font-family: 'transMutation';  src: url('../fonts/transMutation.ttf');  }
+
+#GW2-Red-Title{
+    font-family: $font-family-GW2;
+    font-size: $OL-Text-Size-Large;
+    text-shadow: rgba(3, 3, 3, 0.65) 1px 1px 5px;
+    color: rgba(228, 3, 3, 0.46);
+}
+.GW2-White-Title-10{
+    font-family: $font-family-GW2;
+    font-size: $OL-Text-Size-Medium;
+    text-shadow: $OL-Text-Shadow;
+    color: rgba(255, 255, 255, 0.46);
+}
+.GW2-WhiteTrans-Title-20 {
+    font-family: $font-family-GW2;
+    font-size: $OL-Text-Size-Large;
+    color: rgba(255, 255, 255, 0.69);
+    text-shadow: $OL-Text-Shadow;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.46);
+}
+
+
+.tealHighLight{
+    color: $OL-primary-color !important;
+    font-weight: 700;
+}
+.WeeBeats-features-description{
+    font-size: 25px !important;
+    color: $OL-primary-color !important;
+}
+.OL-WhiteTrans-Title-70 {
+    /*font-family: $font-family-Beats;*/
+    font-size: 70px;
+    color: $OL-primary-color;
+    text-shadow: #030303 2px 3px 1px;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.46);
+}
+.OL-White-Title-10{  /*font-family: $font-family-Beats; */ font-size: $OL-Text-Size-Medium;  text-shadow: $OL-Text-Shadow;  color: rgba(255, 255, 255, 0.46);  }
+.WeeBeats-TealTrans-Title-20 {
+    /*font-family: $font-family-Beats; */
+    font-size: 30px;
+    color: #ffffff;
+    -webkit-text-stroke: 1px rgba(44, 119, 204, 0.49);
+}
+.OL-WhiteTrans-Title-20 {  /*font-family: $font-family-Beats;*/  font-size: $OL-Text-Size-Large;  color: rgba(255, 255, 255, 0.69);  text-shadow: $OL-Text-Shadow;  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.46);  }
+.OL-White-Title{ /*font-family: $font-family-Beats;*/  font-size: 40px;  text-shadow: rgba(3, 3, 3, 0.65) 1px 1px 5px;  color: rgb(255, 255, 255);}
+.OL-White-Title-Extra-Large{ /*font-family: $font-family-Beats;*/  font-size: 50px;  text-shadow: rgba(3, 3, 3, 0.65) 1px 1px 5px;  color: $OL-primary-color; letter-spacing: 8px !important;}
+.OL-White-Title-Small{ /*font-family: $font-family-Beats;*/  font-size: 16px;  text-shadow: rgba(3, 3, 3, 0.65) 1px 1px 5px;  color: rgb(255, 255, 255);};
+
+.Crackin-White-Title-10{  /*font-family: $font-family-Crackin;*/  font-size: $OL-Text-Size-Medium;  text-shadow: $OL-Text-Shadow;  color: rgba(255, 255, 255, 0.46);  }
+.Crackin-WhiteTrans-Title-20 {  /*font-family: $font-family-Crackin;*/  font-size: $OL-Text-Size-Large;  color: rgba(255, 255, 255, 0.69);  text-shadow: $OL-Text-Shadow;  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.46);  }
+.Crackin-White-Title{  /*font-family: $font-family-Crackin;*/  font-size: 25px;  /*text-shadow: rgba(0, 255, 253, 0.75) 1px 4px 5px; */ color: rgb(183, 183, 183);}
+.Crackin-White-Title-Small{  /*font-family: $font-family-Crackin;*/  font-size: 16px;  color: rgb(183, 183, 183);  }
+
+
+/* TEXT BOXES */
+
+
+.info{  border: 1px solid $OL-info-color;  }
+.primary{  border: 1px solid $OL-primary-color;  }
+.neutral{  border: 1px solid $OL-neutral-color;  }
+.failed{  border: 1px solid $OL-failed-color;  }
+.success{  border: 1px solid $OL-success-color;  }
+.warning{  border: 1px solid $OL-warning-color;  }
+
+.text-info{  color: $OL-info-color !important;  }
+.text-primary{  color: $OL-primary-color !important;  }
+.text-neutral{  color: $OL-neutral-color;  }
+.text-failed{   color: $OL-failed-color !important;  }
+.text-success{  color: $OL-success-color !important;  }
+.text-warning{  color: $OL-warning-color !important;  }
+
+
+.hrDesign{
+    border: 0;
+    height: 1px;
+    float: left;
+    width: 100%;
+    margin: 5px;
+    background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop( rgba(0, 230, 228, 0.54)), to(transparent));
+    background-image: linear-gradient(to right, transparent, rgba(0, 230, 228, 0.54), transparent);
+    -webkit-box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+    box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+}
+
+.hrDesign2{
+    border: 0;
+    height: 1px;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop( rgba(0, 230, 228, 0.54)), to(transparent));
+    background-image: linear-gradient(to right, transparent, rgba(0, 230, 228, 0.54), transparent);
+    -webkit-box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+    box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+}
+
+.hrSideBar{
+    border: 0;
+    margin-bottom: 10px;
+    height: 1px;
+    float: left;
+    width: 100%;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 230, 228, 0.54)), color-stop(rgba(0, 230, 228, 0.54)), to(transparent));
+    background-image: linear-gradient(to right, rgba(0, 230, 228, 0.54), rgba(0, 230, 228, 0.54), transparent);
+    -webkit-box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+    box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+}
+
+.Overlord-TextBox{
+    background: #1F2124;
+    background: -moz-linear-gradient(#1F2124, #27292C);
+    background: -ms-linear-gradient(#1F2124, #27292C);
+    background: -o-linear-gradient(#1F2124, #27292C);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#1F2124), to(#27292C));
+    background: -webkit-linear-gradient(#1F2124, #27292C);
+    background: linear-gradient(#1F2124, #27292C);
+
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    padding: 5px 20px;
+    margin: 5px;
+}
