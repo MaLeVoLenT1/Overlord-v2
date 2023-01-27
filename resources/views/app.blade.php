@@ -24,6 +24,8 @@
 @include('footer')
 
 <script src="{{ url('/js/pages/home.js') }}"></script>
+<script src="{{ url('/js/vendor.js') }}"></script>
+<script src="{{ url('/js/scripts.js') }}"></script>
 
 </body>
 </html>

@@ -36,6 +36,9 @@
         "imagesloaded": "^5.0.0",
         "jquery": "^3.6.3",
         "jquery.waitforimages": "^2.4.0",
-        "undici": "^5.15.0"
+        "undici": "^5.15.0",
+        "isotope-layout": "^3.0.6",
+        "flexslider": "^2.7.1",
+        "magnific-popup": "^1.1.0"
     }
 }
