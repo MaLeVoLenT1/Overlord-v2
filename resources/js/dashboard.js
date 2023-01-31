@@ -11,12 +11,12 @@ const App =  {
             userConfig:{
                 isSignedIn: false,
                 overlord_rank: '',
-                belongsToGuilds:false,
-                belongsToAlliances: false,
-                belongsToHubs: false,
-                isGuildLeader: false,
-                isAllianceLeader: false,
-                isHubLeader: false,
+                belongsToOrg:false,
+                belongsToCommunity: false,
+                belongsToTeam: false,
+                isOrgLeader: false,
+                isCommunityLeader: false,
+                isTeamLeader: false,
             },
             hudControls:{
                 mainHud: false,
@@ -1151,9 +1151,193 @@ const App =  {
     created(){
         let self = this;
         console.log("Dashboard Created.");
+        self.configAuth();
+
+    },
+    computed: {
+        computedInterface: function(){
+            if(this.location.main === null)  return this.interfaces["home"];
+            return this.interfaces[this.location.main];
+        },
+        computedSubLinks: function(){
+            for(let x= 0; x < this.links.length; x++){
+                if(this.links[x].name === this.location.main) return this.links[x].pages;
+            }
+        },
+        computedBtn: function () {
+            switch(this.location.main){
+                case"hub": return "guild-";
+                case"news":  return "blog-";
+                case"crypto": return "builds-";
+                case"games": return "wvw-";
+                case"discord": return "admin-";
+                case"about":return "raid-";
+                default: return null;
+            }
+        },
+        computedTitle: function(){
+            switch(this.location.main){
+                case'hub': return "Overlord Hub";
+                case'news': return "News Portal";
+                case'about': return "Overlord Information";
+                case'crypto': return "Crypto Portal";
+                case'games': return "Gaming Portal";
+                case'discord': return "Discord Portal";
+                default: return "OverLord";
+            }
+        }
+    },
+    methods: {
+        jsUcFirst(text) {return String(text).charAt(0).toUpperCase() + String(text).slice(1);},
+        hudState(change){
+            this.hudControls[change.hud + 'Hud'] = change.action;
+        },
+        updateSearch(string){
+            console.log(`Searching for '${string}'.`);
+            this.hudControls.search = string;
+            // Run Search.
+        },
+        disableMainLinks(){
+            this.links.forEach((link) => {
+                if (link.name === "home") link.active = false;
+                else link.pages.home.active = false
+            })
+        },
+        disableSubLinks(){
+            this.links.forEach((link) => {
+                if (link.name !== "home" || "login"){
+                    for (let key in link.pages) {
+                        if (Object.prototype.hasOwnProperty.call(link.pages, key)) {
+                            if(key !== "home")link.pages[key].active = false;
+                        }
+                    }
+                }
+            });
+        },
+        disableSideLinks(){
+            this.links.forEach((link) => {
+                if (link.name !== "home" || "login"){
+                    for (let key in link.pages) {
+                        if (Object.prototype.hasOwnProperty.call(link.pages, key)) {
+                            link.pages[key].links.forEach((sideLink) => sideLink.active = false);
+                        }
+                    }
+                }
+            });
+        },
+
+        configAuth() {
+            let message;
+
+            if (self.user) {
+                if(self.user.data){
+                    self.user.data = JSON.parse(self.user.data);
+                    message = "User data found.";
+                    self.authTeamsLinks();
+                    self.authOrganizationsLinks();
+                    self.authCommunitiesLinks();
+                }
+                else message = "No user data found.";
+            }
+            else message = "No user data found.";
+
+            console.log(message);
 
 
-    }
+
+        },
+        authTeamsLinks(){
+
+        },
+
+        authOrganizationsLinks(){
+
+        },
+
+        authCommunitiesLinks(){
+
+        },
+
+        /**
+         * http://www.overlord.com/[main]/[sub]/[target]
+         * @param request */
+        async updateLocation(request){
+            let self = this;
+            let mainTitle = self.jsUcFirst(request.title);
+            let subTitle, url, id;
+
+            // If request has no sub, set to a home link.
+            if(request.sub === null){
+                subTitle = self.jsUcFirst(request.main);
+
+                // If request has target, set target.
+                if(request.target !== null){
+                    url = self.location.host + request.main + '/' + request.target;
+                    id = `${request.main}-${request.target}`
+                }
+
+                // If request has no target, set to the home page.
+                else{
+                    url = self.location.host + request.main;
+                    id = `${request.main}-home`
+                }
+
+            }
+            // If request has sub, set sub.
+            else {
+                subTitle = self.jsUcFirst(request.sub);
+
+                // If request has target, set target.
+                if(request.target !== null){
+                    url = self.location.host + request.main + '/' + request.sub + '/' + request.target;
+                    id = `${request.sub}-${request.target}`
+                }
+
+                // If request has no target, set to the home page.
+                else{
+                    url = self.location.host + request.main + '/' + request.sub;
+                    id = `${request.main}-${request.sub}`
+                }
+
+            }
+
+            // Set the location.
+            history.pushState({id: id}, `${mainTitle} | ${subTitle}`, url);
+
+            self.location.sub = request.sub;
+            self.location.target = request.target;
+            self.location.main = request.main;
+
+            // Unsets the active links.
+            self.disableMainLinks();
+            self.disableSubLinks();
+            self.disableSideLinks();
+
+            // Sets the active links.
+            self.links.forEach((link) => {
+                if(link.name === request.main){
+                    if(request.main === 'home') link.active = true;
+                    else link.pages.home.active = true;
+                }
+
+                else{
+                    if(link.name === 'home') link.active = false;
+                    else link.pages.home.active = false;
+                }
+
+            });
+
+            // If request has no sub, set Title this way.
+            if(self.location.sub !== null){
+                $(document).prop('title', 'Overlord | ' + self.jsUcFirst(self.location.main) + ' | ' + self.jsUcFirst(self.location.sub));
+            }
+            // If request has sub, set Title this way.
+            else{
+                if(self.location.target === null) $(document).prop('title', 'Overlord | ' + self.jsUcFirst(self.location.main));
+                else $(document).prop('title', `Overlord | ${self.jsUcFirst(self.location.main)} | ${self.jsUcFirst(self.location.target)}`);
+            }
+        },
+    },
+
 }
-window.vDashboard = Vue.createApp(App
-   ).mount("#dash");
+window.vDashboard = Vue.createApp(App).mount("#dash");
