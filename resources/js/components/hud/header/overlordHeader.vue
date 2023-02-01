@@ -18,7 +18,7 @@
                         Overlord
                     </a>
 
-                    <header-options/>
+                    <header-options :links="links"/>
 
                 </nav>
             </div>
@@ -42,6 +42,7 @@ export default {
     data(){
         return{
             location: window.vDashboard.location,
+            links:window.vDashboard.links,
             // Movement Controls
             isMoved: false, isOverlay: false, isFloating: false,
             isCenter: false, isFluid: false, isContainer: true,

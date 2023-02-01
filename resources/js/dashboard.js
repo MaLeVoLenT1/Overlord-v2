@@ -466,6 +466,7 @@ const App =  {
                         },
                         teams:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Teams",
                             text:"Teams",
                             href:'hub/teams',
@@ -503,6 +504,7 @@ const App =  {
                         },
                         organizations:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Orgs",
                             text:"Organizations",
                             href:'hub/organizations',
@@ -547,6 +549,7 @@ const App =  {
                         },
                         communities:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Communities",
                             text:"Communities",
                             href:'hub/communities',
@@ -577,6 +580,7 @@ const App =  {
                         },
                         members:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Members",
                             text:"Community Members",
                             href:'community/members',
@@ -636,6 +640,7 @@ const App =  {
                         },
                         livePrices:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Live Prices",
                             text:"Live Prices",
                             href:'crypto/live-prices',
@@ -674,6 +679,7 @@ const App =  {
                         },
                         liveCharts:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Live Charts",
                             text:"Live Charts",
                             href:'crypto/live-charts',
@@ -684,6 +690,7 @@ const App =  {
                         } ,
                         mining:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"mining",
                             text:"Crypto Mining (PoW)",
                             href:'crypto/crypto-mining',
@@ -708,6 +715,7 @@ const App =  {
                         },
                         defi:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"DEFI",
                             text:"Decentralized Finance",
                             href:'crypto/defi',
@@ -747,6 +755,7 @@ const App =  {
                         },
                         blockchains:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Blockchains",
                             text:"Blockchains",
                             href:'crypto/blockchains',
@@ -763,6 +772,7 @@ const App =  {
                         },
                         exchanges:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Exchanges",
                             text:"Exchanges",
                             href:'crypto/exchanges',
@@ -773,6 +783,7 @@ const App =  {
                         },
                         wallets:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Wallets",
                             text:"Wallets",
                             href:'crypto/wallets',
@@ -783,6 +794,7 @@ const App =  {
                         },
                         tools:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Tools",
                             text:"Tools",
                             href:'crypto/tools',
@@ -793,6 +805,7 @@ const App =  {
                         },
                         events:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Events",
                             text:"Events",
                             href:'crypto/events',
@@ -803,6 +816,7 @@ const App =  {
                         },
                         news:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"News",
                             text:"News",
                             href:'crypto/news',
@@ -813,6 +827,7 @@ const App =  {
                         },
                         blockchain:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Blockchain",
                             text:"Blockchain",
                             href:'crypto/blockchain',
@@ -823,6 +838,7 @@ const App =  {
                         },
                         education:{
                             type:"link",
+                            sorting:"second",
                             abbreviation:"Education",
                             text:"Education",
                             href:'crypto/education',

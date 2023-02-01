@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Header v-if="location.main !== ''" :headerStyle="headerStyle" :headerColor="'dark'"></Header>
         <Welcome v-if="location.main === '' && location.uri === '/'"></Welcome>
         <Login v-if="location.main === 'login'"></Login>
         <Register v-if="location.main === 'register'"></Register>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+    import Header from "./header/overlordHeader.vue";
     import Welcome from "../Pages/Welcome.vue";
     import Login from "../Pages/Login.vue";
     import Register from "../Pages/Register.vue";
@@ -26,12 +28,20 @@
     import Profile from "../Pages/Profile.vue";
 
     export default {
-        components: {Welcome, Login, Register, Home, Crypto, News, About, Hub, Gaming, Profile},
+        components: {Header, Welcome, Login, Register, Home, Crypto, News, About, Hub, Gaming, Profile},
         name: "publicPages",
         data() {
             return {
                 location: {main: null, sub: null, target: null, host: null, uri: null},
                 user: null, section: null, requests: null
+            }
+        },
+        computed:{
+            headerStyle:function(){
+                switch(window.vDashboard.location.main){
+                    case'home': return 'fixed';
+                    default: return 'floating';
+                }
             }
         },
         created(){
