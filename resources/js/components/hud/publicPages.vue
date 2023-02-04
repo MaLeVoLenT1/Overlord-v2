@@ -1,16 +1,16 @@
 <template>
     <div>
-        <Header v-if="location.main !== ''" :headerStyle="headerStyle" :headerColor="'dark'" @test="testCatch"></Header>
-        <Welcome v-if="location.main === '' && location.uri === '/'"></Welcome>
-        <Login v-if="location.main === 'login'"></Login>
-        <Register v-if="location.main === 'register'"></Register>
-        <Home v-if="location.main === 'home'"></Home>
-        <Crypto v-if="location.main === 'crypto'"></Crypto>
-        <News v-if="location.main === 'news'"></News>
-        <About v-if="location.main === 'about'"></About>
-        <Hub v-if="location.main === 'hub'"></Hub>
-        <Gaming v-if="location.main === 'gaming'"></Gaming>
-        <Profile v-if="location.main === 'profile'"></Profile>
+        <Header v-if="location.main !== ''" :headerStyle="headerStyle" :headerColor="'dark'" @test="testCatch"/>
+        <Welcome v-if="location.main === '' && location.uri === '/'"/>
+        <Login v-if="location.main === 'login'"/>
+        <Register v-if="location.main === 'register'"/>
+        <Home v-if="location.main === 'home'"/>
+        <Crypto v-if="location.main === 'crypto'"/>
+        <News v-if="location.main === 'news'"/>
+        <About v-if="location.main === 'about'"/>
+        <Hub v-if="location.main === 'hub'"/>
+        <Gaming v-if="location.main === 'gaming'"/>
+        <Profile v-if="location.main === 'profile'"/>
     </div>
 </template>
 

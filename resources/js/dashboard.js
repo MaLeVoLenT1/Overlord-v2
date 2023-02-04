@@ -1204,14 +1204,12 @@ const App =  {
         }
     },
     methods: {
-        /**
-         * Capitalize the first letter of a string.
+        /** Capitalize the first letter of a string.
          * @param text
          * @returns {string} */
         jsUcFirst(text) {return String(text).charAt(0).toUpperCase() + String(text).slice(1);},
 
-        /**
-         * Change the state of the HUD.
+        /** Change the state of the HUD.
          * @param change */
         hudState(change){
             this.hudControls[change.hud + 'Hud'] = change.action;
@@ -1252,7 +1250,7 @@ const App =  {
 
         configAuth() {
             let message;
-
+            let self = this;
             if (self.user) {
                 if(self.user.data){
                     self.user.data = JSON.parse(self.user.data);
