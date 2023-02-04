@@ -13,7 +13,7 @@ class CreateNewsArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_articles', function (Blueprint $table) {
+        Schema::connection('mysql')->create('news_articles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

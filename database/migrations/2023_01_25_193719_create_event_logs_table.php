@@ -13,7 +13,7 @@ class CreateEventLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_logs', function (Blueprint $table) {
+        Schema::connection('mysql')->create('event_logs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventAttendee extends Model
 {
-    //
+    protected $connection = 'mysql';
 }

@@ -13,7 +13,7 @@ class CreateEventOrganizersTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_organizers', function (Blueprint $table) {
+        Schema::connection('mysql')->create('event_organizers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

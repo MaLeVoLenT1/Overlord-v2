@@ -13,7 +13,7 @@ class CreateHeaderInformationTable extends Migration
      */
     public function up()
     {
-        Schema::create('header_information', function (Blueprint $table) {
+        Schema::connection('mysql')->create('header_information', function (Blueprint $table) {
             $table->id();
             $table -> string('author', 15)->unique();
             $table -> string('description')->nullable();

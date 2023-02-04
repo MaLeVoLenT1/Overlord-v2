@@ -13,7 +13,7 @@ class CreateDiscordAssociationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('discord_associations', function (Blueprint $table) {
+        Schema::connection('discord')->create('discord_associations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

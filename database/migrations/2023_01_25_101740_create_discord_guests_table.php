@@ -13,7 +13,7 @@ class CreateDiscordGuestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('discord_guests', function (Blueprint $table) {
+        Schema::connection('discord')->create('discord_guests', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

@@ -13,7 +13,7 @@ class CreatePortfoliosTable extends Migration
      */
     public function up()
     {
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::connection('crypto')->create('portfolios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

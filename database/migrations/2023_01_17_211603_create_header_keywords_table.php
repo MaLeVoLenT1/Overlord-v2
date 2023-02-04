@@ -13,7 +13,7 @@ class CreateHeaderKeywordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('header_keywords', function (Blueprint $table) {
+        Schema::connection('mysql')->create('header_keywords', function (Blueprint $table) {
             $table->id();
             $table -> string('name',15) -> unique();
             $table -> boolean('is_active');

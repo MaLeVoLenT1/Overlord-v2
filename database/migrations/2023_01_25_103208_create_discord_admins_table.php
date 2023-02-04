@@ -13,7 +13,7 @@ class CreateDiscordAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('discord_admins', function (Blueprint $table) {
+        Schema::connection('discord')->create('discord_admins', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

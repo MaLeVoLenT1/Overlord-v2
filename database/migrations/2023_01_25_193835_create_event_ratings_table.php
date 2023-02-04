@@ -13,7 +13,7 @@ class CreateEventRatingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_ratings', function (Blueprint $table) {
+        Schema::connection('mysql')->create('event_ratings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsArticle extends Model
 {
-    //
+    /** connection
+     * @var array */
+    protected $connection = 'mysql';
 }

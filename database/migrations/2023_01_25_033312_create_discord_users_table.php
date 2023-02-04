@@ -13,7 +13,7 @@ class CreateDiscordUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('discord_users', function (Blueprint $table) {
+        Schema::connection('discord')->create('discord_users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

@@ -13,7 +13,7 @@ class CreateOrganizationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('organizations', function (Blueprint $table) {
+        Schema::connection('mysql')->create('organizations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

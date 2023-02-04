@@ -13,7 +13,7 @@ class CreateEventAttendeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_attendees', function (Blueprint $table) {
+        Schema::connection('mysql')->create('event_attendees', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

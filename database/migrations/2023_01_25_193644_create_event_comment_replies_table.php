@@ -13,7 +13,7 @@ class CreateEventCommentRepliesTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_comment_replies', function (Blueprint $table) {
+        Schema::connection('mysql')->create('event_comment_replies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

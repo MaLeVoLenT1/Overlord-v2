@@ -13,7 +13,7 @@ class CreateCryptocurrenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cryptocurrencies', function (Blueprint $table) {
+        Schema::connection('crypto')->create('cryptocurrencies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

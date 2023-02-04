@@ -13,7 +13,7 @@ class CreateHeaderViewportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('header_viewports', function (Blueprint $table) {
+        Schema::connection('mysql')->create('header_viewports', function (Blueprint $table) {
             $table->id();
             $table->string('property');
             $table -> boolean('is_active');

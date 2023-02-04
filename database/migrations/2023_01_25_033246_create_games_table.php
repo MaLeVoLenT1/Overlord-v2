@@ -13,7 +13,7 @@ class CreateGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::connection('mysql')->create('games', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

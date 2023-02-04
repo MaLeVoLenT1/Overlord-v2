@@ -13,7 +13,7 @@ class CreateCommunitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('communities', function (Blueprint $table) {
+        Schema::connection('mysql')->create('communities', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

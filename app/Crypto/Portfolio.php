@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Crypto;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DiscordAssociation extends Model
+class Portfolio extends Model
 {
     /** connection
      * @var array */
-    protected $connection = 'discord';
+    protected $connection = 'crypto';
 }

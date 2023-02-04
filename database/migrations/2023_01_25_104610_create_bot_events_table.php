@@ -13,7 +13,7 @@ class CreateBotEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bot_events', function (Blueprint $table) {
+        Schema::connection('discord')->create('bot_events', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

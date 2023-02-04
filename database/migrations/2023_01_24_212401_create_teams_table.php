@@ -13,7 +13,7 @@ class CreateTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::connection('mysql')->create('teams', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

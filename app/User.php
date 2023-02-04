@@ -10,6 +10,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /** connection
+     * @var array */
+    protected $connection = 'mysql';
+
     /**
      * The attributes that are mass assignable.
      *

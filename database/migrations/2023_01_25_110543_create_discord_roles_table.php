@@ -13,7 +13,7 @@ class CreateDiscordRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('discord_roles', function (Blueprint $table) {
+        Schema::connection('discord')->create('discord_roles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

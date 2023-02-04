@@ -13,7 +13,7 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::connection('mysql')->create('galleries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

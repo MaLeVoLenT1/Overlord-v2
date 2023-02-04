@@ -13,7 +13,7 @@ class CreateBotSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bot_settings', function (Blueprint $table) {
+        Schema::connection('discord')->create('bot_settings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
