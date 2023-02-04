@@ -1,0 +1,322 @@
+@import "../overlordStyle";
+
+// Sub Sticky Bar (Main Bar)
+.sticky-black{
+    background-color: #252525 !important;
+    border-bottom: 0.5px solid rgba(17, 153, 134, 0.54);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 100% !important;
+    height: 40px;
+    left: 0;
+}
+// Sticks Icon Image to the Menu
+.imageSticky{bottom: -3px;padding: 10px;position: absolute;}
+
+// page-name sticky animations
+.page-name h6{font-size: 30px;font-weight: 600;color: white;}
+.pageNameStick{bottom: 30px;left: 130px;}
+.pageNameUnstick{bottom: 15px;left: 130px;}
+
+// Side Menu Title Unstuck
+.side-menu-title{
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+// Added to .WidgetSideSticky when Side Menu is Stuck
+.sticky-second{
+    height:40px;
+    width:1000px !important;
+    left: 160px;
+}
+
+.ulMain{
+    padding: 30px 0;
+}
+
+.ulSticky{
+    height: 100%;
+    padding: 0 !important;
+    bottom: 13px;
+    left: 90px;
+    position: relative;
+}
+
+.widget-transition{
+    -webkit-transition: background-color .2s, border 2s, bottom 1s, margin-left 1s, width 1s, top 1s, left 1s, right 1s;
+    transition: background-color .2s, border 2s, bottom 1s, margin-left 1s, width 1s, top 1s, left 1s, right 1s;
+}
+.search-transition{
+    -webkit-transition:  none !important;
+    transition:  none !important;
+}
+.image-holder{
+    float: left;
+    margin-top: 15px;
+    width: 120px;
+    margin-bottom: -8px;
+}
+
+.image-holder-unstuck {
+    margin-left: 50px;
+    width: 100px !important;
+    margin-bottom: 0 !important;
+}
+
+.overlordWidget{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+.overlordWidget li{
+    float: left !important;
+}
+
+
+.widgetMain a{
+    -webkit-transition: color 1s, font-size 1s, letter-spacing 1s;
+    transition: color 1s, font-size 1s, letter-spacing 1s;
+    text-align: center;
+    float: left;
+    padding: 16px;
+    font-size: 22px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    color: #7b7b7b;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+.widgetMain a:hover, a.active{
+    color: #139194;
+}
+.widgetSideSticky{
+    float: left;
+}
+.widgetFontSticked{
+    font-size: 16px !important;
+}
+.widgetSide{
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding: 5px;
+    a{
+        text-transform: uppercase;
+        color: #7b7b7b;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+    }
+    a:before{
+        content: "+" !important;
+    }
+}
+.widgetMain a:before{
+    content: "" !important;
+}
+.link-holder{
+    float: left;
+    height: 100%;
+    text-align: center;
+}
+.widgetMainSticky{
+    background-color: transparent;
+}
+.panel-background{
+   // background-image: url(../images/calculator/profBG.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.page-name{
+    position: absolute;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s;
+
+}
+.second-sticky-menu{
+    float: left;
+    height: 40px;
+    padding: 10px;
+    margin: 0;
+}
+.changeOpacity{
+    opacity: 100 !important;
+}
+
+
+.pageStickyUL{
+    bottom: 45px;
+    margin-left: 15px;
+}
+.search-container{
+    max-width: 280px;
+    width: 100%;
+    margin-top: 5px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    float: right;
+}
+.search-container-side{
+    width: 100%;
+    margin-top: 5px;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    margin-bottom: 20px;
+    float: left;
+};
+.stickyHudFix{
+    top: 60px !important;
+}
+.paddingFullHud{
+    margin-top:30px;
+}
+.search-box{
+    background: #1F2124;
+    float: left;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1F2124), to(#27292C));
+    background: linear-gradient(#1F2124, #27292C);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: #080808;
+    border-width: 1px;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+    color: white;
+}
+.search-box-side{
+    padding-left: 35px;
+    background: #1F2124;
+    float: left;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1F2124), to(#27292C));
+    background: linear-gradient(#1F2124, #27292C);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: #080808;
+    border-width: 1px;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+    color: white;
+}
+.searchButton{
+    position: absolute;
+    background-color: black;
+    width: 30px;
+    padding-top: 4px;
+    right: 0;
+    height: 30px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.searchButtonSide{
+    position: absolute;
+    background-color: black;
+    width: 30px;
+    padding-top: 4px;
+    height: 30px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.breakline-outer {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    width: 40px;
+    top: 20px;
+    right: 20px;
+    float: left;
+    height: 2px;
+    position: relative;
+}
+.breakline-inner {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(0, 230, 228, 0.54)), to(transparent));
+    background-image: linear-gradient(to right, transparent, rgba(0, 230, 228, 0.54), transparent);
+    -webkit-box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+    box-shadow: 0 4px 5px -10px rgba(39, 39, 39, 0.83) inset;
+}
+
+.profile-header-container{
+    min-width: 50px;
+    min-height: 100%;
+    max-height: 100px;
+    max-width: 100px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: black;
+    @include overlord-shadow();
+    padding: 5px;
+    .menu-user-image{
+        width: 100%;
+        height: 100%;
+
+    }
+    .user-commander{
+        height: 20px;
+        width: 20px;
+        position: relative;
+        bottom: 20px;
+        .commander-icon{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.profile-header-information{
+    padding: 5px;
+    min-width: 50px;
+    min-height: 50px;
+    width: 70%;
+    height: 100%;
+    display: inline-block;
+    .user-account{
+
+    }
+    .user-email{
+        font-size: 10px;
+        color: $OL-primary-color;
+        text-transform: none;
+    }
+}
+.container-float{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    float: right;
+    padding-right: 15px;
+
+}
+.menuAdjustment{
+    margin-top:20px !important;
+}
+.container-display{
+    @include overlord-gradient();
+    @include overlord-shadow();
+    @include overlord-border-medium();
+}
+.header-text{
+    font-weight: bolder !important;
+    -webkit-transition: color 3s, height .3s, line-height .3s, margin .3s;
+    transition: color 3s, height .3s, line-height .3s, margin .3s;
+    color: white;
+    :hover{
+        color: #139194;
+    }
+}

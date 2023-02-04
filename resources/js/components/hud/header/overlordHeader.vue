@@ -18,7 +18,7 @@
                         Overlord
                     </a>
 
-                    <header-options :links="links"/>
+                    <header-options :links="links" @test="testCatch"/>
 
                 </nav>
             </div>
@@ -95,6 +95,12 @@ export default {
         }
     },
     methods:{
+        /**
+         * Test Catch */
+        testCatch(){
+            // console.log(' OverlordHeader: test catch successful ');
+            this.$emit('test');
+        },
         initSticky() {
             let $navbarSticky, navbarHeight, $brandLogo, centerLogoNormalHeight, centerLogoStickyHeight, bottomNav, navMenu;
             let self = this;

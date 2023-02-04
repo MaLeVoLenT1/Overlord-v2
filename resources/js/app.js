@@ -8,3 +8,5 @@ require('flexslider/jquery.flexslider-min');
 require('isotope-layout/dist/isotope.pkgd.min');
 require('magnific-popup/dist/jquery.magnific-popup.min');
 window.Vue = require('vue');
+
+

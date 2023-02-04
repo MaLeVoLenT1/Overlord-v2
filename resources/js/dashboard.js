@@ -1,5 +1,5 @@
 //import Vue from 'vue';
-
+import { createApp } from 'vue'
 const App =  {
     name: 'Dashboard',
     data(){
@@ -394,10 +394,10 @@ const App =  {
                         home:{
                             type:"image",
                             sorting:"second",
-                            abbreviation:"Community",
-                            text:"Community Home",
-                            href:'community',
-                            portal:"community",
+                            abbreviation:"Hub",
+                            text:"Community Hub",
+                            href:'hub',
+                            portal:"hub",
                             active:false,
                             links:[
                                 {type: "top", name: "make",  text:"Register", active:false, stickyShow:true},
@@ -616,7 +616,7 @@ const App =  {
                     pages:{
                         home:{
                             type:"image",
-                            sorting:"second",
+                            sorting:"first",
                             abbreviation:"Crypto",
                             text:"Cryptocurrencies",
                             href:'crypto',
@@ -854,7 +854,7 @@ const App =  {
                     pages:{
                         home:{
                             type:"image",
-                            sorting:"second",
+                            sorting:"first",
                             abbreviation:"Gaming",
                             text:"Gaming",
                             href:'gaming',
@@ -1153,7 +1153,7 @@ const App =  {
                 {
                     name:"home",
                     abbreviation:"Home",
-                    sorting:"second",
+                    sorting:"first",
 
                     text:"Home",
                     href:'home',
@@ -1204,7 +1204,15 @@ const App =  {
         }
     },
     methods: {
+        /**
+         * Capitalize the first letter of a string.
+         * @param text
+         * @returns {string} */
         jsUcFirst(text) {return String(text).charAt(0).toUpperCase() + String(text).slice(1);},
+
+        /**
+         * Change the state of the HUD.
+         * @param change */
         hudState(change){
             this.hudControls[change.hud + 'Hud'] = change.action;
         },
@@ -1278,6 +1286,7 @@ const App =  {
          * http://www.overlord.com/[main]/[sub]/[target]
          * @param request */
         async updateLocation(request){
+            console.log("Updating location to: ", request);
             let self = this;
             let mainTitle = self.jsUcFirst(request.title);
             let subTitle, url, id;

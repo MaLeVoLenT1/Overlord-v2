@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header v-if="location.main !== ''" :headerStyle="headerStyle" :headerColor="'dark'"></Header>
+        <Header v-if="location.main !== ''" :headerStyle="headerStyle" :headerColor="'dark'" @test="testCatch"></Header>
         <Welcome v-if="location.main === '' && location.uri === '/'"></Welcome>
         <Login v-if="location.main === 'login'"></Login>
         <Register v-if="location.main === 'register'"></Register>
@@ -30,43 +30,30 @@
     export default {
         components: {Header, Welcome, Login, Register, Home, Crypto, News, About, Hub, Gaming, Profile},
         name: "publicPages",
-        data() {
-            return {
-                location: {main: null, sub: null, target: null, host: null, uri: null},
-                user: null, section: null, requests: null
-            }
+        props:{
+            location:{'default': null},
+            user:{'default': null},
+            section:{'default': null},
+            requests:{'default': null}
         },
         computed:{
             headerStyle:function(){
-                switch(window.vDashboard.location.main){
+                switch(this.location.main){
                     case'home': return 'fixed';
                     default: return 'floating';
                 }
             }
         },
-        created(){
-            let self = this;
+        mounted(){
 
-            // Checks if the overlord object is available.
-            if (typeof overlord.Dashboard !== 'undefined') {
-
-                // Assigns the location object to pages that are loaded via the public pages component.
-                const page = overlord.Dashboard['page'];
-                self.location.main = page.main;
-                self.location.sub = page.sub;
-                self.location.target = page.target;
-                self.location.host = page.host;
-                self.location.uri = page.uri;
-
-                self.location.user = overlord.Dashboard['user'];
-                self.location.section = overlord.Dashboard['section'];
-                self.location.requests = overlord.Dashboard['request'];
-
-                console.log(`PATH: ${overlord.Dashboard['path']} | URL: ${overlord.Dashboard['url']}`);
-                console.log("Public Pages Loaded.");
+        },
+        methods: {
+            /**
+             * Test Catch */
+            testCatch(){
+                // console.log(" Public Pages: Test Catch successful.");
+                this.$emit('test');
             }
-            else console.log("Public Pages Failed to Load.");
-
         }
     }
 </script>

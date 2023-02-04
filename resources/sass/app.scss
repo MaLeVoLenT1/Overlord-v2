@@ -72,10 +72,11 @@
 // Variables
 @import "variables";
 @import "shortcodes/shortcodes";
-
+@import "overlordStyle";
 @import "overlord/parallaxBackgrounds/overlordParallax";
 @import "overlord/loading";
 @import "overlord/modal";
 @import "overlord/navbar";
+@import "overlord/stickyBar";
 // Pages
 @import "overlord/pages/welcome";

@@ -104,13 +104,13 @@ export default {
     },
     methods:{
         linkClick(type, link){
+            console.log("firing link click", link.name, "type: ", type, "");
             window.vDashboard.updateLocation({
                 main:link.name,
                 sub:null,
                 target:null,
                 title: link.name
             });
-
         },
     }
 }

@@ -17,7 +17,7 @@
 <div id="app">
     <div class="wrapper">
 
-        <public-pages></public-pages>
+        <public-pages :location="location" :requests="requests" :section="section" :user="user" @test="testCatch"></public-pages>
 
     </div>
 </div>

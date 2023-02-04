@@ -62,3 +62,30 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+
+/*==================================================
+    * BootStrap Override
+* ===============================================*/
+$brand-primary:         $text-color !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               #fff !default;
+//** Global text color on `<body>`.
+$text-color:            $text-color !default;
+
+//** Global textual link color.
+$link-color:            $text-color !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:     $OL-hover-color !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;
