@@ -11,6 +11,8 @@
         <!-- Page Content -->
         <section class="body-content">
 
+            <features :location="location" />
+
         </section>
     </section>
 </template>
@@ -19,9 +21,10 @@
 import Loading from "../hud/loading.vue";
 import OverlordParallaxV1 from "../hud/parallax/OverlordParallaxV1.vue";
 import Modal from "../hud/modal.vue";
+import Features from "../sections/Features.vue";
     export default {
         components: {
-            Loading, OverlordParallaxV1, Modal
+            Loading, OverlordParallaxV1, Modal, Features
         },
         name: "Home",
         data(){

@@ -1,4 +1,3 @@
-//import Vue from 'vue';
 import { createApp } from 'vue'
 const App =  {
     name: 'Dashboard',
@@ -1363,4 +1362,4 @@ const App =  {
     },
 
 }
-window.vDashboard = Vue.createApp(App).mount("#dash");
+window.vDashboard = createApp(App).mount("#dash");
