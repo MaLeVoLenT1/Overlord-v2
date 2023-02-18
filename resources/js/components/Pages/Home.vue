@@ -8,11 +8,10 @@
                 Welcome !
             </h3>
         </modal>
+
         <!-- Page Content -->
         <section class="body-content">
-
-            <features :location="location" />
-
+            <features :location="location"/>
         </section>
     </section>
 </template>
