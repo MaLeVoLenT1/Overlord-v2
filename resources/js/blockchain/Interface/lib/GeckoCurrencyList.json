@@ -81,6 +81,8 @@
             "name": "CoinGecko", "domain": "public",
             "description": "Cryptocurrency market cap & price data",
             "root": "https://api.coingecko.com/api/v3/",
+            "headers": {"Content-Type": "application/json"},
+            "Documentation": "https://www.coingecko.com/api/documentations/v3",
             "uris": [
                 {
                     "uri": "coins/list",
