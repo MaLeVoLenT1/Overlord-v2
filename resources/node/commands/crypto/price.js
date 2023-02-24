@@ -1,5 +1,5 @@
 const {Embed, EmbedBuilder} = require('discord.js');
-const cryptoLibrary = require("../../cryptoLibrary/coinGeckoCoinList.json");
+const cryptoLibrary = require("../../../js/blockchain/Interface/lib/apis/json/CoinGecko/GeckoCoinList.json");
 const { request } = require('undici');
 
 module.exports = {

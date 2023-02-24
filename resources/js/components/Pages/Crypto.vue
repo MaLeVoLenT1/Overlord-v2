@@ -10,29 +10,21 @@ export default {
     name: "Crypto",
     data(){
         return {
+            assetName:"ethereum",
             settings: {
-                currency: 'usd',
-                localization: 'en',
-                enabled: true,
-                api:{
-                    type: 'gecko',
-                    permissions: 'public',
-                },
-                cache: {
-                    enabled: true,
-                    time: 60,
-                }
+                "currency": "usd", "localization": "en", "enabled": true,
+                "api":{"type": "all", "permissions": "public", "keys": []},
+                "cache": {"enabled": true, "time": 60}
             },
-            blockchains:[]
+            blockchains:[],
+            data:null
 
         }
     },
-    created(){
+    async created(){
         console.log("Crypto Portal Created.");
         this.GenerateBlockchains();
-        this.GenerateAPIData();
-
-
+        await this.GenerateAPIData();
     },
     methods: {
         // Blockchain
@@ -44,10 +36,11 @@ export default {
         },
 
         // API
-        GenerateAPIData(){
+        async GenerateAPIData(){
             let self = this;
-            let API = new api('coins', 'bitcoin', self.settings);
-            console.log(API);
+
+            self.data = new api(self.assetName);
+
         },
 
         // Cryptocurrency

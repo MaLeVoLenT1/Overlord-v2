@@ -76,7 +76,7 @@
 
         ]
     },
-    "api": [
+    "api-endpoints": [
         {
             "name": "CoinGecko", "domain": "public",
             "description": "Cryptocurrency market cap & price data",
@@ -391,6 +391,65 @@
                 }
 
             ]
+        },
+        {
+            "name": "Blockchair", "domain": "pro",
+            "description": "Blockchair is a blockchain explorer and API provider. Bitcoin Cash, Litecoin, Dogecoin, Dash, Bitcoin SV, Ethereum, Ethereum Classic, and Monero blockchains. ",
+            "root": "https://api.blockchair.com",
+            "documentation": "https://blockchair.com/api/docs",
+            "uris": [
+                {
+                    "uri": "/{coin}/dashboards/address/{address}",
+                    "description": "Get address information",
+                    "parameters": [
+                        {"name": "coin", "description": "The blockchain to query (bitcoin, bitcoin-cash, bitcoin-sv, litecoin, dogecoin, dash, ethereum, ethereum-classic, monero)"},
+                        {"name": "address", "description": "The address to query"}
+                    ]
+                },
+                {
+                    "uri": "/{coin}/dashboards/transaction/{transaction}",
+                    "description": "Get transaction information",
+                    "parameters": [
+                        {"name": "coin", "description": "The blockchain to query (bitcoin, bitcoin-cash, bitcoin-sv, litecoin, dogecoin, dash, ethereum, ethereum-classic, monero)"},
+                        {"name": "transaction", "description": "The transaction to query"}
+                    ]
+                },
+                {
+                    "uri": "/{coin}/dashboards/block/{block}",
+                    "description": "Get block information",
+                    "parameters": [
+                        {"name": "coin", "description": "The blockchain to query (bitcoin, bitcoin-cash, bitcoin-sv, litecoin, dogecoin, dash, ethereum, ethereum-classic, monero)"},
+                        {"name": "block", "description": "The block to query"}
+                    ]
+                }
+            ]
         }
-    ]
+    ],
+    "api-calls": ["crypto", "exchange", "blockchain", "nft", "company", "market"],
+    "api-options":[
+        {"call": "all", "option": "simple", "description": "Simple API call"},
+        {"call": "all", "option": "full", "description": "Full data of the API call."},
+        {"call": "all", "option": "list", "description": "Full list of assets from the API call."},
+        {"call": "crypto,exchange,blockchain,nft", "option": "market", "description": "Market data from the following, (Crypto, Exchange, Blockchain, NFTs.)"},
+        {"call": "crypto", "option": "social", "description": "Crypto Social Media data"},
+        {"call": "crypto,exchange,market", "option": "pairing", "description": "Parings for the following, (Crypto, Exchange, Market.)"}
+
+    ],
+
+    "overlord": {
+
+    },
+    "defaultSettings": {
+        "currency": "usd", "localization": "en", "enabled": true,
+        "api":{
+            "type": "gecko",
+            "permissions": "public",
+            "keys": []
+        },
+        "cache": {
+            "enabled": true,
+            "time": 60
+        }
+    }
+
 }

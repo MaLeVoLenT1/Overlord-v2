@@ -14,20 +14,19 @@ class Cryptocurrency{
         // If the name is null, then the cryptocurrency is being created from the gecko api
         if (api !== null) {
             this.API = api;
-
             this.id =  this.API.id;
             this.name =  this.API.name;
             this.symbol =  this.API.symbol;
-            this.image =  this.API.image.thumb;
+            this.image =  this.API.image['thumb'];
 
             this.description =  this.API.description;
             this.links =  this.API.links;
             this.platform =  this.API.platform;
 
             this.market = {
-                updated:  this.API.market_data.last_updated,
-                volume:  this.API.market_data.total_volume,
-                TotalValueLocked:  this.API.market_data.total_value_locked,
+                updated:  this.API['market_data']['last_updated'],
+                volume:  this.API['market_data']['total_volume'],
+                TotalValueLocked:  this.API['market_data']['total_value_locked'],
                 marketCap: new MarketCap(API),
                 price: new Price(API),
                 supply: new Supply(API)
