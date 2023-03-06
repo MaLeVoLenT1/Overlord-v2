@@ -3,36 +3,40 @@
         <!-- Search Box -->
         <div  class="col-md-12 search-container-side search-transition" v-if="!pageMenu" :style="'max-width:'+ computedLinksFix +'px;'">
             <div  class="searchButtonSide"><i class="fa fa-search"></i></div>
-            <input type="text"
-                   name="searchBox"
-                   class="form-control search-box-side"
-                   v-model="search"
-                   :placeholder="'Search for ' + configureTitle + ' ...'"
-                   @keyup.enter="sendSearch"
-                   @mouseout="sendSearch"/>
+            <input type="text" name="searchBox" class="form-control search-box-side"
+                   v-model="search" :placeholder="'Search for ' + configureTitle + ' ...'"
+                   @keyup.enter="sendSearch" @mouseout="sendSearch"/>
         </div>
 
         <!-- ****************************************************** Page Links ****************************************************** -->
         <div :id="'sideHud-'+location.main" :class="{listFix:stuck}" class="linkSection">
             <h6 v-if="!stuck" class="text-uppercase side-menu-title">
                 {{configureTitle}}
-                <a v-for="subLink in computedLinks"
-                   v-if="subLink.name === 'all'"
-                   href="javascript:void(0)"
-                   class="allLink"
-                   :class="{active: subLink.active}"
-                > {{subLink.text}} </a>
-            </h6>
+
+                <template v-for="link of computedLinks">
+                    <a v-if="link.name === 'all'" href="javascript:void(0)" class="allLink" :class="{active: link.active}"> {{link.text}} </a>
+                </template>
+
+           </h6>
+
             <hr v-if="!stuck" class="hrSideBar"/>
             <ul v-if="!stuck" class="widget-transition"  style="float: left; margin-bottom: 15px;">
-                <li class="widgetSide" v-for="link in computedLinks" v-if="link.type ==='top' && link.name !== 'all'">
-                    <a href="javascript:void(0)"> {{link.text}} </a>
-                </li>
+
+                <template v-for="link in computedLinks">
+                    <li class="widgetSide" v-if="link.type ==='top' && link.name !== 'all'">
+                        <a href="javascript:void(0)"> {{link.text}} </a>
+                    </li>
+                </template>
+
             </ul>
             <ul v-if="stuck" class="second-sticky-menu">
-                <li class="overlordWidget" v-for="link in computedLinks" v-if="link.stickyShow" style="float: left; padding-right: 15px; ">
-                    <a href="javascript:void(0)" :class="{active: link.active}">{{link.text}}</a>
-                </li>
+
+                <template v-for="link in computedLinks">
+                    <li class="overlordWidget" v-if="link.stickyShow" style="float: left; padding-right: 15px; ">
+                        <a href="javascript:void(0)" :class="{active: link.active}">{{link.text}}</a>
+                    </li>
+                </template>
+
             </ul>
         </div>
 
@@ -40,33 +44,42 @@
         <slot name="widget_1"></slot>
 
         <!-- ****************************************************** Authenticated Links ****************************************************** -->
-        <div v-if="userConfig.hasAPI" v-for="link in computedAuthLinks" class="linkSection">
+        <template v-for="link in computedAuthLinks">
+            <div v-if="userConfig['hasAPI']" class="linkSection">
 
-            <h6 class="text-uppercase side-menu-title">
-                {{link.title}}
-                <a v-for="subLink in link.links"
-                   v-if="subLink.name === 'all'"
-                   href="javascript:void(0)"
-                   class="allLink"
-                   :class="{active: subLink.active}"
-                > {{subLink.text}} </a>
-            </h6>
-            <hr class="hrSideBar"/>
-            <ul class="widget-transition"  style="float: left; margin-bottom: 15px;">
-                <li class="widgetSide" v-for="subLink in link.links" v-if="subLink.name !== 'all'">
-                    <a href="javascript:void(0)" :class="{active: subLink.active}">{{subLink.text}}</a>
-                </li>
-            </ul>
+                <h6 class="text-uppercase side-menu-title">
+                    {{link.title}}
 
-            <!-- Slot Widgets in between link lists.-->
-            <div v-if="computedAuthLinks[1] !== undefined">
-                <slot v-if="computedAuthLinks[1].title === link.title" name="widget_2"></slot>
+                    <template v-for="subLink in link.links">
+                        <a href="javascript:void(0)" class="allLink" v-if="subLink.name === 'all'" :class="{active: subLink.active}">
+                            {{subLink.text}}
+                        </a>
+                    </template>
+
+                </h6>
+
+                <hr class="hrSideBar"/>
+                <ul class="widget-transition"  style="float: left; margin-bottom: 15px;">
+
+                    <template v-for="subLink in link.links">
+                        <li class="widgetSide" v-if="subLink.name !== 'all'">
+                            <a href="javascript:void(0)" :class="{active: subLink.active}">{{subLink.text}}</a>
+                        </li>
+                    </template>
+
+                </ul>
+
+                <!-- Slot Widgets in between link lists.-->
+                <div v-if="computedAuthLinks[1] !== undefined">
+                    <slot v-if="computedAuthLinks[1].title === link.title" name="widget_2"></slot>
+                </div>
+
+                <div v-if="computedAuthLinks[3] !== undefined">
+                    <slot v-if="computedAuthLinks[3].title === link.title" name="widget_3"></slot>
+                </div>
             </div>
+        </template>
 
-            <div v-if="computedAuthLinks[3] !== undefined">
-                <slot v-if="computedAuthLinks[3].title === link.title" name="widget_3"></slot>
-            </div>
-        </div>
         <slot v-if="computedAuthLinks[1] === undefined" name="widget_2"></slot>
         <slot v-if="computedAuthLinks[3] === undefined" name="widget_3"></slot>
     </div>
@@ -78,14 +91,14 @@ export default {
     props:{
         'hud-style':{'default':'normal'},
         'page-menu':{'default': false},
-        location:{"default": ""},
-        user:{"default": ""},
-        requests:{"default": ""},
     },
     data(){
         return {
             stuck:false,
-            userConfig: window.vDashboard.userConfig,
+            location: window.vDashboard['location'],
+            user: window.vDashboard.user,
+            requests: window.vDashboard['requests'],
+            userConfig: window.vDashboard['userConfig'],
             search:""
         }
     },
@@ -102,24 +115,27 @@ export default {
     },
     computed:{
         // Where To sticky, based on Hud Style
-        computedTopSpacing: function(){switch(this.hudStyle){ case"normal": return 60; case"full": return 60;}},
+        computedTopSpacing: function(){switch(this['hudStyle']){ case"normal": return 60; case"full": return 60;}},
 
         // Fixes Widget if widget is Hud Style full and is stuck.
-        computedClassFix: function(){if(this.stuck && this.hudStyle === 'full') return true; else return false;},
+        computedClassFix: function(){ return this.stuck && this['hudStyle'] === 'full'},
 
         // Computes link Max Width based on Hud Style.
-        computedLinksFix: function(){switch(this.hudStyle){case"normal": return 232; case"full": return 355;}},
+        computedLinksFix: function(){ switch(this['hudStyle']){case"normal": return 232; case"full": return 355;}},
 
         // Adds padding to Widget if widget is Hud Style full and is stuck.
-        computedPadding: function(){switch(this.hudStyle){
-            case"normal": return false; case"full": if(this.stuck) return false; else return true;
-        }},
+        computedPadding: function(){
+            switch(this['hudStyle']) {
+                case"normal": return false;
+                case"full": return !this.stuck;
+            }
+        },
 
         computedAuthLinks: function(){
             let self = this;
             if(self.userConfig.isSignedIn){
                 let subPage = (self.location.sub !== null) ? self.location.sub : "home";
-                return window.vDashboard.computedSubLinks[subPage].authenticated;
+                return window.vDashboard['computedSubLinks'][subPage].authenticated;
             }
             else return [];
         },
@@ -135,13 +151,13 @@ export default {
             }
 
 
-            return window.vDashboard.computedSubLinks[subPage].links;
+            return window.vDashboard['computedSubLinks'][subPage].links;
         },
         configureTitle: function(){
             if(this.location.target !== null) {
                 switch(this.location.main){
                     case"news":
-                        if(this.location.target !== null) {
+                        if(this.location.target) {
                             if(this.requests['item'] !== null) return this.requests['item']['title'];
                             else return this.location.target;
                         }

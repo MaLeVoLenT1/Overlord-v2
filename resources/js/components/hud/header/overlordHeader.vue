@@ -142,26 +142,7 @@ export default {
                 }
             });
         }
-        /**
-         initSticky(){
-            let self = this;
-            let header = document.querySelector('.header');
-            let sticky = header.offsetTop;
-            window.onscroll = function() {
-                if (window.pageYOffset > sticky) {
-                    header.classList.add("sticky");
-                    self.isMoved = true;
-                } else {
-                    header.classList.remove("sticky");
-                    self.isMoved = false;
-                }
-            };
-        },
-         toggleIcon(){
-            this.showIcon = !this.showIcon;
-        }
 
-         */
     }
 }
 </script>

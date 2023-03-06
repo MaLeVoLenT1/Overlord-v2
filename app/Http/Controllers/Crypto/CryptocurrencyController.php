@@ -4,18 +4,20 @@ namespace App\Http\Controllers\Crypto;
 
 use App\Crypto\Cryptocurrency;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Laracasts\Utilities\JavaScript\JavaScriptFacade as Javascript;
 
 class CryptocurrencyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : Renderable
     {
-        //
+        JavaScript::put(["Dashboard" => $this -> dashboard]);
+        return view('app')-> with('header' , $this -> dashboard['header']);
     }
 
     /**

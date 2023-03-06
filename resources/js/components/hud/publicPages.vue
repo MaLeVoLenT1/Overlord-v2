@@ -31,7 +31,7 @@
         components: {Header, Welcome, Login, Register, Home, Crypto, News, About, Hub, Gaming, Profile},
         name: "publicPages",
         props:{
-            location:{'default': null},
+            location:{'default': {main:'', uri:''}},
             user:{'default': null},
             section:{'default': null},
             requests:{'default': null}

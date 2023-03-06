@@ -49,7 +49,7 @@
             <div class="selectTitle"><p class="text-center">{{configureStickTitle}}</p></div>
 
             <div v-if="containerStyle === 'full'" class="col-md-12" style="padding-left:0;">
-                <page-hud :location="location" :side-menu="sideMenuStuck" @stickyTalk="pageHudChange" :hud-style="containerStyle"/>
+                <page-hud :side-menu="sideMenuStuck" @stickyTalk="pageHudChange" :hud-style="containerStyle"/>
             </div>
 
             <div v-if="containerStyle === 'calc'" class="col-md-6 professions">
@@ -62,7 +62,7 @@
         <div v-if="(containerStyle === 'full' || containerStyle === 'calc') && hasMenu" class="menu-header col-md-12 OverlordBevel Bevel-h20"></div>
         <!-- Side Menus -->
         <div v-if="containerStyle === 'full' && hasMenu" class="col-md-3">
-            <side-hud :location="location" :page-menu="pageMenuStuck" @stickyTalk="sideHudChange" :hud-style="'full'"/>
+            <side-hud :page-menu="pageMenuStuck" @stickyTalk="sideHudChange" :hud-style="'full'"/>
             <slot name="sideMenu"></slot>
         </div>
         <!-- ******* MENU FINISH -->
@@ -93,7 +93,7 @@ export default {
         'container-style':{"default":"normal"},
         'has-menu':{"default": false},
         'is-calculator':{"default":true},
-        location:{"default": ""},
+        location:{"default": {main: "", sub: ""}},
         user:{"default": ""},
         requests:{"default": ""},
     },
@@ -115,7 +115,10 @@ export default {
         }
     },
     methods:{
-        pageHudChange(change){this.pageMenuStuck = change;},
+        pageHudChange(change){
+            console.log("Page Hud Change: " + change)
+            this.pageMenuStuck = change;
+        },
         sideHudChange(change){this.sideMenuStuck = change;}
     },
 }

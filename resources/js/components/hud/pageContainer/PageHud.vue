@@ -1,24 +1,30 @@
 <template>
-    <div class="widget widget-transition widgetMainSticky panel-background" :id="'pageHud-'+location.main" :class="{'sticky-black':stuck}">
+    <div class="widget widget-transition widgetMainSticky panel-background" :id="'pageHud-'+ location.main" :class="{'sticky-black':stuck}">
+
         <!-- Shows Icon for Top Widget -->
-        <div class="image-holder widget-transition" :class="{imageSticky:stuck, 'image-holder-unstuck':!stuck}" v-for="link in computedLinks" v-if="link.type === 'image'">
-            <a @mouseover="button.hover = true" @mouseout="button.hover = false"  href="javascript:void(0)" @click="linkClick('image', link)" >
-                <img style="width: 100%;" :src="communityBtn"/>
-            </a>
-        </div>
+        <template v-for="link in computedLinks">
+            <div class="image-holder widget-transition" :class="{imageSticky:stuck, 'image-holder-unstuck':!stuck}" v-if="link.type === 'image'">
+                <a @mouseover="button.hover = true" @mouseout="button.hover = false"  href="javascript:void(0)" @click="linkClick('image', link)" >
+                    <img style="width: 100%;" :src="communityBtn"/>
+                </a>
+            </div>
+        </template>
 
         <!-- Main Sticky Main Location Header -->
         <div v-if="stuck" class="page-name" :class="{pageNameStick:sideMenu, pageNameUnstick:!sideMenu}">
             <h6 class="text-uppercase">{{configureStickTitle}}</h6>
         </div>
 
-        <!-- Shows Link list if List list is set to main links-->
+        <!-- Shows Link list if List list is set to main links -->
         <ul class="widget-category widget-transition ulMain"  :class="{ulSticky:stuck, pageStickyUL:sideMenu}" style="float: left; margin-bottom: 0;">
-            <li class="overlordWidget widgetMain" v-for="link in computedLinks" v-if="link.type === 'link'">
-                <a @click="linkClick('sub', link)" href="javascript:void(0)" :class="{active:link.active, widgetFontSticked:sideMenu}">
-                    <div class="link-holder"> {{link.abbreviation}} </div>
-                </a>
-            </li>
+            <template v-for="link in computedLinks" >
+                <li class="overlordWidget widgetMain" v-if="link.type === 'link'">
+                    <a @click="linkClick('sub', link)" href="javascript:void(0)" :class="{active:link.active, widgetFontSticked:sideMenu}">
+                        <div class="link-holder"> {{link.abbreviation}} </div>
+                    </a>
+                </li>
+            </template>
+
         </ul>
 
         <div  class="search-container" v-if="stuck">
@@ -35,12 +41,12 @@ export default {
     props:{
         'hud-style':{'default':'normal'},
         'side-menu':{'default': false},
-        location:{"default": ""},
-        user:{"default": ""},
-        requests:{"default": ""},
     },
     data(){
         return {
+            location: window.vDashboard.location,
+            user: window.vDashboard.user,
+            requests: window.vDashboard.requests,
             userConfig: window.vDashboard.userConfig,
             scrollDistance:0,
             navTop:0,
@@ -63,6 +69,7 @@ export default {
     mounted(){
         let self = this;
         self.loaded();
+
     },
 
     computed:{
@@ -109,11 +116,13 @@ export default {
             subNav.sticky({topSpacing:60, zIndex: 7000, responsiveWidth:true, getWidthFrom:'.widgetMainSticky'})
                 .on("sticky-start", function(){
                     window.vDashboard.hudState({hud:'page', action:true});
+                    console.log("Sticky Start");
                     self.stickyCommunication(true);
                     self.stuck = true;
                 })
                 .on("sticky-end", function(){
                     window.vDashboard.hudState({hud:'page', action:false});
+                    console.log("Sticky End");
                     self.stickyCommunication(false);
                     self.stuck = false;
                 });
@@ -134,7 +143,10 @@ export default {
                 if(this.search !== window.vDashboard.hudControls.search) window.vDashboard.updateSearch(this.search);
             }
         },
-        stickyCommunication(isStuck){this.$emit("stickyTalk", isStuck);}
+        stickyCommunication(isStuck){
+            console.log("Sticky Communication: " + isStuck);
+            this.$emit("stickyTalk", isStuck);
+        }
     }
 }
 </script>

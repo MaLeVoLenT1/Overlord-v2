@@ -637,12 +637,12 @@ const App =  {
                                 },
                             ]
                         },
-                        livePrices:{
+                        charts:{
                             type:"link",
                             sorting:"second",
-                            abbreviation:"Live Prices",
-                            text:"Live Prices",
-                            href:'crypto/live-prices',
+                            abbreviation:"Charts",
+                            text:"Charts",
+                            href:'crypto/charts',
                             portal:"crypto",
                             active:false,
                             links:[
@@ -675,17 +675,6 @@ const App =  {
                                     ]
                                 },
                             ]
-                        },
-                        liveCharts:{
-                            type:"link",
-                            sorting:"second",
-                            abbreviation:"Live Charts",
-                            text:"Live Charts",
-                            href:'crypto/live-charts',
-                            portal:"crypto",
-                            active:false,
-                            links:[],
-                            authenticated:[]
                         } ,
                         mining:{
                             type:"link",
@@ -710,46 +699,6 @@ const App =  {
                                     ]
                                 },
 
-                            ]
-                        },
-                        defi:{
-                            type:"link",
-                            sorting:"second",
-                            abbreviation:"DEFI",
-                            text:"Decentralized Finance",
-                            href:'crypto/defi',
-                            portal:"hub",
-                            active:false,
-                            links:[
-                                {type: "top", name: "all",  text:"All", active:false, stickyShow:true},
-                                {type: "top", name: "ethereum",  text:"Ethereum", active:false, stickyShow:true},
-                                {type: "top", name: "bsc",  text:"Binance Smart-Chain", active:false, stickyShow:false},
-                                {type: "top", name: "cardano",  text:"Cardano", active:false, stickyShow:false},
-                                {type: "top", name: "solana",  text:"Solana", active:false, stickyShow:false},
-                                {type: "top", name: "cosmos",  text:"Cosmos", active:false, stickyShow:false}
-                            ],
-                            authenticated:[
-                                {
-                                    title: "My Liquidity Pools", name: "my-lps",
-                                    active:false, stickyShow:true,
-                                    links:[
-                                        {type: "top", name: "all",  text:"All", active:false},
-                                    ]
-                                },
-                                {
-                                    title: "My Lending Pools", name: "my-lending-pools",
-                                    active:false, stickyShow:true,
-                                    links:[
-                                        {type: "top", name: "all",  text:"All", active:false},
-                                    ]
-                                },
-                                {
-                                    title: "My Staking Pools", name: "my-staking-pools",
-                                    active:false, stickyShow:true,
-                                    links:[
-                                        {type: "top", name: "all",  text:"All", active:false},
-                                    ]
-                                },
                             ]
                         },
                         blockchains:{
@@ -797,50 +746,6 @@ const App =  {
                             abbreviation:"Tools",
                             text:"Tools",
                             href:'crypto/tools',
-                            portal:"crypto",
-                            active:false,
-                            links:[],
-                            authenticated:[]
-                        },
-                        events:{
-                            type:"link",
-                            sorting:"second",
-                            abbreviation:"Events",
-                            text:"Events",
-                            href:'crypto/events',
-                            portal:"crypto",
-                            active:false,
-                            links:[],
-                            authenticated:[]
-                        },
-                        news:{
-                            type:"link",
-                            sorting:"second",
-                            abbreviation:"News",
-                            text:"News",
-                            href:'crypto/news',
-                            portal:"crypto",
-                            active:false,
-                            links:[],
-                            authenticated:[]
-                        },
-                        blockchain:{
-                            type:"link",
-                            sorting:"second",
-                            abbreviation:"Blockchain",
-                            text:"Blockchain",
-                            href:'crypto/blockchain',
-                            portal:"crypto",
-                            active:false,
-                            links:[],
-                            authenticated:[]
-                        },
-                        education:{
-                            type:"link",
-                            sorting:"second",
-                            abbreviation:"Education",
-                            text:"Education",
-                            href:'crypto/education',
                             portal:"crypto",
                             active:false,
                             links:[],
@@ -1211,6 +1116,7 @@ const App =  {
         /** Change the state of the HUD.
          * @param change */
         hudState(change){
+            console.log(`Changing HUD state to '${change.action}' for '${change.hud}' HUD.`);
             this.hudControls[change.hud + 'Hud'] = change.action;
         },
         updateSearch(string){
