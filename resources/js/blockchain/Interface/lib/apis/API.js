@@ -16,9 +16,7 @@ export default class api{
      *                  blockchain, blockchain-simple, blockchain-market, blockchain-blocks)
      * @param settings - The settings object to use for the API call. See the documentation for more information.
      * @returns {Promise<*>} */
-    constructor(asset = 'bitcoin', call='crypto-simple', settings = Config.defaultSettings)
-    {
-        this.data = null;
+    constructor(asset = 'bitcoin', call='crypto-simple', settings = Config.defaultSettings) {
         this.asset = null;
 
         if (!this.findAsset(asset)) throw new Error(`The asset ${asset} was not found.`);
@@ -27,24 +25,25 @@ export default class api{
         if (!this.computeCall(call).response) throw new Error(`The call ${call} was not found.`);
         else this.call = this.computeCall(call);
 
-        this.urls = {
-            private: {
-                coinbase: 'https://api.coinbase.com/v2',
-                binance: 'https://api.binance.com/api/v3',
-                blockchain: 'https://blockchain.com',
-            },
-            pro: {
-                coinMarketCap: 'https://pro-api.coinmarketcap.com/v1'
-            },
-            public: {
-                gecko: 'https://api.coingecko.com/api/v3',
-                coinMarketCap: 'https://pro-api.coinmarketcap.com/v1',
-                blockchain: 'https://blockchain.info',
-                blockCypher: 'https://api.blockcypher.com/v1',
-                blockStream: 'https://blockstream.info/api'
+        /*
+            this.urls = {
+                private: {
+                    coinbase: 'https://api.coinbase.com/v2',
+                    binance: 'https://api.binance.com/api/v3',
+                    blockchain: 'https://blockchain.com',
+                },
+                pro: {
+                    coinMarketCap: 'https://pro-api.coinmarketcap.com/v1'
+                },
+                public: {
+                    gecko: 'https://api.coingecko.com/api/v3',
+                    coinMarketCap: 'https://pro-api.coinmarketcap.com/v1',
+                    blockchain: 'https://blockchain.info',
+                    blockCypher: 'https://api.blockcypher.com/v1',
+                    blockStream: 'https://blockstream.info/api'
+                }
             }
-        }
-
+         */
     }
 
     /** Finds the coin in the list of coins
@@ -54,16 +53,28 @@ export default class api{
         let cryptoFound = false;
 
         CoinList.forEach((coin) => {
-            if(coin.name.toLowerCase() === name.toLowerCase()){ this.asset = coin; cryptoFound = true; } });
+            if(coin.name.toLowerCase() === name.toLowerCase()){
+                this.type = 'coin'; this.id = coin.id; this.symbol = coin.symbol; this.name = coin.name;
+                cryptoFound = true;
+            }
+        });
 
         if(!cryptoFound){
             CoinList.forEach((coin) => {
-                if(coin.symbol.toLowerCase() === name.toLowerCase()){ this.asset = coin; cryptoFound = true;} });
+                if(coin.symbol.toLowerCase() === name.toLowerCase()){
+                    this.type = 'coin'; this.id = coin.id; this.symbol = coin.symbol; this.name = coin.name;
+                    cryptoFound = true;
+                }
+            });
         }
 
         if(!cryptoFound){
             CoinList.forEach((coin) => {
-                if(coin.id.toLowerCase() === name.toLowerCase()){ this.asset = coin; cryptoFound = true;} });
+                if(coin.id.toLowerCase() === name.toLowerCase()){
+                    this.type = 'coin'; this.id = coin.id; this.symbol = coin.symbol; this.name = coin.name;
+                    cryptoFound = true;
+                }
+            });
         }
 
         return cryptoFound;
@@ -76,17 +87,13 @@ export default class api{
         let exchangeFound = false;
 
         ExchangeList.forEach((exchange) => {
-            if(exchange.name.toLowerCase() === name.toLowerCase()){ this.asset = exchange; exchangeFound = true; } });
-
-        if(!exchangeFound){
-            ExchangeList.forEach((exchange) => {
-                if(exchange.symbol.toLowerCase() === name.toLowerCase()){ this.asset = exchange; exchangeFound = true;} });
-        }
-
-        if(!exchangeFound){
-            ExchangeList.forEach((exchange) => {
-                if(exchange.id.toLowerCase() === name.toLowerCase()){ this.asset = exchange; exchangeFound = true;} });
-        }
+            if(exchange.name.toLowerCase() === name.toLowerCase() || exchange.id.toLowerCase() === name.toLowerCase()){
+                this.type = 'exchange'; this.id = exchange.id; this.name = exchange.name;
+                this.year_established = exchange.year_established; this.country = exchange.country;
+                this.url = exchange.url; this.image = exchange.image;
+                exchangeFound = true;
+            }
+        });
 
         return exchangeFound;
     }
@@ -98,17 +105,12 @@ export default class api{
         let blockchainFound = false;
 
         BlockchainList.forEach((blockchain) => {
-            if(blockchain.name.toLowerCase() === name.toLowerCase()){ this.asset = blockchain; blockchainFound = true; } });
-
-        if(!blockchainFound){
-            BlockchainList.forEach((blockchain) => {
-                if(blockchain['shortname'].toLowerCase() === name.toLowerCase() && name !== ""){ this.asset = blockchain; blockchainFound = true;} });
-        }
-
-        if(!blockchainFound){
-            BlockchainList.forEach((blockchain) => {
-                if(blockchain.id.toLowerCase() === name.toLowerCase()){ this.asset = blockchain; blockchainFound = true;} });
-        }
+            if((blockchain['shortname'].toLowerCase() === name.toLowerCase() && name !== "") || blockchain.name.toLowerCase() === name.toLowerCase() || blockchain.id.toLowerCase() === name.toLowerCase()){
+                this.type = 'blockchain'; this.name = blockchain.name; this.shortname = blockchain.shortname;
+                this.id = blockchain.id; this.chain_identifier = blockchain.chain_identifier;
+                blockchainFound = true;
+            }
+        });
 
         return blockchainFound;
     }
@@ -120,17 +122,11 @@ export default class api{
         let nftFound = false;
 
         NFTList.forEach((nft) => {
-            if(nft.name.toLowerCase() === name.toLowerCase()){ this.asset = nft; nftFound = true; } });
-
-        if(!nftFound){
-            NFTList.forEach((nft) => {
-                if(nft.symbol.toLowerCase() === name.toLowerCase()){ this.asset = nft; nftFound = true;} });
-        }
-
-        if(!nftFound){
-            NFTList.forEach((nft) => {
-                if(nft.id.toLowerCase() === name.toLowerCase()){ this.asset = nft; nftFound = true;} });
-        }
+            if(nft.name.toLowerCase() === name.toLowerCase() || nft.symbol.toLowerCase() === name.toLowerCase() || nft.id.toLowerCase() === name.toLowerCase()){
+                this.type = 'nft'; this.id = nft.id; this.symbol = nft.symbol; this.name = nft.name;
+                nftFound = true;
+            }
+        });
 
         return nftFound;
     }
@@ -207,12 +203,7 @@ export default class api{
 
             if (optionsString.split(',').length > 1) options = optionsString.split(',');
             else options.push(optionsString);
-
         }
-
-
-
-
         return {response:true, options:options, call:callType};
     }
 

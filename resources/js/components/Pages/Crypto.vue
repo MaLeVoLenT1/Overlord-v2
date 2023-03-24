@@ -36,11 +36,6 @@ export default {
             user: window.vDashboard.user,
             requests: window.vDashboard.requests,
             assetName:"ethereum",
-            settings: {
-                "currency": "usd", "localization": "en", "enabled": true,
-                "api":{"type": "all", "permissions": "public", "keys": []},
-                "cache": {"enabled": true, "time": 60}
-            },
             blockchains:[],
             data:null
 
@@ -72,7 +67,13 @@ export default {
         // API
         async GenerateAPIData(){
             let self = this;
-            self.data = new api(self.assetName);
+            let settings = {
+                    currency: "usd", localization: "en", enabled: true,
+                    api:{ type: "gecko", permissions: "public", keys: []},
+                    cache: { enabled: true, time: 60}
+            };
+
+            self.data = new api(self.assetName, 'crypto-price,exchange,blockchain,account', settings);
 
         },
 
