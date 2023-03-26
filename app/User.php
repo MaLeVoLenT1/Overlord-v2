@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -20,9 +21,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
+        'username',
+        'display_name',
         'password',
+        'email',
+        'first',
+        'last',
+        'birthdate',
+        'avatar',
+        'overlord_rank',
+        'token',
     ];
 
     /**
@@ -42,4 +50,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @return MorphMany
+     */
+    public function api(): MorphMany
+    {
+        return $this -> morphMany('App\APIAssociation', 'user');
+    }
+
+    /**
+     * @return MorphMany
+     */
+    public function discord_servers(): MorphMany
+    {
+        return $this -> morphMany('App\DiscordBot', 'user');
+    }
 }

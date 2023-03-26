@@ -394,6 +394,61 @@
                 ]
             },
             {
+                "name": "Coinbase", "domain": "pro",
+                "description":"",
+                "root": "https://api.pro.coinbase.com",
+                "documentation": "https://docs.pro.coinbase.com",
+                "uris": [
+                    {
+                        "uri": "/products",
+                        "description": "Get a list of available currency pairs for trading.",
+                        "parameters": []
+                    },
+                    {
+                        "uri": "/products/{product_id}/book",
+                        "description": "Get a list of open orders for a product. The amount of detail shown can be customized with the level parameter.",
+                        "parameters": [
+                            {"name": "product_id", "description": "The product id (e.g. BTC-USD)"},
+                            {"name": "level", "description": "The order book level (1, 2, or 3)"}
+                        ]
+                    },
+                    {
+                        "uri": "/products/{product_id}/ticker",
+                        "description": "Get the ticker for a product.",
+                        "parameters": [
+                            {"name": "product_id", "description": "The product id (e.g. BTC-USD)"}
+                        ]
+                    },
+                    {
+                        "uri": "/products/{product_id}/trades",
+                        "description": "Get a list of the latest trades for a product.",
+                        "parameters": [
+                            {"name": "product_id", "description": "The product id (e.g. BTC-USD)"}
+                        ]
+                    },
+                    {
+                        "uri": "/products/{product_id}/candles",
+                        "description": "Get historical candle data for a product. The maximum number of data points for a single request is 300 candles. If your selection of start/end time and granularity will result in more than 300 data points, your request will be rejected. If you wish to retrieve fine granularity data over a larger time range, you will need to make multiple requests with new start/end ranges.",
+                        "parameters": [
+                            {"name": "product_id", "description": "The product id (e.g. BTC-USD)"},
+                            {"name": "start", "description": "ISO 8601 start time"},
+                            {"name": "end", "description": "ISO 8601 end time"},
+                            {"name": "granularity", "description": "The granularity field must be one of the following values: {60, 300, 900, 3600, 21600, 86400}"}
+                        ]
+                    },
+                    {
+                        "uri": "/products/{product_id}/stats",
+                        "description": "Get 24 hr stats for the product. volume is in base currency units. open, high, low are in quote currency units.",
+                        "parameters": [
+                            {
+                                "name": "product_id",
+                                "description": "The product id (e.g. BTC-USD)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 "name": "Blockchair", "domain": "pro",
                 "description": "Blockchair is a blockchain explorer and API provider. Bitcoin Cash, Litecoin, Dogecoin, Dash, Bitcoin SV, Ethereum, Ethereum Classic, and Monero blockchains. ",
                 "root": "https://api.blockchair.com",

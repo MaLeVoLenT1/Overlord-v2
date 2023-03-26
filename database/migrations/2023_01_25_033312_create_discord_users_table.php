@@ -15,6 +15,24 @@ class CreateDiscordUsersTable extends Migration
     {
         Schema::connection('discord')->create('discord_users', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('discord_id');
+            $table->string('discord_username');
+            $table->string('display_name')-> nullable();
+            $table->string('discord_discriminator');
+            $table -> string('first') -> nullable();
+            $table -> string('last') -> nullable();
+            $table->string('email')-> nullable();
+            $table -> timestamp('email_verified_at') -> nullable();
+            $table->string('avatar')-> nullable();
+            $table->timestamp('discord_last_message_time')-> nullable();
+            $table->integer('discord_last_message_id')-> nullable();
+            $table -> enum('overlord_rank', [
+                'guest',
+                'member',
+                'moderator',
+                'administrator',
+                'banned'
+            ]) ->default('guest');
             $table->timestamps();
         });
     }

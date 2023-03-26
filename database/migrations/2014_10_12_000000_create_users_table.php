@@ -34,14 +34,6 @@ class CreateUsersTable extends Migration
                 'banned'
             ]) ->default('guest');
 
-            /** Discord Information */
-            $table -> bigInteger('discord_id') -> nullable();
-            $table -> string('discord_username') -> nullable();
-            $table -> integer('discord_discriminator') -> nullable();
-            $table -> string('discord_verification_token') -> nullable();
-            $table -> timestamp('discord_last_message_time') -> nullable();
-            $table -> integer('discord_last_message_id') -> nullable();
-
             $table -> rememberToken();
             $table -> timestamps();
         });

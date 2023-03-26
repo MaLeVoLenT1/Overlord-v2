@@ -195,7 +195,6 @@ export default class api{
 
     computeCall(call){
         let options = [], callType;
-
         if (call.split('-').length < 2) callType = call;
         else {
             let optionsString = call.split('-')[1];
@@ -207,26 +206,8 @@ export default class api{
         return {response:true, options:options, call:callType};
     }
 
-    async getCoinInfo(call = 'crypto-simple'){
-        let option = call.split('-')[1];
-        let callType = call.split('-')[0];
-        if (callType !== 'crypto') throw new Error('Invalid call type. Must be "crypto"');
-
-        switch (option) {
-            case 'simple':
-
-                break;
-
-            case 'full':
-                break;
-
-            default:
-
-                break;
-
-        }
-
-        let url = `${this.urls[this.settings.permissionType][this.type]}/coins/${this.name}`;
+    async getCoinInfo(){
+        let url = `${this['urls'][this.settings['permissionType']][this.type]}/coins/${this.name}`;
         let response = await axios.get(url);
         return await response.data;
     }
