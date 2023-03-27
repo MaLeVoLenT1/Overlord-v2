@@ -19,28 +19,28 @@ class DiscordBot extends Model
         return $this->morphTo();
     }
 
-    public function assignable_roles(){
-        return $this -> hasMany('App\AssignableRole');
+    public function roles(){
+        return $this -> hasMany('App\Discord\DiscordRole');
     }
 
-    public function assignable_emojis(){
-        return $this -> hasMany('App\AssignableEmoji');
+    public function emojis(){
+        return $this -> hasMany('App\Discord\BotEmojis');
     }
 
     public function admins(){
-        return $this -> hasMany('App\DiscordAdmin');
+        return $this -> hasMany('App\Discord\DiscordAdmin');
     }
     public function moderators(){
-        return $this -> hasMany('App\DiscordModerator');
+        return $this -> hasMany('App\Discord\DiscordModerator');
     }
-    public function verified_guest(){
-        return $this -> hasMany('App\DiscordGuest');
+    public function guest(){
+        return $this -> hasMany('App\Discord\DiscordGuest');
     }
 
-    public function management_channels(){
-        return $this -> hasOne('App\ManagementChannel');
+    public function channels(){
+        return $this -> hasOne('App\Discord\BotChannel');
     }
     public function settings(){
-        return $this -> hasOne('App\DiscordSettings');
+        return $this -> hasOne('App\Discord\BotSettings');
     }
 }

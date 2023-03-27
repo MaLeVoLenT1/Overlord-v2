@@ -394,7 +394,7 @@
                 ]
             },
             {
-                "name": "Coinbase", "domain": "pro",
+                "name": "Coinbase-pro", "domain": "pro",
                 "description":"",
                 "root": "https://api.pro.coinbase.com",
                 "documentation": "https://docs.pro.coinbase.com",
@@ -477,6 +477,202 @@
                             {"name": "coin", "description": "The blockchain to query (bitcoin, bitcoin-cash, bitcoin-sv, litecoin, dogecoin, dash, ethereum, ethereum-classic, monero)"},
                             {"name": "block", "description": "The block to query"}
                         ]
+                    }
+                ]
+            },
+            {
+                "name": "CoinMarketCap", "domain": "pro",
+                "description": "CoinMarketCap is the world's most trusted cryptocurrency data aggregator. ",
+                "root": "https://pro-api.coinmarketcap.com",
+                "documentation": "https://coinmarketcap.com/api/documentation/v1/#section/Introduction",
+                "uris": [
+                    {
+                        "uri": "/v1/cryptocurrency/listings/latest",
+                        "description": "Get latest cryptocurrency listings",
+                        "parameters": [
+                            {"name": "start", "description": "The offset for the start (1-based index)"},
+                            {"name": "limit", "description": "The number of results to return. Use this parameter and the start parameter to determine your own pagination size."},
+                            {"name": "convert", "description": "Return price, 24h volume, and market cap in terms of another currency. Valid values are: BTC, ETH, USD, CAD, EUR, GBP, JPY, KRW, RUB, TRY, AUD, BRL, CHF, CLP, CNY, CZK, DKK, HKD, HUF, IDR, ILS, INR, MXN, MYR, NOK, NZD, PHP, PKR, PLN, SEK, SGD, THB, TWD, ZAR"}
+                        ]
+                    },
+                    {
+                        "uri": "/v1/cryptocurrency/quotes/latest",
+                        "description": "Get latest cryptocurrency quotes",
+                        "parameters": [
+                            {"name": "id", "description": "A comma-separated list of cryptocurrency platform IDs. Example: 1,2,3"},
+                            {"name": "slug", "description": "A comma-separated list of cryptocurrency slugs. Example: bitcoin,ethereum"},
+                            {"name": "symbol", "description": "A comma-separated list of cryptocurrency symbols. Example: BTC,ETH"},
+                            {"name": "convert", "description": "Return price, 24h volume, and market cap in terms of another currency. Valid values are: BTC, ETH, USD, CAD, EUR, GBP, JPY, KRW, RUB, TRY, AUD, BRL, CHF, CLP, CNY, CZK, DKK, HKD, HUF, IDR, ILS, INR, MXN, MYR, NOK, NZD, PHP, PKR, PLN, SEK, SGD, THB, TWD, ZAR"}
+                        ]
+                    },
+                    {
+                        "uri": "/v1/cryptocurrency/quotes/historical",
+                        "description": "Get historical cryptocurrency quotes",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "description": "A comma-separated list of cryptocurrency platform IDs. Example: 1,2,3"
+                            },
+                            {
+                                "name": "slug",
+                                "description": "A comma-separated list of cryptocurrency slugs. Example: bitcoin,ethereum"
+                            },
+                            {
+                                "name": "symbol",
+                                "description": "A comma-separated list of cryptocurrency symbols. Example: BTC,ETH"
+                            },
+                            {
+                                "name": "time_start",
+                                "description": "A timestamp (Unix or ISO 8601) to start returning historical quotes for. Example: 1417411980 or 2014-12-01T12:00:00"
+                            },
+                            {
+                                "name": "time_end",
+                                "description": "A timestamp (Unix or ISO 8601) to stop returning historical quotes for. Example: 1417411980 or 2014-12-01T12:00:00"
+                            },
+                            {
+                                "name": "count",
+                                "description": "The number of historical quotes to return. Example: 10"
+                            },
+                            {
+                                "name": "interval",
+                                "description": "The interval between each historical quote. Example: 1h"
+                            },
+                            {
+                                "name": "convert",
+                                "description": "Return price, 24h volume, and market cap in terms of another currency. Valid values are: BTC, ETH, USD, CAD, EUR, GBP, JPY, KRW, RUB, TRY, AUD, BRL, CHF, CLP, CNY, CZK, DKK, HKD, HUF, IDR, ILS, INR, MXN, MYR, NOK, NZD, PHP, PKR, PLN, SEK, SGD, THB, TWD, ZAR"
+                            }
+                        ],
+                        "notes": "The interval parameter must be one of the following: 1m, 5m, 15m, 30m, 1h, 2h, 6h, 12h, 1d, 1w, 1mo, 3mo"
+                    },
+                    {
+                        "uri": "/v1/cryptocurrency/ohlcv/latest",
+                        "description": "Get latest OHLCV (Open, High, Low, Close, Volume) for a currency",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "description": "A comma-separated list of cryptocurrency platform IDs. Example: 1,2,3"
+                            },
+                            {
+                                "name": "slug",
+                                "description": "A comma-separated list of cryptocurrency slugs. Example: bitcoin,ethereum"
+                            },
+                            {
+                                "name": "symbol",
+                                "description": "A comma-separated list of cryptocurrency symbols. Example: BTC,ETH"
+                            },
+                            {
+                                "name": "convert",
+                                "description": "Return price, 24h volume, and market cap in terms of another currency. Valid values are: BTC, ETH, USD, CAD, EUR, GBP, JPY, KRW, RUB, TRY, AUD, BRL, CHF, CLP, CNY, CZK, DKK, HKD, HUF, IDR, ILS, INR, MXN, MYR, NOK, NZD, PHP, PKR, PLN, SEK, SGD, THB, TWD, ZAR"
+                            },
+                            {
+                                "name": "time_period",
+                                "description": "The time period to return OHLCV data for. Example: 1d"
+                            }
+                        ],
+                        "notes": "The time_period parameter must be one of the following: 1m, 5m, 15m, 30m, 1h, 2h, 6h, 12h, 1d, 1w, 1mo, 3mo"
+                    },
+                    {
+                        "uri": "/v1/cryptocurrency/ohlcv/historical",
+                        "description": "Get historical OHLCV (Open, High, Low, Close, Volume) for a currency",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "description": "A comma-separated list of cryptocurrency platform IDs. Example: 1,2,3"
+                            },
+                            {
+                                "name": "slug",
+                                "description": "A comma-separated list of cryptocurrency slugs. Example: bitcoin,ethereum"
+                            },
+                            {
+                                "name": "symbol",
+                                "description": "A comma-separated list of cryptocurrency symbols. Example: BTC,ETH",
+                                "required": true
+                            },
+                            {
+                                "name": "convert",
+                                "description": "Return price, 24h volume, and market cap in terms of another currency. Valid values are: BTC, ETH, USD, CAD, EUR, GBP, JPY, KRW, RUB, TRY, AUD, BRL, CHF, CLP, CNY, CZK, DKK, HKD, HUF, IDR, ILS, INR, MXN, MYR, NOK, NZD, PHP, PKR, PLN, SEK, SGD, THB, TWD, ZAR"
+                            },
+                            {
+                                "name": "time_period",
+                                "description": "The time period to return OHLCV data for. Example: 1d"
+                            },
+                            {
+                                "name": "time_start",
+                                "description": "A timestamp (Unix or ISO 8601) to start returning historical OHLCV data for. Example: 1417411980 or 2014-12-01T12:00:00"
+                            },
+                            {
+                                "name": "time_end",
+                                "description": "A timestamp (Unix or ISO 8601) to stop returning historical OHLCV data for. Example: 1417411980 or 2014-12-01T12:00:00"
+                            },
+                            {
+                                "name": "count",
+                                "description": "The number of historical OHLCV data points to return. Example: 10"
+                            }
+                        ],
+                        "notes": "The time_period parameter must be one of the following: 1m, 5m, 15m, 30m, 1h, 2h, 6h, 12h, 1d, 1w, 1mo, 3mo"
+                    },
+                    {
+                        "uri": "/v1/cryptocurrency/price-performance-stats/latest",
+                        "description": "Get latest price performance stats for 1000+ cryptocurrencies",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "description": "A comma-separated list of cryptocurrency platform IDs. Example: 1,2,3"
+                            },
+                            {
+                                "name": "slug",
+                                "description": "A comma-separated list of cryptocurrency slugs. Example: bitcoin,ethereum"
+                            },
+                            {
+                                "name": "symbol",
+                                "description": "A comma-separated list of cryptocurrency symbols. Example: BTC,ETH"
+                            },
+                            {
+                                "name": "convert",
+                                "description": "Return price, 24h volume, and market cap in terms of another currency. Valid values are: BTC, ETH, USD, CAD, EUR, GBP, JPY, KRW, RUB, TRY, AUD, BRL, CHF, CLP, CNY, CZK, DKK, HKD, HUF, IDR, ILS, INR, MXN, MYR, NOK, NZD, PHP, PKR, PLN, SEK, SGD, THB, TWD, ZAR"
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "/v1/cryptocurrency/price-performance-stats/historical",
+                        "description": "Get historical price performance stats for 1000+ cryptocurrencies",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "description": "A comma-separated list of cryptocurrency platform IDs. Example: 1,2,3"
+                            },
+                            {
+                                "name": "slug",
+                                "description": "A comma-separated list of cryptocurrency slugs. Example: bitcoin,ethereum"
+                            },
+                            {
+                                "name": "symbol",
+                                "description": "A comma-separated list of cryptocurrency symbols. Example: BTC,ETH",
+                                "required": true
+                            },
+                            {
+                                "name": "convert",
+                                "description": "Return price, 24h volume, and market cap in terms of another currency. Valid values are: BTC, ETH, USD, CAD, EUR, GBP, JPY, KRW, RUB, TRY, AUD, BRL, CHF, CLP, CNY, CZK, DKK, HKD, HUF, IDR, ILS, IN."
+                            },
+                            {
+                                "name": "time_period",
+                                "description": "The time period to return OHLCV data for. Example: 1d"
+                            },
+                            {
+                                "name": "time_start",
+                                "description": "A timestamp (Unix or ISO 8601) to start returning historical OHLCV data for. Example: 1417411980 or 2014-12-01T12:00:00"
+                            },
+                            {
+                                "name": "time_end",
+                                "description": "A timestamp (Unix or ISO 8601) to stop returning historical OHLCV data for. Example: 1417411980 or 2014-12-01T12:00:00"
+                            },
+                            {
+                                "name": "count",
+                                "description": "The number of historical OHLCV data points to return. Example: 10"
+                            }
+                        ],
+                        "notes": "The time_period parameter must be one of the following: 1m, 5m, 15m, 30m, 1h, 2h, 6h, 12h, 1d, 1w, 1mo, 3mo",
+                        "pagination": false
                     }
                 ]
             }

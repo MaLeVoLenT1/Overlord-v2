@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Profile extends Model
+class APIAssociation extends Model
 {
-    /** connection
-     * @var array */
     protected $connection = 'mysql';
+    protected $table = 'a_p_i_associations';
+
     protected $fillable = [
         'owner_id',
         'owner_type',
@@ -16,7 +16,6 @@ class Profile extends Model
         'owner_user_id',
     ];
 
-    public function owner(){
-        return $this->morphTo();
-    }
+    public function user(){return $this->morphTo();}
+
 }

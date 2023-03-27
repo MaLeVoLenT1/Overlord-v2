@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Profile;
+namespace App\Http\Controllers;
 
-use App\Discord\DiscordAssociation;
-use App\Http\Controllers\Controller;
+use App\APIAssociation;
 use Illuminate\Http\Request;
 
-class DiscordAssociationController extends Controller
+class APIAssociationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class DiscordAssociationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Discord\DiscordAssociation  $discordAssociation
+     * @param  \App\APIAssociation  $aPIAssociation
      * @return \Illuminate\Http\Response
      */
-    public function show(DiscordAssociation $discordAssociation)
+    public function show(APIAssociation $aPIAssociation)
     {
         //
     }
@@ -53,10 +52,10 @@ class DiscordAssociationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Discord\DiscordAssociation  $discordAssociation
+     * @param  \App\APIAssociation  $aPIAssociation
      * @return \Illuminate\Http\Response
      */
-    public function edit(DiscordAssociation $discordAssociation)
+    public function edit(APIAssociation $aPIAssociation)
     {
         //
     }
@@ -65,10 +64,10 @@ class DiscordAssociationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Discord\DiscordAssociation  $discordAssociation
+     * @param  \App\APIAssociation  $aPIAssociation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DiscordAssociation $discordAssociation)
+    public function update(Request $request, APIAssociation $aPIAssociation)
     {
         //
     }
@@ -76,10 +75,10 @@ class DiscordAssociationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Discord\DiscordAssociation  $discordAssociation
+     * @param  \App\APIAssociation  $aPIAssociation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DiscordAssociation $discordAssociation)
+    public function destroy(APIAssociation $aPIAssociation)
     {
         //
     }

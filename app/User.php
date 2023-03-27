@@ -51,19 +51,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * @return MorphMany
-     */
-    public function api(): MorphMany
-    {
-        return $this -> morphMany('App\APIAssociation', 'user');
-    }
+    /** * @return MorphMany */
+    public function api(): MorphMany { return $this -> morphMany('App\APIAssociation', 'user','owner_type', 'owner_id'); }
 
-    /**
-     * @return MorphMany
-     */
-    public function discord_servers(): MorphMany
-    {
-        return $this -> morphMany('App\DiscordBot', 'user');
-    }
+    /** * @return MorphMany */
+    public function discord_servers(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
+
+    /** * @return MorphMany */
+    public function profile(): MorphMany { return $this -> morphMany('App\Profile', 'user','owner_type', 'owner_id'); }
 }
