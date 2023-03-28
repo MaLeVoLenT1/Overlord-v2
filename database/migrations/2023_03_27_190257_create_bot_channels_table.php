@@ -13,7 +13,7 @@ class CreateBotChannelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bot_channels', function (Blueprint $table) {
+        Schema::connection('discord')->create('bot_channels', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

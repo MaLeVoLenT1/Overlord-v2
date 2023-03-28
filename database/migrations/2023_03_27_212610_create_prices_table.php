@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBotEmojisTable extends Migration
+class CreatePricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBotEmojisTable extends Migration
      */
     public function up()
     {
-        Schema::connection('discord')->create('bot_emojis', function (Blueprint $table) {
+        Schema::connection('crypto')->create('prices', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateBotEmojisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bot_emojis');
+        Schema::dropIfExists('prices');
     }
 }

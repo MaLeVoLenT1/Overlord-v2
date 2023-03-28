@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Crypto;
+namespace App\Crypto\portfolio;
 
 use Illuminate\Database\Eloquent\Model;
 

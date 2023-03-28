@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Profile;
+namespace App\Http\Controllers;
 
-use App\Crypto\portfolio\Portfolio;
-use App\Http\Controllers\Controller;
+use App\Crypto\elements\Price;
 use Illuminate\Http\Request;
 
-class PortfolioController extends Controller
+class PriceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class PortfolioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
+     * @param  \App\Crypto\elements\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function show(Portfolio $portfolio)
+    public function show(Price $price)
     {
         //
     }
@@ -53,10 +52,10 @@ class PortfolioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
+     * @param  \App\Crypto\elements\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit(Price $price)
     {
         //
     }
@@ -65,10 +64,10 @@ class PortfolioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
+     * @param  \App\Crypto\elements\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request, Price $price)
     {
         //
     }
@@ -76,10 +75,10 @@ class PortfolioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
+     * @param  \App\Crypto\elements\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portfolio $portfolio)
+    public function destroy(Price $price)
     {
         //
     }
