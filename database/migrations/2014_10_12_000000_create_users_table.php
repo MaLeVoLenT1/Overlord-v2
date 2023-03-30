@@ -21,19 +21,7 @@ class CreateUsersTable extends Migration
             $table -> string('email', 40) -> unique();
             $table -> timestamp('email_verified_at') -> nullable();
             $table -> string('password');
-            $table -> string('first') -> nullable();
-            $table -> string('last') -> nullable();
-            $table -> date('birthdate') ->default('2017-01-01');
             $table -> string('token') -> nullable();
-            $table -> string('avatar') -> nullable();
-            $table -> enum('overlord_rank', [
-                'guest',
-                'member',
-                'moderator',
-                'administrator',
-                'banned'
-            ]) ->default('guest');
-
             $table -> rememberToken();
             $table -> timestamps();
         });

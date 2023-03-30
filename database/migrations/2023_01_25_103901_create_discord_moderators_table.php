@@ -15,6 +15,11 @@ class CreateDiscordModeratorsTable extends Migration
     {
         Schema::connection('discord')->create('discord_moderators', function (Blueprint $table) {
             $table->id();
+
+            $table -> integer('discord_bot_id') -> unsigned();
+            $table -> foreign('discord_bot_id') -> references('id') -> on('discord_bots') -> onDelete('cascade');
+            $table -> bigInteger('discord_id');
+
             $table->timestamps();
         });
     }

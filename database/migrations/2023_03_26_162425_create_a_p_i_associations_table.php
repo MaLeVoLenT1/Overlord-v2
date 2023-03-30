@@ -17,8 +17,6 @@ class CreateAPIAssociationsTable extends Migration
             $table -> id();
             $table -> integer('owner_id') -> unsigned();
             $table -> string('owner_type');
-            $table -> bigInteger('owner');
-            $table -> bigInteger('owner_user_id');
 
             $table -> string('api_key');
             $table -> string('secret') -> nullable();

@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Calendar;
+namespace App\Http\Controllers;
 
-use App\Calendar\EventCommentReply;
-use App\Http\Controllers\Controller;
+use App\Reply;
 use Illuminate\Http\Request;
 
-class EventCommentReplyController extends Controller
+class ReplyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class EventCommentReplyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calendar\EventCommentReply  $eventCommentReply
+     * @param  \App\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function show(EventCommentReply $eventCommentReply)
+    public function show(Reply $reply)
     {
         //
     }
@@ -53,10 +52,10 @@ class EventCommentReplyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calendar\EventCommentReply  $eventCommentReply
+     * @param  \App\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function edit(EventCommentReply $eventCommentReply)
+    public function edit(Reply $reply)
     {
         //
     }
@@ -65,10 +64,10 @@ class EventCommentReplyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calendar\EventCommentReply  $eventCommentReply
+     * @param  \App\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EventCommentReply $eventCommentReply)
+    public function update(Request $request, Reply $reply)
     {
         //
     }
@@ -76,10 +75,10 @@ class EventCommentReplyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calendar\EventCommentReply  $eventCommentReply
+     * @param  \App\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EventCommentReply $eventCommentReply)
+    public function destroy(Reply $reply)
     {
         //
     }

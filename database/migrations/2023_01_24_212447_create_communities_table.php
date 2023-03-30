@@ -14,8 +14,17 @@ class CreateCommunitiesTable extends Migration
     public function up()
     {
         Schema::connection('mysql')->create('communities', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+            $table -> integer('owner_id') -> unsigned();
+            $table -> string('owner_type');
+
+            $table -> string('name');
+            $table -> string('description') -> nullable();
+            $table -> string('ticker') -> nullable();
+            $table -> integer('member_count') -> nullable();
+
+            $table -> string('discord_id') -> nullable();
+            $table -> timestamps();
         });
     }
 

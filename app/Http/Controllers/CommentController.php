@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Calendar;
+namespace App\Http\Controllers;
 
-use App\Calendar\EventComment;
-use App\Http\Controllers\Controller;
+use App\Comment;
 use Illuminate\Http\Request;
 
-class EventCommentController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class EventCommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calendar\EventComment  $eventComment
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(EventComment $eventComment)
+    public function show(Comment $comment)
     {
         //
     }
@@ -53,10 +52,10 @@ class EventCommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calendar\EventComment  $eventComment
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(EventComment $eventComment)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -65,10 +64,10 @@ class EventCommentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calendar\EventComment  $eventComment
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EventComment $eventComment)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -76,10 +75,10 @@ class EventCommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calendar\EventComment  $eventComment
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EventComment $eventComment)
+    public function destroy(Comment $comment)
     {
         //
     }

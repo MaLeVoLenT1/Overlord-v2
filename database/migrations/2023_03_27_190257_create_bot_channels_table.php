@@ -14,8 +14,25 @@ class CreateBotChannelsTable extends Migration
     public function up()
     {
         Schema::connection('discord')->create('bot_channels', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+            $table -> integer('discord_bot_id') -> unsigned();
+            $table -> foreign('discord_bot_id') -> references('id') -> on('discord_bots') -> onDelete('cascade');
+            $table -> string('name') -> nullable();
+            $table -> bigInteger('channel_id') -> nullable();
+            $table -> enum('type', [
+                'administration',
+                'moderation',
+                'guests',
+                'teams',
+                'members',
+                'raids',
+                'announcements',
+                'welcome',
+                'crypto',
+                'bot',
+                'other',
+            ]) -> default('bot');
+            $table -> timestamps();
         });
     }
 

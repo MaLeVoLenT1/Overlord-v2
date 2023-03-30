@@ -10,10 +10,13 @@ class DiscordUser extends Model
 {
     protected $connection = 'discord';
     protected $fillable = [
-        'username', 'display_name', 'discord_discriminator',
-        'discord_id', 'first', 'last',
-        'email', 'avatar', 'discord_last_message_time',
-        'discord_last_message_id', 'overlord_rank',
+        'username',
+        'display_name',
+        'discord_discriminator',
+        'discord_id',
+        'email',
+        'discord_last_message_time',
+        'discord_last_message_id',
     ];
 
     /** * @return MorphMany */

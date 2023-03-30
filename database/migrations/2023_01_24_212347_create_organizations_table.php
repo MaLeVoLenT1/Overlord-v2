@@ -15,6 +15,9 @@ class CreateOrganizationsTable extends Migration
     {
         Schema::connection('mysql')->create('organizations', function (Blueprint $table) {
             $table->id();
+            $table -> integer('owner_id')->unsigned();
+            $table -> string('owner_type');
+
             $table->timestamps();
         });
     }

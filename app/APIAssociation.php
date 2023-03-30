@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class APIAssociation extends Model
 {
@@ -12,10 +13,13 @@ class APIAssociation extends Model
     protected $fillable = [
         'owner_id',
         'owner_type',
-        'owner',
-        'owner_user_id',
+        'name',
+        'api_key',
+        'secret',
+        'description',
+        'type',
     ];
 
-    public function user(){return $this->morphTo();}
+    public function user(): MorphTo {return $this->morphTo();}
 
 }

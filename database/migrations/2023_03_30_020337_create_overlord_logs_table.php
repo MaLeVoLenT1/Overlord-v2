@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventCommentRepliesTable extends Migration
+class CreateOverlordLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateEventCommentRepliesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql')->create('event_comment_replies', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('overlord_logs', function (Blueprint $table) {
+            $table -> id();
+            $table -> timestamps();
         });
     }
 
@@ -26,6 +26,6 @@ class CreateEventCommentRepliesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_comment_replies');
+        Schema::dropIfExists('overlord_logs');
     }
 }

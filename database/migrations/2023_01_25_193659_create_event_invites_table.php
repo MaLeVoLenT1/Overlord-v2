@@ -14,8 +14,31 @@ class CreateEventInvitesTable extends Migration
     public function up()
     {
         Schema::connection('mysql')->create('event_invites', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+
+            $table -> integer('calendar_event_id') -> unsigned();
+            $table -> foreign('calendar_event_id') -> references('id') -> on('calendar_events') -> onDelete('cascade');
+
+            $table -> integer('inviter_id') -> unsigned();
+            $table -> foreign('inviter_id') -> references('id') -> on('profiles');
+
+            $table -> integer('invitee_id') -> unsigned();
+            $table -> foreign('invitee_id') -> references('id') -> on('profiles');
+
+            $table -> boolean('accepted') -> default(false);
+            $table -> boolean('declined') -> default(false);
+            $table -> text('message');
+            $table -> text('response');
+            $table -> enum('rsvp', [
+                'attending',
+                'not attending',
+                'probably attending',
+                'late attendance',
+                'probably not attending',
+                'undecided'
+            ]) -> default('undecided');
+
+            $table -> timestamps();
         });
     }
 

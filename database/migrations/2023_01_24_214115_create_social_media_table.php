@@ -14,8 +14,30 @@ class CreateSocialMediaTable extends Migration
     public function up()
     {
         Schema::connection('mysql')->create('social_media', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+            $table -> string('name');
+            $table -> string('url');
+            $table -> string('icon');
+            $table -> enum('type', [
+                'facebook',
+                'youtube',
+                'twitter',
+                'instagram',
+                'twitch',
+                'reddit',
+                'github',
+                'steam',
+                'pinterest',
+                'linkedin',
+                'snapchat',
+                'tumblr',
+                'vimeo',
+            ]);
+
+            $table -> integer('profile_id') -> unsigned();
+            $table -> foreign('profile_id') -> references('id') -> on('profiles');
+
+            $table -> timestamps();
         });
     }
 

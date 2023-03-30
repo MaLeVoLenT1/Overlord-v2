@@ -25,11 +25,6 @@ class User extends Authenticatable
         'display_name',
         'password',
         'email',
-        'first',
-        'last',
-        'birthdate',
-        'avatar',
-        'overlord_rank',
         'token',
     ];
 

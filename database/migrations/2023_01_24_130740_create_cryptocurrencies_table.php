@@ -15,6 +15,14 @@ class CreateCryptocurrenciesTable extends Migration
     {
         Schema::connection('crypto')->create('cryptocurrencies', function (Blueprint $table) {
             $table -> id();
+            $table -> string('gecko_id');
+            $table -> string('symbol');
+            $table -> string('name');
+            $table -> string('image_url');
+            $table -> string('description');
+            $table -> string('blockchain_explorer_url');
+            $table -> string('blockchain_explorer_api_url');
+
             $table -> timestamps();
         });
     }

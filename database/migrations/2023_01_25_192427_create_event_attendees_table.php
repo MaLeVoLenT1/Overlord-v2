@@ -14,8 +14,15 @@ class CreateEventAttendeesTable extends Migration
     public function up()
     {
         Schema::connection('mysql')->create('event_attendees', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+
+            $table -> integer('calendar_event_id') -> unsigned();
+            $table -> foreign('calendar_event_id') -> references('id') -> on('calendar_events') -> onDelete('cascade');
+
+            $table -> integer('attender_id') -> unsigned();
+            $table -> foreign('attender_id') -> references('id') -> on('profiles');
+
+            $table -> timestamps();
         });
     }
 

@@ -14,8 +14,13 @@ class CreatePortfoliosTable extends Migration
     public function up()
     {
         Schema::connection('crypto')->create('portfolios', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+            $table -> unsignedInteger('profile_id');
+            $table -> foreign('profile_id') -> references('id') -> on('profiles');
+            $table -> string('name');
+            $table -> string('description');
+
+            $table -> timestamps();
         });
     }
 

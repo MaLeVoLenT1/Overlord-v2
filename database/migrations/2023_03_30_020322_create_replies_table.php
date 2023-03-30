@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventReviewsTable extends Migration
+class CreateRepliesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,16 @@ class CreateEventReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql')->create('event_reviews', function (Blueprint $table) {
+        Schema::create('replies', function (Blueprint $table) {
             $table -> id();
 
-            $table -> integer('calendar_event_id') -> unsigned();
-            $table -> foreign('calendar_event_id') -> references('id') -> on('calendar_events') -> onDelete('cascade');
+            $table -> integer('comment_id') -> unsigned();
+            $table -> foreign('comment_id') -> references('id') -> on('comments') -> onDelete('cascade');
 
             $table -> integer('author_id') -> unsigned();
             $table -> foreign('author_id') -> references('id') -> on('profiles');
 
-            $table -> longText('body');
-
+            $table -> text('body');
             $table -> boolean('is_anonymous') -> default(false);
             $table -> boolean('is_approved') -> default(false);
             $table -> boolean('is_flagged') -> default(false);
@@ -32,7 +31,7 @@ class CreateEventReviewsTable extends Migration
             $table -> boolean('needs_approval') -> default(false);
             $table -> boolean('is_private') -> default(false);
             $table -> boolean('is_public') -> default(false);
-            $table -> boolean('has_comment') -> default(true);
+
 
             $table -> timestamps();
         });
@@ -45,6 +44,6 @@ class CreateEventReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_reviews');
+        Schema::dropIfExists('replies');
     }
 }

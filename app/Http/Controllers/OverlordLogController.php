@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Calendar;
+namespace App\Http\Controllers;
 
-use App\Calendar\EventLog;
-use App\Http\Controllers\Controller;
+use App\OverlordLog;
 use Illuminate\Http\Request;
 
-class EventLogController extends Controller
+class OverlordLogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class EventLogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calendar\EventLog  $eventLog
+     * @param  \App\OverlordLog  $overlordLog
      * @return \Illuminate\Http\Response
      */
-    public function show(EventLog $eventLog)
+    public function show(OverlordLog $overlordLog)
     {
         //
     }
@@ -53,10 +52,10 @@ class EventLogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calendar\EventLog  $eventLog
+     * @param  \App\OverlordLog  $overlordLog
      * @return \Illuminate\Http\Response
      */
-    public function edit(EventLog $eventLog)
+    public function edit(OverlordLog $overlordLog)
     {
         //
     }
@@ -65,10 +64,10 @@ class EventLogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calendar\EventLog  $eventLog
+     * @param  \App\OverlordLog  $overlordLog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EventLog $eventLog)
+    public function update(Request $request, OverlordLog $overlordLog)
     {
         //
     }
@@ -76,10 +75,10 @@ class EventLogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calendar\EventLog  $eventLog
+     * @param  \App\OverlordLog  $overlordLog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EventLog $eventLog)
+    public function destroy(OverlordLog $overlordLog)
     {
         //
     }

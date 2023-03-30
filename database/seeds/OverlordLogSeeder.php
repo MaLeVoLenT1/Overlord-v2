@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EventCommentReplySeeder extends Seeder
+class OverlordLogSeeder extends Seeder
 {
     /**
      * Run the database seeds.
