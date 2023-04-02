@@ -15,6 +15,10 @@ class CreateProfilesTable extends Migration
     {
         Schema::connection('mysql')->create('profiles', function (Blueprint $table) {
             $table -> id();
+            $table -> integer('owner_id') -> unsigned();
+            $table -> string('owner_type');
+
+
             $table -> string('first') -> nullable();
             $table -> string('last') -> nullable();
             $table -> date('birthdate') -> default('2017-01-01');

@@ -14,8 +14,17 @@ class CreateBotCommandsTable extends Migration
     public function up()
     {
         Schema::connection('discord')->create('bot_commands', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+
+            $table -> integer('discord_bot_id') -> unsigned();
+            $table -> foreign('discord_bot_id') -> references('id') -> on('discord_bots') -> onDelete('cascade');
+            $table -> string('command');
+            $table -> string('description');
+            $table -> boolean('enabled') -> default(true);
+            $table -> string('response');
+            $table -> enum('type', ['text', 'embed', 'file', 'crypto', 'default']) -> default('default');
+
+            $table -> timestamps();
         });
     }
 

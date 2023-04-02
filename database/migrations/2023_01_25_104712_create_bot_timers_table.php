@@ -15,11 +15,11 @@ class CreateBotTimersTable extends Migration
     {
         Schema::connection('discord')->create('bot_timers', function (Blueprint $table) {
             $table -> id();
-            $table -> integer('discord_bot_id') -> unsigned();
-            $table -> foreign('discord_bot_id') -> references('id') -> on('discord_bots') -> onDelete('cascade');
+            $table -> integer('settings_id') -> unsigned();
+            $table -> foreign('settings_id') -> references('id') -> on('bot_settings') -> onDelete('cascade');
 
             $table -> integer("timer") -> default(60);
-            $table -> string("name") -> unique();
+            $table -> string("name");
             $table -> string("description") -> nullable();
             $table -> string("command") -> nullable();
             $table -> boolean("enabled") -> default(true);

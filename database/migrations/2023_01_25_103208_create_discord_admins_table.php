@@ -18,6 +18,10 @@ class CreateDiscordAdminsTable extends Migration
 
             $table -> integer('discord_bot_id') -> unsigned();
             $table -> foreign('discord_bot_id') -> references('id') -> on('discord_bots') -> onDelete('cascade');
+
+            $table -> integer('profile_id') -> unsigned() -> nullable();
+            $table -> foreign('profile_id') -> references('id') -> on('profiles');
+
             $table -> bigInteger('discord_id');
 
             $table -> timestamps();

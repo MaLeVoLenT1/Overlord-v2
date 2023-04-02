@@ -14,14 +14,17 @@ class CreateDiscordAssociationsTable extends Migration
     public function up()
     {
         Schema::connection('discord')->create('discord_associations', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('discord_id');
-            $table->string('discord_username');
-            $table->string('display_name')-> nullable();
-            $table->string('discord_discriminator');
-            $table->timestamp('discord_last_message_time')-> nullable();
-            $table->integer('discord_last_message_id')-> nullable();
-            $table->timestamps();
+            $table -> id();
+            $table -> integer('user_id') -> unsigned();
+            $table -> foreign('user_id') -> references('id') -> on('users') -> onDelete('cascade');
+
+            $table -> bigInteger('discord_id');
+            $table -> string('discord_username');
+            $table -> string('display_name')-> nullable();
+            $table -> string('discord_discriminator');
+            $table -> timestamp('discord_last_message_time')-> nullable();
+            $table -> integer('discord_last_message_id')-> nullable();
+            $table -> timestamps();
         });
     }
 

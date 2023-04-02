@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Profile extends Model
 {
@@ -12,9 +14,6 @@ class Profile extends Model
     protected $fillable = [
         'owner_id',
         'owner_type',
-        'owner',
-        'owner_user_id',
-
         'first',
         'last',
         'birthdate',
@@ -22,11 +21,9 @@ class Profile extends Model
         'overlord_rank',
     ];
 
-    public function owner(){
-        return $this->morphTo();
-    }
-
-    public function social_accounts(){
-        return $this->morphMany('App\SocialMedia', 'user');
-    }
+    public function owner(): MorphTo { return $this -> morphTo(); }
+    public function social_accounts(): MorphMany { return $this -> morphMany('App\SocialMedia', 'profile'); }
+    public function discord_guests(): MorphMany { return $this -> morphMany('App\Discord\DiscordGuest', 'profile'); }
+    public function discord_moderators(): MorphMany { return $this -> morphMany('App\Discord\DiscordModerator', 'profile'); }
+    public function discord_admins(): MorphMany { return $this -> morphMany('App\Discord\DiscordAdmin', 'profile'); }
 }

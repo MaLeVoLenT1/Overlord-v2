@@ -14,13 +14,17 @@ class CreateDiscordModeratorsTable extends Migration
     public function up()
     {
         Schema::connection('discord')->create('discord_moderators', function (Blueprint $table) {
-            $table->id();
+            $table -> id();
 
             $table -> integer('discord_bot_id') -> unsigned();
             $table -> foreign('discord_bot_id') -> references('id') -> on('discord_bots') -> onDelete('cascade');
+
+            $table -> integer('profile_id') -> unsigned() -> nullable();
+            $table -> foreign('profile_id') -> references('id') -> on('profiles');
+
             $table -> bigInteger('discord_id');
 
-            $table->timestamps();
+            $table -> timestamps();
         });
     }
 

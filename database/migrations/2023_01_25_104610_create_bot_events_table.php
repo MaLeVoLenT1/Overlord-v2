@@ -14,8 +14,22 @@ class CreateBotEventsTable extends Migration
     public function up()
     {
         Schema::connection('discord')->create('bot_events', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+            $table -> integer('discord_bot_id') -> unsigned();
+            $table -> foreign('discord_bot_id') -> references('id') -> on('discord_bots') -> onDelete('cascade');
+            $table -> boolean("channel_create") -> default(false);
+            $table -> boolean("channel_update") -> default(false);
+            $table -> boolean("channel_delete") -> default(false);
+            $table -> boolean("member_kick") -> default(false);
+            $table -> boolean("member_ban_add") -> default(false);
+            $table -> boolean("member_ban_remove") -> default(false);
+            $table -> boolean("member_update") -> default(false);
+            $table -> boolean("invite_create") -> default(false);
+            $table -> boolean("invite_delete") -> default(false);
+            $table -> boolean("message_delete") -> default(false);
+            $table -> boolean("message_update") -> default(false);
+
+            $table -> timestamps();
         });
     }
 

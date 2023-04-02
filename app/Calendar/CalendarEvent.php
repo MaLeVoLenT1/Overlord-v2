@@ -38,4 +38,6 @@ class CalendarEvent extends Model
     public function calendar(): BelongsTo { return $this -> belongsTo('App\Calendar\Calendar'); }
     public function host(): BelongsTo { return $this -> belongsTo('App\Profile','host_id','id'); }
     public function attendees(): HasMany { return $this -> hasMany('App\Calendar\EventAttendee'); }
+    public function reviews(): HasMany { return $this -> hasMany('App\Calendar\EventReview'); }
+    public function ratings(): HasMany { return $this -> hasMany('App\Calendar\EventRating'); }
 }

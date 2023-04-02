@@ -22,8 +22,8 @@ class CreateAPIAssociationsTable extends Migration
             $table -> string('secret') -> nullable();
             $table -> string('name');
             $table -> string('description') -> nullable();
-            $table -> enum('type',[
-                //Social Media APIS
+            $table -> enum('type', [
+                // Social Media APIS
                 'discord',
                 'twitch',
                 'youtube',

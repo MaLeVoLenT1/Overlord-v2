@@ -15,6 +15,9 @@ class CreateSocialMediaTable extends Migration
     {
         Schema::connection('mysql')->create('social_media', function (Blueprint $table) {
             $table -> id();
+            $table -> integer('profile_id') -> unsigned();
+            $table -> foreign('profile_id') -> references('id') -> on('profiles');
+
             $table -> string('name');
             $table -> string('url');
             $table -> string('icon');
@@ -33,9 +36,6 @@ class CreateSocialMediaTable extends Migration
                 'tumblr',
                 'vimeo',
             ]);
-
-            $table -> integer('profile_id') -> unsigned();
-            $table -> foreign('profile_id') -> references('id') -> on('profiles');
 
             $table -> timestamps();
         });

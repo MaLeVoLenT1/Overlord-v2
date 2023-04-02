@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -47,11 +49,14 @@ class User extends Authenticatable
     ];
 
     /** * @return MorphMany */
-    public function api(): MorphMany { return $this -> morphMany('App\APIAssociation', 'user','owner_type', 'owner_id'); }
+    public function apis(): MorphMany { return $this -> morphMany('App\APIAssociation', 'user','owner_type', 'owner_id'); }
 
     /** * @return MorphMany */
-    public function discord_servers(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
+    public function bots(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
 
-    /** * @return MorphMany */
-    public function profile(): MorphMany { return $this -> morphMany('App\Profile', 'user','owner_type', 'owner_id'); }
+    /** @return HasOne */
+    public function discord_info(): HasOne { return $this -> hasOne('App\Discord\DiscordAssociation'); }
+
+    /** * @return MorphOne */
+    public function profile(): MorphOne { return $this -> morphOne('App\Profile', 'user','owner_type', 'owner_id'); }
 }

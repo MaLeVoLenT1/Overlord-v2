@@ -18,7 +18,6 @@ class CreateCalendarsTable extends Migration
             $table -> string('name');
             $table -> string('description');
             $table -> string('color');
-            $table -> string('timezone');
 
             $table -> boolean('is_public');
             $table -> boolean('is_default');
