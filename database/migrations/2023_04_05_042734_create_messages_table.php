@@ -23,7 +23,7 @@ class CreateMessagesTable extends Migration
             $table -> foreign('profile_id') -> references('id') -> on('profiles');
 
             $table -> string('message');
-            $table -> enum('message_type',[
+            $table -> enum('message_type', [
                 'text',
                 'image',
                 'video',

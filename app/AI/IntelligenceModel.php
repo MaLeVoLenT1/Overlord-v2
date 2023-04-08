@@ -3,19 +3,36 @@
 namespace App\AI;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class IntelligenceModel extends Model
 {
-    // needs to be able to store the following:
-    // - the model's name
-    // - the model's type
-    // - the model's training data
-    // - the owner of the model
-    // - the model's settings
-    // - the model's conversations
-    // - if the model is active
-    // - if the model is public
-    // - the model's description
-    // - the model's id
-    // - if the model is a custom model
+    /** connection
+     * @var string */
+    protected $connection = 'ai';
+
+    /** The attributes that are mass assignable.
+     * @var array */
+    protected $fillable = [
+        'ai_id',
+        'owner_id',
+        'owner_type',
+        'name',
+        'description',
+        'type',
+        'mode',
+        'is_public',
+        'is_active',
+        'is_trained',
+    ];
+
+    public function ai(): BelongsTo { return $this -> belongsTo('App\AI\AI'); }
+    public function owner(): MorphTo { return $this -> morphTo(); }
+    public function settings(): HasOne { return $this -> hasOne('App\AI\ModelSettings'); }
+    public function prompts(): HasMany { return $this -> hasMany('App\AI\SystemPrompt'); }
+    public function training_data(): HasMany { return $this -> hasMany('App\AI\TrainingData'); }
+    public function conversations(): HasMany { return $this -> hasMany('App\AI\Conversation'); }
 }

@@ -23,6 +23,9 @@ class DiscordUser extends Model
     public function apis(): MorphMany { return $this -> morphMany('App\APIAssociation', 'user', 'owner_type', 'owner_id'); }
 
     /** * @return MorphMany */
+    public function AI(): MorphMany { return $this -> morphMany('App\AI\AI', 'owner','owner_type', 'owner_id'); }
+
+    /** * @return MorphMany */
     public function bots(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
 
     /** * @return MorphOne */

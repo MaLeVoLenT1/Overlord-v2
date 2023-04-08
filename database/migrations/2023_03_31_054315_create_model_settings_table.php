@@ -58,22 +58,22 @@ class CreateModelSettingsTable extends Migration
             /** These settings are for LLaMa + Alpaca */
 
             /** The number of tokens to return (The default is 128 if unspecified). [LLaMA + Alpaca] */
-            $table -> integer('N_predict') -> default(128);
+            $table -> integer('n_predict') -> default(128);
 
             /** The number of tokens to check for repetition (The default is 64 if unspecified). [LLaMA + Alpaca] */
-            $table -> integer('Repeat_last_n') -> default(64);
+            $table -> integer('repeat_last_n') -> default(64);
 
             /** The penalty for repeating tokens (The default is 1.2 if unspecified). [LLaMA + Alpaca] */
-            $table -> float('Repeat_penalty') -> default(1.2);
+            $table -> float('repeat_penalty') -> default(1.2);
 
             /** The number of top tokens to consider (The default is 100 if unspecified). [LLaMA + Alpaca] */
-            $table -> integer('Top_k') -> default(100);
+            $table -> integer('top_k') -> default(100);
 
             /** The seed. The default is -1 (none). [LLaMA + Alpaca] */
-            $table -> integer('Seed') -> default(-1);
+            $table -> integer('seed') -> default(-1);
 
             /**  Number of threads to use (The default is 1 if unspecified). [LLaMA + Alpaca] */
-            $table -> integer('Threads') -> default(1);
+            $table -> integer('threads') -> default(1);
 
             /** Debugging flag. [LLaMA + Alpaca] */
             $table -> boolean('debug') -> default(false);
