@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discord;
 
 use App\Discord\BotChannel;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class BotChannelController extends Controller

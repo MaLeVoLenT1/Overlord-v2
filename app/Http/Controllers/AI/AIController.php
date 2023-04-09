@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\AI;
 
-use App\Discord\BotEmojis;
+use App\AI\AI;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BotEmojisController extends Controller
+class AIController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class BotEmojisController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Discord\BotEmojis  $botEmojis
+     * @param  \App\AI\AI  $aI
      * @return \Illuminate\Http\Response
      */
-    public function show(BotEmojis $botEmojis)
+    public function show(AI $aI)
     {
         //
     }
@@ -52,10 +53,10 @@ class BotEmojisController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Discord\BotEmojis  $botEmojis
+     * @param  \App\AI\AI  $aI
      * @return \Illuminate\Http\Response
      */
-    public function edit(BotEmojis $botEmojis)
+    public function edit(AI $aI)
     {
         //
     }
@@ -64,10 +65,10 @@ class BotEmojisController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Discord\BotEmojis  $botEmojis
+     * @param  \App\AI\AI  $aI
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BotEmojis $botEmojis)
+    public function update(Request $request, AI $aI)
     {
         //
     }
@@ -75,10 +76,10 @@ class BotEmojisController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Discord\BotEmojis  $botEmojis
+     * @param  \App\AI\AI  $aI
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BotEmojis $botEmojis)
+    public function destroy(AI $aI)
     {
         //
     }

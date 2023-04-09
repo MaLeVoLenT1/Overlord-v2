@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crypto;
 
-use App\AI\SystemPrompt;
+use App\Crypto\elements\Marketcap;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SystemPromptController extends Controller
+class MarketcapController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class SystemPromptController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AI\SystemPrompt  $systemPrompt
+     * @param  \App\Crypto\elements\Marketcap  $marketcap
      * @return \Illuminate\Http\Response
      */
-    public function show(SystemPrompt $systemPrompt)
+    public function show(Marketcap $marketcap)
     {
         //
     }
@@ -52,10 +53,10 @@ class SystemPromptController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AI\SystemPrompt  $systemPrompt
+     * @param  \App\Crypto\elements\Marketcap  $marketcap
      * @return \Illuminate\Http\Response
      */
-    public function edit(SystemPrompt $systemPrompt)
+    public function edit(Marketcap $marketcap)
     {
         //
     }
@@ -64,10 +65,10 @@ class SystemPromptController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AI\SystemPrompt  $systemPrompt
+     * @param  \App\Crypto\elements\Marketcap  $marketcap
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SystemPrompt $systemPrompt)
+    public function update(Request $request, Marketcap $marketcap)
     {
         //
     }
@@ -75,10 +76,10 @@ class SystemPromptController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AI\SystemPrompt  $systemPrompt
+     * @param  \App\Crypto\elements\Marketcap  $marketcap
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SystemPrompt $systemPrompt)
+    public function destroy(Marketcap $marketcap)
     {
         //
     }

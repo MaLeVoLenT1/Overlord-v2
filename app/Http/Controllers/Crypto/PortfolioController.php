@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crypto;
 
-use App\AI\IntelligenceModel;
+use App\Crypto\portfolio\Portfolio;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class IntelligenceModelController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class IntelligenceModelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AI\IntelligenceModel  $intelligenceModel
+     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function show(IntelligenceModel $intelligenceModel)
+    public function show(Portfolio $portfolio)
     {
         //
     }
@@ -52,10 +53,10 @@ class IntelligenceModelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AI\IntelligenceModel  $intelligenceModel
+     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(IntelligenceModel $intelligenceModel)
+    public function edit(Portfolio $portfolio)
     {
         //
     }
@@ -64,10 +65,10 @@ class IntelligenceModelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AI\IntelligenceModel  $intelligenceModel
+     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, IntelligenceModel $intelligenceModel)
+    public function update(Request $request, Portfolio $portfolio)
     {
         //
     }
@@ -75,10 +76,10 @@ class IntelligenceModelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AI\IntelligenceModel  $intelligenceModel
+     * @param  \App\Crypto\portfolio\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(IntelligenceModel $intelligenceModel)
+    public function destroy(Portfolio $portfolio)
     {
         //
     }

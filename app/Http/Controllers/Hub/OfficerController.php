@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Hub;
 
-use App\AI\Conversation;
+use App\Http\Controllers\Controller;
+use App\Officer;
 use Illuminate\Http\Request;
 
-class ConversationController extends Controller
+class OfficerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class ConversationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AI\Conversation  $conversation
+     * @param  \App\Officer  $officer
      * @return \Illuminate\Http\Response
      */
-    public function show(Conversation $conversation)
+    public function show(Officer $officer)
     {
         //
     }
@@ -52,10 +53,10 @@ class ConversationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AI\Conversation  $conversation
+     * @param  \App\Officer  $officer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Conversation $conversation)
+    public function edit(Officer $officer)
     {
         //
     }
@@ -64,10 +65,10 @@ class ConversationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AI\Conversation  $conversation
+     * @param  \App\Officer  $officer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Conversation $conversation)
+    public function update(Request $request, Officer $officer)
     {
         //
     }
@@ -75,10 +76,10 @@ class ConversationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AI\Conversation  $conversation
+     * @param  \App\Officer  $officer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Conversation $conversation)
+    public function destroy(Officer $officer)
     {
         //
     }

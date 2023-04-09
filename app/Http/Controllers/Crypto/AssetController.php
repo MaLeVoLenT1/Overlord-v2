@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crypto;
 
 use App\Crypto\portfolio\Asset;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AssetController extends Controller

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\AI;
 
-use App\AI\ModelSettings;
+use App\AI\ConversationKeyword;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ModelSettingsController extends Controller
+class ConversationKeywordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class ModelSettingsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AI\ModelSettings  $modelSettings
+     * @param  \App\AI\ConversationKeyword  $conversationKeyword
      * @return \Illuminate\Http\Response
      */
-    public function show(ModelSettings $modelSettings)
+    public function show(ConversationKeyword $conversationKeyword)
     {
         //
     }
@@ -52,10 +53,10 @@ class ModelSettingsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AI\ModelSettings  $modelSettings
+     * @param  \App\AI\ConversationKeyword  $conversationKeyword
      * @return \Illuminate\Http\Response
      */
-    public function edit(ModelSettings $modelSettings)
+    public function edit(ConversationKeyword $conversationKeyword)
     {
         //
     }
@@ -64,10 +65,10 @@ class ModelSettingsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AI\ModelSettings  $modelSettings
+     * @param  \App\AI\ConversationKeyword  $conversationKeyword
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ModelSettings $modelSettings)
+    public function update(Request $request, ConversationKeyword $conversationKeyword)
     {
         //
     }
@@ -75,10 +76,10 @@ class ModelSettingsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AI\ModelSettings  $modelSettings
+     * @param  \App\AI\ConversationKeyword  $conversationKeyword
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ModelSettings $modelSettings)
+    public function destroy(ConversationKeyword $conversationKeyword)
     {
         //
     }

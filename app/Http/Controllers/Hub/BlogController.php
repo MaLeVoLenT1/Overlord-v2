@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Hub;
 
-use App\AI\TrainingData;
+use App\Blog;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TrainingDataController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class TrainingDataController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AI\TrainingData  $trainingData
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(TrainingData $trainingData)
+    public function show(Blog $blog)
     {
         //
     }
@@ -52,10 +53,10 @@ class TrainingDataController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AI\TrainingData  $trainingData
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(TrainingData $trainingData)
+    public function edit(Blog $blog)
     {
         //
     }
@@ -64,10 +65,10 @@ class TrainingDataController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AI\TrainingData  $trainingData
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TrainingData $trainingData)
+    public function update(Request $request, Blog $blog)
     {
         //
     }
@@ -75,10 +76,10 @@ class TrainingDataController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AI\TrainingData  $trainingData
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TrainingData $trainingData)
+    public function destroy(Blog $blog)
     {
         //
     }

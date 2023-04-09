@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crypto;
 
-use App\AI\AI;
+use App\Crypto\Blockchain;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AIController extends Controller
+class BlockchainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class AIController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AI\AI  $aI
+     * @param  \App\Crypto\Blockchain  $blockchain
      * @return \Illuminate\Http\Response
      */
-    public function show(AI $aI)
+    public function show(Blockchain $blockchain)
     {
         //
     }
@@ -52,10 +53,10 @@ class AIController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AI\AI  $aI
+     * @param  \App\Crypto\Blockchain  $blockchain
      * @return \Illuminate\Http\Response
      */
-    public function edit(AI $aI)
+    public function edit(Blockchain $blockchain)
     {
         //
     }
@@ -64,10 +65,10 @@ class AIController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AI\AI  $aI
+     * @param  \App\Crypto\Blockchain  $blockchain
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AI $aI)
+    public function update(Request $request, Blockchain $blockchain)
     {
         //
     }
@@ -75,10 +76,10 @@ class AIController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AI\AI  $aI
+     * @param  \App\Crypto\Blockchain  $blockchain
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AI $aI)
+    public function destroy(Blockchain $blockchain)
     {
         //
     }

@@ -14,11 +14,38 @@ class CreateTeamsTable extends Migration
     public function up()
     {
         Schema::connection('mysql')->create('teams', function (Blueprint $table) {
-            $table->id();
-            $table -> integer('owner_id')->unsigned();
+            $table -> id();
+            $table -> integer('owner_id') -> unsigned();
             $table -> string('owner_type');
 
-            $table->timestamps();
+            $table -> string('discord_id') -> nullable();
+            $table -> foreign('discord_id') -> references('id') -> on('discord_bots');
+
+            $table -> string('channel_id') -> nullable();
+            $table -> foreign('channel_id') -> references('id') -> on('bot_channels');
+
+            $table -> string('name');
+            $table -> string('description') -> nullable();
+            $table -> string('ticker') -> nullable();
+            $table -> integer('member_count') -> nullable();
+            $table -> string('website') -> nullable();
+            $table -> string('logo') -> nullable();
+            $table -> string('banner') -> nullable();
+            $table -> string('color') -> nullable();
+
+            $table -> enum('synonym', [
+                'team',
+                'squad',
+                'division',
+                'department',
+                'section',
+                'unit',
+                'platoon',
+                'squadron',
+                'battalion',
+            ]) -> default('team');
+
+            $table -> timestamps();
         });
     }
 

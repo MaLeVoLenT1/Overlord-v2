@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\AI;
 
-use App\Crypto\Blockchain;
+use App\AI\TrainingData;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BlockchainController extends Controller
+class TrainingDataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class BlockchainController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Crypto\Blockchain  $blockchain
+     * @param  \App\AI\TrainingData  $trainingData
      * @return \Illuminate\Http\Response
      */
-    public function show(Blockchain $blockchain)
+    public function show(TrainingData $trainingData)
     {
         //
     }
@@ -52,10 +53,10 @@ class BlockchainController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Crypto\Blockchain  $blockchain
+     * @param  \App\AI\TrainingData  $trainingData
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blockchain $blockchain)
+    public function edit(TrainingData $trainingData)
     {
         //
     }
@@ -64,10 +65,10 @@ class BlockchainController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Crypto\Blockchain  $blockchain
+     * @param  \App\AI\TrainingData  $trainingData
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blockchain $blockchain)
+    public function update(Request $request, TrainingData $trainingData)
     {
         //
     }
@@ -75,10 +76,10 @@ class BlockchainController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Crypto\Blockchain  $blockchain
+     * @param  \App\AI\TrainingData  $trainingData
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blockchain $blockchain)
+    public function destroy(TrainingData $trainingData)
     {
         //
     }

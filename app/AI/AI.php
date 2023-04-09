@@ -27,7 +27,6 @@ class AI extends Model
         'is_active',
     ];
 
-
     /** * @return MorphTo */
     public function owner(): MorphTo { return $this -> morphTo(); }
 
