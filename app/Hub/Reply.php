@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Hub;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,6 +20,6 @@ class Reply extends Model
         'is_private',
         'is_public',
     ];
-    public function comment(): BelongsTo { return $this -> belongsTo('App\Comment'); }
+    public function comment(): BelongsTo { return $this -> belongsTo('App\Hub\Comment'); }
     public function author(): BelongsTo { return $this -> belongsTo('App\Profile','author_id','id'); }
 }

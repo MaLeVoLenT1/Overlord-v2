@@ -19,8 +19,6 @@ class Leader extends Model
         'association_type',
         'profile_id',
     ];
-
     public function association(): MorphTo {return $this -> morphTo();}
-
     public function profile(): BelongsTo {return $this -> belongsTo('App\Profile','profile_id');}
 }

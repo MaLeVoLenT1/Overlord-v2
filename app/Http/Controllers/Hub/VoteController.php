@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Hub;
 
-use App\Hub\Reply;
+use App\Http\Controllers\Controller;
+use App\Hub\Vote;
 use Illuminate\Http\Request;
 
-class ReplyController extends Controller
+class VoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class ReplyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show(Vote $vote)
     {
         //
     }
@@ -52,10 +53,10 @@ class ReplyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reply $reply)
+    public function edit(Vote $vote)
     {
         //
     }
@@ -64,10 +65,10 @@ class ReplyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reply $reply)
+    public function update(Request $request, Vote $vote)
     {
         //
     }
@@ -75,10 +76,10 @@ class ReplyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Vote $vote)
     {
         //
     }

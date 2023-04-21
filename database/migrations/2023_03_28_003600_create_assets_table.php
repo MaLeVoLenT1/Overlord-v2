@@ -14,8 +14,21 @@ class CreateAssetsTable extends Migration
     public function up()
     {
         Schema::connection('crypto')->create('assets', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+
+            $table -> integer('association_id') -> unsigned();
+            $table -> string('association_type');
+
+            $table -> integer('profile_id') -> unsigned();
+            $table -> foreign('profile_id') -> references('id') -> on('profiles') -> onDelete('cascade');
+
+            $table -> integer('crypto_id') -> unsigned();
+            $table -> foreign('crypto_id') -> references('id') -> on('cryptocurrencies');
+
+            $table -> decimal('amount', 32, 16) -> default(0.0000000000000000);
+            $table -> decimal('value', 32, 16) -> default(0.0000000000000000);
+
+            $table -> timestamps();
         });
     }
 

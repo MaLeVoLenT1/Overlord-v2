@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Hub;
 
-use App\Hub\Reply;
+use App\Http\Controllers\Controller;
+use App\Hub\Poll;
 use Illuminate\Http\Request;
 
-class ReplyController extends Controller
+class PollController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class ReplyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show(Poll $poll)
     {
         //
     }
@@ -52,10 +53,10 @@ class ReplyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reply $reply)
+    public function edit(Poll $poll)
     {
         //
     }
@@ -64,10 +65,10 @@ class ReplyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reply $reply)
+    public function update(Request $request, Poll $poll)
     {
         //
     }
@@ -75,10 +76,10 @@ class ReplyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Hub\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Poll $poll)
     {
         //
     }

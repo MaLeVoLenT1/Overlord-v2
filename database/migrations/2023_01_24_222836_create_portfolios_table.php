@@ -15,10 +15,26 @@ class CreatePortfoliosTable extends Migration
     {
         Schema::connection('crypto')->create('portfolios', function (Blueprint $table) {
             $table -> id();
-            $table -> unsignedInteger('profile_id');
-            $table -> foreign('profile_id') -> references('id') -> on('profiles');
+
+            $table -> integer('owner_id') -> unsigned();
+            $table -> string('owner_type');
+
             $table -> string('name');
             $table -> string('description');
+
+            $table -> integer('balance') -> unsigned();
+            $table -> integer('profit') -> unsigned();
+            $table -> integer('loss') -> unsigned();
+            $table -> integer('total') -> unsigned();
+            $table -> integer('total_invested') -> unsigned();
+            $table -> integer('total_withdrawn') -> unsigned();
+            $table -> integer('total_profit') -> unsigned();
+            $table -> integer('total_fees') -> unsigned();
+            $table -> integer('number_of_assets') -> unsigned();
+            $table -> integer('number_of_transactions') -> unsigned();
+            $table -> integer('number_of_withdrawals') -> unsigned();
+            $table -> integer('number_of_deposits') -> unsigned();
+            $table -> integer('number_of_trades') -> unsigned();
 
             $table -> timestamps();
         });

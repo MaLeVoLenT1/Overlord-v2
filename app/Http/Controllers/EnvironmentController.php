@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Hub\Reply;
+use App\Story\Environment;
 use Illuminate\Http\Request;
 
-class ReplyController extends Controller
+class EnvironmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ReplyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Story\Environment  $environment
      * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show(Environment $environment)
     {
         //
     }
@@ -52,10 +52,10 @@ class ReplyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Story\Environment  $environment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reply $reply)
+    public function edit(Environment $environment)
     {
         //
     }
@@ -64,10 +64,10 @@ class ReplyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Story\Environment  $environment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reply $reply)
+    public function update(Request $request, Environment $environment)
     {
         //
     }
@@ -75,10 +75,10 @@ class ReplyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hub\Reply  $reply
+     * @param  \App\Story\Environment  $environment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Environment $environment)
     {
         //
     }

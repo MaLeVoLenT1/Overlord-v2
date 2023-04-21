@@ -14,8 +14,18 @@ class CreateNewsArticlesTable extends Migration
     public function up()
     {
         Schema::connection('mysql')->create('news_articles', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+            $table -> integer('blog_id') -> unsigned();
+            $table -> foreign('blog_id') -> references('id') -> on('blogs') -> onDelete('cascade');
+
+            $table -> integer('author_id') -> unsigned();
+            $table -> foreign('author_id') -> references('id') -> on('profiles') -> onDelete('cascade');
+
+            $table -> string('title');
+            $table -> string('slug') -> unique();
+            $table -> string('description') -> nullable();
+
+            $table -> timestamps();
         });
     }
 
