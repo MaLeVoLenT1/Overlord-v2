@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsArticlesTable extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateNewsArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql')->create('news_articles', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table -> id();
+
             $table -> integer('blog_id') -> unsigned();
             $table -> foreign('blog_id') -> references('id') -> on('blogs') -> onDelete('cascade');
 
@@ -36,6 +37,6 @@ class CreateNewsArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_articles');
+        Schema::dropIfExists('articles');
     }
 }

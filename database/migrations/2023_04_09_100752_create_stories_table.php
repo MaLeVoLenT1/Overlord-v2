@@ -15,6 +15,7 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table -> id();
+
             $table -> integer('association_id') -> unsigned();
             $table -> string('association_type');
             $table -> integer('author_id') -> unsigned();
@@ -32,6 +33,7 @@ class CreateStoriesTable extends Migration
             $table -> boolean('has_revisions') -> default(false);
             $table -> boolean('has_chapters') -> default(false);
             $table -> boolean('has_drafts') -> default(false);
+
             $table -> timestamps();
         });
     }

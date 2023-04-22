@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Hub;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -32,6 +32,6 @@ class Blog extends Model
     ];
     public function association(): MorphTo {return $this -> morphTo();}
     public function author(): BelongsTo {return $this -> belongsTo('App\Profile','author_id');}
-    public function articles(): HasMany {return $this -> hasMany('App\NewsArticle');}
+    public function articles(): HasMany {return $this -> hasMany('App\Hub\Article');}
     public function comments(): MorphMany { return $this -> morphMany('App\Hub\Comment', 'commentable', 'commentable_type', 'commentable_id'); }
 }

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Hub;
 
-use App\NewsArticle;
+use App\Http\Controllers\Controller;
+use App\Hub\Article;
 use Illuminate\Http\Request;
 
-class NewsArticleController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class NewsArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\NewsArticle  $newsArticle
+     * @param  \App\Hub\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(NewsArticle $newsArticle)
+    public function show(Article $article)
     {
         //
     }
@@ -52,10 +53,10 @@ class NewsArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\NewsArticle  $newsArticle
+     * @param  \App\Hub\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(NewsArticle $newsArticle)
+    public function edit(Article $article)
     {
         //
     }
@@ -64,10 +65,10 @@ class NewsArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\NewsArticle  $newsArticle
+     * @param  \App\Hub\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NewsArticle $newsArticle)
+    public function update(Request $request, Article $article)
     {
         //
     }
@@ -75,10 +76,10 @@ class NewsArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\NewsArticle  $newsArticle
+     * @param  \App\Hub\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(NewsArticle $newsArticle)
+    public function destroy(Article $article)
     {
         //
     }

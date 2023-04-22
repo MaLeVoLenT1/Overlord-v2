@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Hub;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class NewsArticle extends Model
+class Article extends Model
 {
     /** connection
      * @var array */
@@ -21,7 +21,7 @@ class NewsArticle extends Model
         'slug',
         'description',
     ];
-    public function blog(): BelongsTo { return $this -> belongsTo('App\Blog','blog_id'); }
+    public function blog(): BelongsTo { return $this -> belongsTo('App\Hub\Blog','blog_id'); }
     public function sections(): MorphMany { return $this -> morphMany('App\Story\Section', 'association', 'association_type', 'association_id'); }
     public function comments(): MorphMany { return $this -> morphMany('App\Hub\Comment', 'commentable', 'commentable_type', 'commentable_id'); }
 }

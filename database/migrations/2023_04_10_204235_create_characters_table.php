@@ -14,8 +14,18 @@ class CreateCharactersTable extends Migration
     public function up()
     {
         Schema::create('characters', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id();
+
+            $table -> integer('association_id') -> unsigned();
+            $table -> string('association_type');
+            $table -> integer('author_id') -> unsigned();
+            $table -> foreign('author_id') -> references('id') -> on('profiles') -> onDelete('cascade');
+
+            $table -> string('name');
+            $table -> string('slug') -> unique();
+
+
+            $table -> timestamps();
         });
     }
 
