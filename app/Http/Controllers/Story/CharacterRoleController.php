@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Hub;
+namespace App\Http\Controllers\Story;
 
 use App\Http\Controllers\Controller;
-use App\Story\Section;
+use App\Story\Character\CharacterRole;
 use Illuminate\Http\Request;
 
-class SectionController extends Controller
+class CharacterRoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class SectionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Story\Section  $section
+     * @param  \App\Story\Character\CharacterRole  $characterRole
      * @return \Illuminate\Http\Response
      */
-    public function show(Section $section)
+    public function show(CharacterRole $characterRole)
     {
         //
     }
@@ -53,10 +53,10 @@ class SectionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Story\Section  $section
+     * @param  \App\Story\Character\CharacterRole  $characterRole
      * @return \Illuminate\Http\Response
      */
-    public function edit(Section $section)
+    public function edit(CharacterRole $characterRole)
     {
         //
     }
@@ -65,10 +65,10 @@ class SectionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story\Section  $section
+     * @param  \App\Story\Character\CharacterRole  $characterRole
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Section $section)
+    public function update(Request $request, CharacterRole $characterRole)
     {
         //
     }
@@ -76,10 +76,10 @@ class SectionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story\Section  $section
+     * @param  \App\Story\Character\CharacterRole  $characterRole
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Section $section)
+    public function destroy(CharacterRole $characterRole)
     {
         //
     }

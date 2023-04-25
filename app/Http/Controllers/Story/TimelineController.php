@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Story;
 
-use App\Story\Environment;
+use App\Http\Controllers\Controller;
+use App\Story\Elements\Timeline;
 use Illuminate\Http\Request;
 
-class EnvironmentController extends Controller
+class TimelineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class EnvironmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Story\Environment  $environment
+     * @param  \App\Story\Elements\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function show(Environment $environment)
+    public function show(Timeline $timeline)
     {
         //
     }
@@ -52,10 +53,10 @@ class EnvironmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Story\Environment  $environment
+     * @param  \App\Story\Elements\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function edit(Environment $environment)
+    public function edit(Timeline $timeline)
     {
         //
     }
@@ -64,10 +65,10 @@ class EnvironmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story\Environment  $environment
+     * @param  \App\Story\Elements\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Environment $environment)
+    public function update(Request $request, Timeline $timeline)
     {
         //
     }
@@ -75,10 +76,10 @@ class EnvironmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story\Environment  $environment
+     * @param  \App\Story\Elements\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Environment $environment)
+    public function destroy(Timeline $timeline)
     {
         //
     }

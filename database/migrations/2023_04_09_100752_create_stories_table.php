@@ -23,6 +23,25 @@ class CreateStoriesTable extends Migration
             $table -> string('title');
             $table -> string('slug') -> unique();
             $table -> string('description') -> nullable();
+            $table -> enum('genre', [
+                'fiction',
+                'non-fiction',
+                'poetry',
+                'drama',
+                'science-fiction',
+                'fantasy',
+                'other'
+            ]) -> default('fiction');
+            $table -> enum('type', [
+                'short-story',
+                'novel',
+                'diary',
+                'poem',
+                'play',
+                'other'
+            ]) -> default('novel');
+
+
             $table -> boolean('is_active') -> default(true);
             $table -> boolean('is_featured') -> default(false);
             $table -> boolean('is_pinned') -> default(false);

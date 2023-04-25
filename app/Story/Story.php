@@ -5,6 +5,8 @@ namespace App\Story;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
@@ -23,6 +25,9 @@ class Story extends Model
         'title',
         'slug',
         'description',
+        'genre',
+        'type',
+
         'is_published',
         'is_featured',
         'is_archived',
@@ -37,6 +42,9 @@ class Story extends Model
         'is_finalized',
     ];
     public function association(): MorphTo { return $this -> morphTo(); }
+    public function architecture(): HasOne { return $this -> hasOne('App\Story\Elements\Architecture'); }
+    public function timeline(): HasOne { return $this -> hasOne('App\Story\Elements\Timeline'); }
+    public function characters(): HasMany { return $this -> hasMany('App\Story\Character\Character'); }
     public function author(): BelongsTo { return $this -> belongsTo('App\Profile','author_id', 'association_type', 'association_id'); }
     public function sections(): MorphMany { return $this -> morphMany('App\Story\Section','association', 'association_type', 'association_id'); }
     public function drafts(): MorphMany { return $this -> morphMany('App\Story\Section','association', 'association_type', 'association_id') -> where('type','=', 'draft'); }

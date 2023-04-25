@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Story;
+namespace App\Story\Elements;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Character extends Model
+class Setting extends Model
 {
     //
 }
