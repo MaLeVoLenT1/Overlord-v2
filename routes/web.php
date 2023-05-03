@@ -15,16 +15,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@landing');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/news', 'NewsArticleController');
 Route::resource('/games', 'GameController');
 
 // Profile Pages
 Route::prefix('profile')->group(function(){
-    Route::resource('/blog', 'Profile\BlogController');
-    Route::resource('/galleries', 'Profile\GalleryController');
     Route::resource('/social-media', 'Profile\SocialMediaController');
     Route::resource('/discord', 'Profile\DiscordAssociationController');
-    Route::resource('/portfolio', 'Profile\PortfolioController');
 });
 Route::resource('/profile', 'Profile\ProfileController');
 
@@ -36,6 +32,8 @@ Route::prefix('hub')->group(function () {
     Route::resource('/organizations', 'Hub\OrganizationController');
     Route::resource('/communities', 'Hub\CommunityController');
 
+    Route::resource('/news', 'Hub\ArticleController');
+
     // Calendar Pages
     Route::prefix('calendar')->group(function () {
         Route::resource('/event/review', 'Calendar\EventReviewController');
@@ -43,18 +41,21 @@ Route::prefix('hub')->group(function () {
         Route::resource('/event/Organizers', 'Calendar\EventOrganizerController');
         Route::resource('/event/logs', 'Calendar\EventLogController');
         Route::resource('/event/invites', 'Calendar\EventInviteController');
-        Route::resource('/event/comments/replies', 'Calendar\EventCommentReplyController');
-        Route::resource('/event/comments', 'Calendar\EventCommentController');
         Route::resource('/event/attendees', 'Calendar\EventAttendeeController');
         Route::resource('/event', 'Calendar\CalendarEventController');
     });
     Route::resource('/calendar', 'Calendar\CalendarController');
+
+    Route::resource('/blog', 'Hub\BlogController');
+    Route::resource('/galleries', 'Hub\GalleryController');
+
 });
 
 // Cryptocurrency Pages
 Route::prefix('crypto')->group(function () {
     Route::get('/live-list', 'Crypto\CryptocurrencyController@liveList')->name('crypto.live-list');
     Route::get('/market-cap', 'Crypto\CryptocurrencyController@marketCap')->name('crypto.market-cap');
+    Route::resource('/portfolio', 'Crypto\PortfolioController');
 });
 Route::resource('/crypto', 'Crypto\CryptocurrencyController');
 
@@ -77,3 +78,13 @@ Route::prefix('discord') -> group(function () {
     Route::resource('/discord-admins', 'Discord\DiscordAdminController');
 });
 
+// AI Endpoints
+Route::prefix('ai') -> group(function () {
+    Route::resource('/models/conversations/keywords', 'AI\ConversationKeywordController');
+    Route::resource('/models/conversations/messages', 'AI\MessageController');
+    Route::resource('/models/conversations', 'AI\ConversationController');
+    Route::resource('/models/training-data', 'AI\TrainingDataController');
+    Route::resource('/models/settings', 'AI\ModelSettingsController');
+    Route::resource('/models', 'AI\IntelligenceModelController');
+});
+Route::resource('/ai', 'AI\AIController');

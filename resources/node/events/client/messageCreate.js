@@ -86,7 +86,7 @@ module.exports = {
                 /** If the message is not a command, then run the AI. */
                 const openai = new OpenAIApi(configuration);
                 let conversation = [
-                    {"role": "system", "content": "You are a friendly bot."},
+                    {"role": "system", "content": "You are a friendly bot named Overlord."},
                 ];
                 await message.channel.sendTyping();
 
@@ -99,10 +99,11 @@ module.exports = {
                 console.log(conversation);
 
                 const result = await openai.createChatCompletion({
-                    model: 'gpt-3.5-turbo',
+                    model: 'gpt-4',
                     messages: conversation,
                 });
-                console.log(result.data.choices[0].message);
+                // console.log(result.data.choices[0].message);
+                console.log(result.data);
                 message.reply(result.data.choices[0].message);
 
                 return;

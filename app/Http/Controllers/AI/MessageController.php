@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\AI;
 
 use App\AI\Message;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
