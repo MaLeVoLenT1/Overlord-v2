@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Games;
 
-use App\Game;
+use App\Games\Game;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -41,7 +42,7 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Game  $game
+     * @param  \App\Games\Game  $game
      * @return \Illuminate\Http\Response
      */
     public function show(Game $game)
@@ -52,7 +53,7 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Game  $game
+     * @param  \App\Games\Game  $game
      * @return \Illuminate\Http\Response
      */
     public function edit(Game $game)
@@ -64,7 +65,7 @@ class GameController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Game  $game
+     * @param  \App\Games\Game  $game
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Game $game)
@@ -75,7 +76,7 @@ class GameController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Game  $game
+     * @param  \App\Games\Game  $game
      * @return \Illuminate\Http\Response
      */
     public function destroy(Game $game)

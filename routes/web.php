@@ -2,20 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
+/**
+Web Routes
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+routes are loaded by the RouteServiceProvider within a group which
+contains the "web" middleware group. Now create something great! */
 Route::get('/', 'HomeController@landing');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/games', 'GameController');
 
 // Profile Pages
 Route::prefix('profile')->group(function(){
@@ -46,6 +40,18 @@ Route::prefix('hub')->group(function () {
     });
     Route::resource('/calendar', 'Calendar\CalendarController');
 
+    // Game Pages
+    Route::prefix('games')->group(function () {
+        Route::resource('/reviews', 'Games\GameReviewController');
+        Route::resource('/ratings', 'Games\GameRankController');
+        Route::resource('/logs', 'Games\GameLogController');
+        Route::resource('/invites', 'Games\GameInviteController');
+        Route::resource('/players', 'Games\GamePlayerController');
+        Route::resource('/events', 'Games\GameEventController');
+        Route::resource('/tournaments', 'Games\GameTournamentController');
+    });
+    Route::resource('/gaming', 'Games\GameController');
+
     Route::resource('/blog', 'Hub\BlogController');
     Route::resource('/galleries', 'Hub\GalleryController');
 
@@ -71,11 +77,11 @@ Route::prefix('discord') -> group(function () {
     Route::resource('/bot/events', 'Discord\BotEventController');
     Route::resource('/bot/settings', 'Discord\BotSettingsController');
     Route::resource('/bot', 'Discord\DiscordBotController');
-    Route::resource('/discord-members', 'Discord\DiscordUserController');
-    Route::resource('/discord-moderators', 'Discord\DiscordModeratorController');
-    Route::resource('/discord-roles', 'Discord\DiscordRoleController');
-    Route::resource('/discord-guests', 'Discord\DiscordGuestController');
-    Route::resource('/discord-admins', 'Discord\DiscordAdminController');
+    Route::resource('/members', 'Discord\DiscordUserController');
+    Route::resource('/moderators', 'Discord\DiscordModeratorController');
+    Route::resource('/roles', 'Discord\DiscordRoleController');
+    Route::resource('/guests', 'Discord\DiscordGuestController');
+    Route::resource('/admins', 'Discord\DiscordAdminController');
 });
 
 // AI Endpoints
