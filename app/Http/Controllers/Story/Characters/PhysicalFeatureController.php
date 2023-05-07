@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Story;
+namespace App\Http\Controllers\Story\Characters;
 
 use App\Http\Controllers\Controller;
-use App\Story\Character\CharacterNickname;
+use App\Story\Character\PhysicalFeature;
 use Illuminate\Http\Request;
 
-class CharacterNicknameController extends Controller
+class PhysicalFeatureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CharacterNicknameController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Story\Character\CharacterNickname  $characterNickname
+     * @param  \App\Story\Character\PhysicalFeature  $physicalFeature
      * @return \Illuminate\Http\Response
      */
-    public function show(CharacterNickname $characterNickname)
+    public function show(PhysicalFeature $physicalFeature)
     {
         //
     }
@@ -53,10 +53,10 @@ class CharacterNicknameController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Story\Character\CharacterNickname  $characterNickname
+     * @param  \App\Story\Character\PhysicalFeature  $physicalFeature
      * @return \Illuminate\Http\Response
      */
-    public function edit(CharacterNickname $characterNickname)
+    public function edit(PhysicalFeature $physicalFeature)
     {
         //
     }
@@ -65,10 +65,10 @@ class CharacterNicknameController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story\Character\CharacterNickname  $characterNickname
+     * @param  \App\Story\Character\PhysicalFeature  $physicalFeature
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CharacterNickname $characterNickname)
+    public function update(Request $request, PhysicalFeature $physicalFeature)
     {
         //
     }
@@ -76,10 +76,10 @@ class CharacterNicknameController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story\Character\CharacterNickname  $characterNickname
+     * @param  \App\Story\Character\PhysicalFeature  $physicalFeature
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CharacterNickname $characterNickname)
+    public function destroy(PhysicalFeature $physicalFeature)
     {
         //
     }

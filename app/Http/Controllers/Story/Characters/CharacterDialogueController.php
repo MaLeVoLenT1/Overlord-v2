@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Hub;
+namespace App\Http\Controllers\Story\Characters;
 
-use App\Calendar\Calendar;
 use App\Http\Controllers\Controller;
+use App\Story\Character\CharacterDialogue;
 use Illuminate\Http\Request;
 
-class CalendarController extends Controller
+class CharacterDialogueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CalendarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calendar\Calendar  $calendar
+     * @param  \App\Story\Character\CharacterDialogue  $characterDialogue
      * @return \Illuminate\Http\Response
      */
-    public function show(Calendar $calendar)
+    public function show(CharacterDialogue $characterDialogue)
     {
         //
     }
@@ -53,10 +53,10 @@ class CalendarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calendar\Calendar  $calendar
+     * @param  \App\Story\Character\CharacterDialogue  $characterDialogue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Calendar $calendar)
+    public function edit(CharacterDialogue $characterDialogue)
     {
         //
     }
@@ -65,10 +65,10 @@ class CalendarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calendar\Calendar  $calendar
+     * @param  \App\Story\Character\CharacterDialogue  $characterDialogue
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Calendar $calendar)
+    public function update(Request $request, CharacterDialogue $characterDialogue)
     {
         //
     }
@@ -76,10 +76,10 @@ class CalendarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calendar\Calendar  $calendar
+     * @param  \App\Story\Character\CharacterDialogue  $characterDialogue
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Calendar $calendar)
+    public function destroy(CharacterDialogue $characterDialogue)
     {
         //
     }

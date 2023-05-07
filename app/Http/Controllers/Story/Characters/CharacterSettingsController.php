@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Story;
+namespace App\Http\Controllers\Story\Characters;
 
 use App\Http\Controllers\Controller;
-use App\Story\Elements\Timeline;
+use App\Story\Character\CharacterSettings;
 use Illuminate\Http\Request;
 
-class TimelineController extends Controller
+class CharacterSettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class TimelineController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Story\Elements\Timeline  $timeline
+     * @param  \App\Story\Character\CharacterSettings  $characterSettings
      * @return \Illuminate\Http\Response
      */
-    public function show(Timeline $timeline)
+    public function show(CharacterSettings $characterSettings)
     {
         //
     }
@@ -53,10 +53,10 @@ class TimelineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Story\Elements\Timeline  $timeline
+     * @param  \App\Story\Character\CharacterSettings  $characterSettings
      * @return \Illuminate\Http\Response
      */
-    public function edit(Timeline $timeline)
+    public function edit(CharacterSettings $characterSettings)
     {
         //
     }
@@ -65,10 +65,10 @@ class TimelineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story\Elements\Timeline  $timeline
+     * @param  \App\Story\Character\CharacterSettings  $characterSettings
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Timeline $timeline)
+    public function update(Request $request, CharacterSettings $characterSettings)
     {
         //
     }
@@ -76,10 +76,10 @@ class TimelineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story\Elements\Timeline  $timeline
+     * @param  \App\Story\Character\CharacterSettings  $characterSettings
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Timeline $timeline)
+    public function destroy(CharacterSettings $characterSettings)
     {
         //
     }

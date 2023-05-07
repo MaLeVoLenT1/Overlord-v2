@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Story;
+namespace App\Http\Controllers\Story\Characters;
 
 use App\Http\Controllers\Controller;
-use App\Story\Character\Character;
+use App\Story\Character\CharacterBehavior;
 use Illuminate\Http\Request;
 
-class CharacterController extends Controller
+class CharacterBehaviorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CharacterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Story\Character\Character  $character
+     * @param  \App\Story\Character\CharacterBehavior  $characterBehavior
      * @return \Illuminate\Http\Response
      */
-    public function show(Character $character)
+    public function show(CharacterBehavior $characterBehavior)
     {
         //
     }
@@ -53,10 +53,10 @@ class CharacterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Story\Character\Character  $character
+     * @param  \App\Story\Character\CharacterBehavior  $characterBehavior
      * @return \Illuminate\Http\Response
      */
-    public function edit(Character\Character $character)
+    public function edit(CharacterBehavior $characterBehavior)
     {
         //
     }
@@ -65,10 +65,10 @@ class CharacterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story\Character\Character  $character
+     * @param  \App\Story\Character\CharacterBehavior  $characterBehavior
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Character\Character $character)
+    public function update(Request $request, CharacterBehavior $characterBehavior)
     {
         //
     }
@@ -76,10 +76,10 @@ class CharacterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story\Character\Character  $character
+     * @param  \App\Story\Character\CharacterBehavior  $characterBehavior
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Character\Character $character)
+    public function destroy(CharacterBehavior $characterBehavior)
     {
         //
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Story\Elements;
+namespace App\Story\Timeline;
 
 use Illuminate\Database\Eloquent\Model;
 

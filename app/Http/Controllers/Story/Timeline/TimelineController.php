@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Story;
+namespace App\Http\Controllers\Story\Timeline;
 
 use App\Http\Controllers\Controller;
-use App\Story\Character\CharacterRole;
+use App\Story\Timeline\Timeline;
 use Illuminate\Http\Request;
 
-class CharacterRoleController extends Controller
+class TimelineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CharacterRoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Story\Character\CharacterRole  $characterRole
+     * @param  \App\Story\Timeline\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function show(CharacterRole $characterRole)
+    public function show(Timeline $timeline)
     {
         //
     }
@@ -53,10 +53,10 @@ class CharacterRoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Story\Character\CharacterRole  $characterRole
+     * @param  \App\Story\Timeline\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function edit(CharacterRole $characterRole)
+    public function edit(Timeline $timeline)
     {
         //
     }
@@ -65,10 +65,10 @@ class CharacterRoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story\Character\CharacterRole  $characterRole
+     * @param  \App\Story\Timeline\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CharacterRole $characterRole)
+    public function update(Request $request, Timeline $timeline)
     {
         //
     }
@@ -76,10 +76,10 @@ class CharacterRoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story\Character\CharacterRole  $characterRole
+     * @param  \App\Story\Timeline\Timeline  $timeline
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CharacterRole $characterRole)
+    public function destroy(Timeline $timeline)
     {
         //
     }

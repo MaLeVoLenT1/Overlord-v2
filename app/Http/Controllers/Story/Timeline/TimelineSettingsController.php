@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Hub;
+namespace App\Http\Controllers\Story\Timeline;
 
-use App\Calendar\CalendarEvent;
 use App\Http\Controllers\Controller;
+use App\Story\Timeline\TimelineSettings;
 use Illuminate\Http\Request;
 
-class CalendarEventController extends Controller
+class TimelineSettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CalendarEventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Story\Timeline\TimelineSettings  $timelineSettings
      * @return \Illuminate\Http\Response
      */
-    public function show(CalendarEvent $calendarEvent)
+    public function show(TimelineSettings $timelineSettings)
     {
         //
     }
@@ -53,10 +53,10 @@ class CalendarEventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Story\Timeline\TimelineSettings  $timelineSettings
      * @return \Illuminate\Http\Response
      */
-    public function edit(CalendarEvent $calendarEvent)
+    public function edit(TimelineSettings $timelineSettings)
     {
         //
     }
@@ -65,10 +65,10 @@ class CalendarEventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Story\Timeline\TimelineSettings  $timelineSettings
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CalendarEvent $calendarEvent)
+    public function update(Request $request, TimelineSettings $timelineSettings)
     {
         //
     }
@@ -76,10 +76,10 @@ class CalendarEventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calendar\CalendarEvent  $calendarEvent
+     * @param  \App\Story\Timeline\TimelineSettings  $timelineSettings
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CalendarEvent $calendarEvent)
+    public function destroy(TimelineSettings $timelineSettings)
     {
         //
     }

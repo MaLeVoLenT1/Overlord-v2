@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Story;
+namespace App\Http\Controllers\Story\Timeline;
 
 use App\Http\Controllers\Controller;
-use App\Story\Character\CharacterTrait;
+use App\Story\Timeline\StoryEvent;
 use Illuminate\Http\Request;
 
-class CharacterTraitController extends Controller
+class StoryEventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class CharacterTraitController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Story\Character\CharacterTrait  $characterTrait
+     * @param  \App\Story\Timeline\StoryEvent  $storyEvent
      * @return \Illuminate\Http\Response
      */
-    public function show(CharacterTrait $characterTrait)
+    public function show(StoryEvent $storyEvent)
     {
         //
     }
@@ -53,10 +53,10 @@ class CharacterTraitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Story\Character\CharacterTrait  $characterTrait
+     * @param  \App\Story\Timeline\StoryEvent  $storyEvent
      * @return \Illuminate\Http\Response
      */
-    public function edit(CharacterTrait $characterTrait)
+    public function edit(StoryEvent $storyEvent)
     {
         //
     }
@@ -65,10 +65,10 @@ class CharacterTraitController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story\Character\CharacterTrait  $characterTrait
+     * @param  \App\Story\Timeline\StoryEvent  $storyEvent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CharacterTrait $characterTrait)
+    public function update(Request $request, StoryEvent $storyEvent)
     {
         //
     }
@@ -76,10 +76,10 @@ class CharacterTraitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story\Character\CharacterTrait  $characterTrait
+     * @param  \App\Story\Timeline\StoryEvent  $storyEvent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CharacterTrait $characterTrait)
+    public function destroy(StoryEvent $storyEvent)
     {
         //
     }
