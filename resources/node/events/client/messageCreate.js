@@ -103,6 +103,7 @@ module.exports = {
                     messages: conversation,
                 });
                 // console.log(result.data.choices[0].message);
+                console.log(message.author);
                 console.log(result.data);
                 message.reply(result.data.choices[0].message);
 

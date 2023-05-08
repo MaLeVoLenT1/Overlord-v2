@@ -20,6 +20,7 @@ class CreateAPIAssociationsTable extends Migration
 
             $table -> string('api_key');
             $table -> string('secret') -> nullable();
+            $table -> string('other') -> nullable();
             $table -> string('name');
             $table -> string('description') -> nullable();
             $table -> enum('type', [

@@ -3,6 +3,7 @@
 use Database\Seeds\HeaderInformationSeeder;
 use Database\Seeds\HeaderKeywordsSeeder;
 use Database\Seeds\HeaderViewportSeeder;
+use Database\Seeds\MaLeVoLenTSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HeaderKeywordsSeeder::class);
         $this->call(HeaderInformationSeeder::class);
         $this->call(HeaderViewportSeeder::class);
+        $this->call(MaLeVoLenTSeeder::class);
     }
 }

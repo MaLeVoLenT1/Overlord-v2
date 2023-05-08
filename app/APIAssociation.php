@@ -15,6 +15,7 @@ class APIAssociation extends Model
         'owner_type',
         'name',
         'api_key',
+        'other',
         'secret',
         'description',
         'type',
