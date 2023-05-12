@@ -15,10 +15,11 @@ class DiscordAssociation extends Model
         'user_id',
         'username',
         'display_name',
-        'discord_discriminator',
+        'discriminator',
+        'avatar',
         'discord_id',
-        'discord_last_message_time',
-        'discord_last_message_id',
+        'last_message_time',
+        'last_message_id',
     ];
 
     public function user(): BelongsTo { return $this -> belongsTo('App\User'); }

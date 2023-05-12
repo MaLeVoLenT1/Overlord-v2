@@ -51,11 +51,6 @@ class User extends Authenticatable
     /** * @return MorphMany */
     public function apis(): MorphMany { return $this -> morphMany('App\APIAssociation', 'user','owner_type', 'owner_id'); }
 
-    public function AI(): MorphMany { return $this -> morphMany('App\AI\AI', 'owner','owner_type', 'owner_id'); }
-
-    /** * @return MorphMany */
-    public function bots(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
-
     /** @return HasOne */
     public function discord_info(): HasOne { return $this -> hasOne('App\Discord\DiscordAssociation'); }
 

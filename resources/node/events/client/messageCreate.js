@@ -1,6 +1,5 @@
 const config = require('../../config.json');
 const {Configuration, OpenAIApi} = require('openai');
-
 const AI_key = require('../../ai-config.json');
 const configuration = new Configuration({
     organization: AI_key.organization,
@@ -103,8 +102,9 @@ module.exports = {
                     messages: conversation,
                 });
                 // console.log(result.data.choices[0].message);
-                console.log(message.author);
-                console.log(result.data);
+                console.log(bot.guilds.cache.get(message.guild.id));
+
+                // console.log(result.data);
                 message.reply(result.data.choices[0].message);
 
                 return;

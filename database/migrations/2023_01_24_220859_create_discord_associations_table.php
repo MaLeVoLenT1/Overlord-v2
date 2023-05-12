@@ -19,11 +19,12 @@ class CreateDiscordAssociationsTable extends Migration
             $table -> foreign('user_id') -> references('id') -> on('users') -> onDelete('cascade');
 
             $table -> bigInteger('discord_id');
-            $table -> string('discord_username');
+            $table -> string('username');
             $table -> string('display_name')-> nullable();
-            $table -> string('discord_discriminator');
-            $table -> timestamp('discord_last_message_time')-> nullable();
-            $table -> integer('discord_last_message_id')-> nullable();
+            $table -> string('discriminator');
+            $table -> string('avatar')-> nullable();
+            $table -> timestamp('last_message_time')-> nullable();
+            $table -> integer('last_message_id')-> nullable();
             $table -> timestamps();
         });
     }

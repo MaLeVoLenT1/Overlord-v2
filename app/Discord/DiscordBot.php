@@ -14,6 +14,7 @@ class DiscordBot extends Model
         'owner_id',
         'owner_type',
         'discord_id',
+        'icon',
         'server_name',
     ];
     public function owner(): MorphTo { return $this -> morphTo(); }

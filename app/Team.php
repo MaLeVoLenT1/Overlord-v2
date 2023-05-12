@@ -33,4 +33,8 @@ class Team extends Model
     public function leaders(): MorphMany { return $this -> morphMany('App\Leader', 'association', 'association_type', 'association_id') -> where('type', 'team'); }
     public function members(): MorphMany { return $this -> morphMany('App\Member', 'association', 'association_type', 'association_id') -> where('type', 'team'); }
     public function officers(): MorphMany { return $this -> morphMany('App\Officer', 'association', 'association_type', 'association_id') -> where('type', 'team'); }
+
+    /** @return MorphMany */
+    public function bots(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
+    public function AI(): MorphMany { return $this -> morphMany('App\AI\AI', 'owner','owner_type', 'owner_id'); }
 }

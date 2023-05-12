@@ -52,4 +52,7 @@ class Profile extends Model
     /** Hub Owned Tools */
     public function social_accounts(): MorphMany { return $this -> morphMany('App\SocialMedia', 'profile', 'profile_type', 'profile_id'); }
     public function portfolios(): MorphMany { return $this -> morphMany('App\Crypto\portfolio\Portfolio', 'owner', 'owner_type', 'owner_id'); }
+    /** @return MorphMany */
+    public function bots(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
+    public function AI(): MorphMany { return $this -> morphMany('App\AI\AI', 'owner','owner_type', 'owner_id'); }
 }

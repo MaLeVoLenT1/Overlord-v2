@@ -18,6 +18,7 @@ class CreateDiscordBotsTable extends Migration
             $table -> integer('owner_id') -> unsigned();
             $table -> string('owner_type');
             $table -> bigInteger('discord_id') -> unique();
+            $table -> string('icon')->nullable();
             $table -> string('server_name');
             $table -> timestamps();
         });
