@@ -21,7 +21,7 @@ class CreateAISTable extends Migration
             $table -> string('name');
             $table -> string('description');
             $table -> enum('type', [
-                'other', 'openai', 'huggingFace',
+                'other', 'openai', 'huggingFace', 'PaLM 2', 'Multi-AI',
                 'LangChain', 'LLaMA + Alpaca', 'AutoGPT', 'Stable Diffusion',
             ]) -> default('openai');
             $table -> boolean('is_public') -> default(true);

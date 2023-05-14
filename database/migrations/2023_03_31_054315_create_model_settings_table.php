@@ -40,7 +40,7 @@ class CreateModelSettingsTable extends Migration
 
             /** Whether to stop the chat completion when the model reaches the end of the input text.
              * If set to false, the model will continue generating tokens until it reaches the max_tokens limit. */
-            $table -> string('stop') -> default(null);
+            $table -> string('stop') -> nullable();
 
             /** Number between -2.0 and 2.0.
              * Positive values penalize new tokens based on whether they appear in the text so far,
@@ -53,7 +53,7 @@ class CreateModelSettingsTable extends Migration
             $table -> float('frequency_penalty') -> default(0.0);
 
             /** A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. */
-            $table -> string('user') -> default(null);
+            $table -> string('user') -> nullable();
 
             /** These settings are for LLaMa + Alpaca */
 

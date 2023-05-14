@@ -29,8 +29,8 @@ class IntelligenceModel extends Model
         'is_trained',
     ];
 
-    public function ai(): BelongsTo { return $this -> belongsTo('App\AI\AI'); }
-    public function owner(): MorphTo { return $this -> morphTo(); }
+    public function ai(): BelongsTo { return $this -> belongsTo('App\AI\AI','ai_id','id'); }
+    public function owner(): MorphTo { return $this -> morphTo('owner','owner_type'); }
     public function settings(): HasOne { return $this -> hasOne('App\AI\ModelSettings'); }
     public function prompts(): HasMany { return $this -> hasMany('App\AI\SystemPrompt'); }
     public function training_data(): HasMany { return $this -> hasMany('App\AI\TrainingData'); }

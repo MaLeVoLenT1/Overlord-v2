@@ -31,5 +31,5 @@ class AI extends Model
     public function owner(): MorphTo { return $this -> morphTo(); }
 
     /** * @return HasMany */
-    public function models(): HasMany { return $this -> hasMany('App\AI\IntelligenceModel'); }
+    public function models(): HasMany { return $this -> hasMany('App\AI\IntelligenceModel','ai_id','id'); }
 }
