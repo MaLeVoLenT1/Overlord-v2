@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
@@ -52,7 +53,8 @@ class Profile extends Model
     /** Hub Owned Tools */
     public function social_accounts(): MorphMany { return $this -> morphMany('App\SocialMedia', 'profile', 'profile_type', 'profile_id'); }
     public function portfolios(): MorphMany { return $this -> morphMany('App\Crypto\portfolio\Portfolio', 'owner', 'owner_type', 'owner_id'); }
-    /** @return MorphMany */
     public function bots(): MorphMany { return $this -> morphMany('App\Discord\DiscordBot', 'user','owner_type', 'owner_id'); }
     public function ai(): MorphMany { return $this -> morphMany('App\AI\AI', 'owner','owner_type', 'owner_id'); }
+    public function models(): MorphMany { return $this -> morphMany('App\AI\IntelligenceModel', 'owner','owner_type', 'owner_id'); }
+    public function prompts(): HasMany { return $this -> hasMany('App\AI\SystemPrompt', 'profile_id','id'); }
 }

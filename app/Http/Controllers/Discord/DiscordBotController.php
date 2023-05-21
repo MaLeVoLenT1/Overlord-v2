@@ -4,10 +4,32 @@ namespace App\Http\Controllers\Discord;
 
 use App\Discord\DiscordBot;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class DiscordBotController extends Controller
 {
+
+    /**
+     * Bot response chat.
+     *
+     * @return JsonResponse
+     */
+    public function chat(): JsonResponse
+    {
+        if ($this -> request -> ajax()){
+
+
+
+
+            return response() -> json([
+                'message' => 'Hello World!',
+                'request' => $this -> request,
+            ]);
+        }
+        else return response() -> json(['message' => 'This is not an ajax request.']);
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -72,6 +72,7 @@ Route::prefix('discord') -> group(function () {
     Route::resource('/bot/commands', 'Discord\BotCommandController');
     Route::resource('/bot/events', 'Discord\BotEventController');
     Route::resource('/bot/settings', 'Discord\BotSettingsController');
+    Route::get('/bot/chat', 'Discord\DiscordBotController@chat');
     Route::resource('/bot', 'Discord\DiscordBotController');
 
 
